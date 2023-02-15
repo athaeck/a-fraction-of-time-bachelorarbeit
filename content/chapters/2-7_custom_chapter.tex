@@ -1,0 +1,1743 @@
+\chapter{Konzeption}\label{sec:concept}
+In diesem Abschnitt wird das allgemeine Spielkonzept des Spiels, sowie die damit einhergehende Story des Spiels vorgestellt. Danach wird auf alle wichtigen Aspekte des Spiels eingegangen. In diesem Abschnitt werden alle grundlegenden Konzeptionen für das Spiel aufgelistet. In Kapitel \ref{sec:dev}: \nameref{sec:dev} werden die fertigen Elemente der Konzeption thematisiert.
+
+\section{Genre}
+Das Setting dieses Spiels ist dem Steampunk unterzuordnen.
+
+Das Steampunk-Genre wurde ausgewählt, weil es die passende Kombination aus Ästhetik und Technologie bietet. Die mechanische Ästhetik des Steampunk passt perfekt zu den Maschinen, die im Spiel zum Einsatz kommen. Die futuristische Technologie, die auf Dampfmaschinen und Mechanik basiert, verleiht dem Spiel einen einzigartigen Charme und eine ganz besondere Atmosphäre. Die Verwendung von Kupfer, Messing, Leder und anderen Materialien, die an das Viktorianische Zeitalter erinnern, rundet das Steampunk-Erlebnis ab und lässt den Spieler in eine andere Welt eintauchen.
+
+Zum allgemeinen Design wird im Kapitel \ref{sec:design}: \nameref{sec:design} näher eingegangen.
+
+\subsection{Steampunk}
+Steampunk ist ein Kunstwort aus \say{\emph{Steam}} (Dampf) und \say{\emph{Punk}} und bezeichnet ein Literatur- und Kunstgenre, das im 19. Jahrhundert angesiedelt ist und die Technik und Erfindungen dieser Zeit mit moderner Technologie kombiniert. Es zeichnet sich durch eine Kombination aus Nostalgie und Hightech sowie Dampf- oder Zahnrad betriebener Technik und viktorianischen Kleidungsstilen aus. Steampunk hat sich zu einer kulturellen Bewegung, Mode und Kunst entwickelt und wird in der Literatur, Musik, Comics, Gesellschaft und Videospielen umgesetzt (vgl. \cite{noauthor_steampunk_nodate}).
+
+\section{Story}
+Der Spieler verfolgt die Geschichte eines Chronologen, der eine Maschine erfindet, um mit deren Technologie in andere Zeitlinien zu reisen. Dadurch möchte er Auswirkungen von anders getroffenen Entscheidungen in anderen Zeitlinien erforschen und diese sichtbar machen. Die Maschine hat jedoch eine Fehlfunktion, anstatt dass er in andere Zeitlinien reisen kann und wieder zurück, wird er in eine alternative Zeitlinie gezogen und kommt von dort nicht mehr zurück. Über seine Erfindung kann er allerdings andere Zeitlinien in die Zeitlinie, in der er sich befindet, ziehen und diese haben dadurch einen Einfluss auf die Zeitlinie, in der er sich befindet. Da seine Maschine nicht wie vorgesehen funktioniert, muss er nun einen Weg finden, um sie zu reparieren. Dazu muss er durch verschieden andere Zeitlinien reisen, um Hinweise zu finden, wie er in seine eigene Zeitlinie zurückfinden kann.
+
+Seine Motive ändern sich jedoch, als er feststellt, dass alle alternativen Zeitlinien von einer zukünftigen Version seiner selbst besucht wurden, die ihnen wichtige Teile entnommen und sie in Dystopien verwandelt hat. Bald findet er sich dabei wieder, sein zukünftiges Ich zu jagen, andere Zeitlinien zu reparieren, während er versucht einen Weg zurück in seine ursprüngliche Zeitlinie zu finden.
+
+Der Protagonist wird auf seiner Reise verschiedene alternative Zeitstränge besuchen und ihre Geschichte kennenlernen, um damit seine Ziele zu erreichen. Während seiner Reisen wird er entdecken, wie die Bewohner der anderen Zeitlinien von der Existenz von parallelen Zeitlinien erfahren haben, genauer gesagt glauben zu wissen, was sich in anderen Zeitlinien abspielt. Die Geschichten der Zeitstränge werden hauptsächlich durch die Umgebung und durch kleine Objekte erzählt, die gesammelt werden können. 
+
+Die Geschichte des Spiels wird in fünf Kapitel geteilt. Die ersten fünf Level, die der Spieler absolvieren muss, bilden das erste Kapitel. Nach Abschließen des ersten Kapitels kann der Spieler in das Labor des Chronologen zurückreisen, um von dort seine Expeditionen und Herausforderungen zu starten.
+
+\section{Spielmechanik}
+Grundsätzlich ist das Spiel ein Rätsel-Spiel, das einen Bezug zur Zeit im Allgemeinen und zu einem fiktionalen \say{\emph{Zeitkontinuum}} hat. Das \say{\emph{Zeitkontinuum}} regelt Existenzen und Abläufe von verschiedenen \say{\emph{Zeitlinien}}. Diese \say{\emph{Zeitlinien}} können vom Spieler erzeugt werden, um auf diese Weise Türen für andere \say{\emph{Zeitlinien}} zu öffnen. Diese \say{\emph{Zeitlinien}} bewegen sich in einer hoch-zählenden Zeit. Das heißt jede \say{\emph{Zeitlinie}} wurde zu einem bestimmten Zeitpunkt des Spiels erstellt und endet auch zu dem Zeitpunkt, an dem man von einer neu erstellten \say{\emph{Zeitlinien}} wieder auf die \say{\emph{Grundzeitlinie}} zurückwechselt. Der Chronologe, der Protagonist in diesem Spiel, bewegt sich dabei als Fixpunkt in diesem \say{\emph{Zeitkontinuum}} auf seiner \say{\emph{Zeitlinie}} voran, diese ist auch die \say{\emph{Grundzeitlinie}}. Alle weiteren Erstellten \say{\emph{Zeitlinien}} werden entweder in Referenz zu dieser \say{\emph{Grundzeitlinie}} eingegliedert oder werden an andere neu erstellten \say{\emph{Zeitlinien}} untergegliedert. Im Kapitel \ref{sec:dev} \nameref{sec:dev} erhält man einen genaueren Überblick darüber. 
+
+Der Spieler hat nun die Möglichkeit, durch diese Gegebenheit des \say{\emph{Zeitkontinuums}}, andere Ichs aus anderen \say{\emph{Zeitlinien}} zu sich herzuholen und diese in sein \say{\emph{Zeitkontinuum}} zu integrieren. Das bedeutet, er springt in die Person eines anderen Ichs und bewegt sich in dem Körper des anderen Ichs in der Spielwelt umher. Jede Aktion oder Bewegung, die  ausgeführt wird, hat immer einen Einfluss auf danach entstehende \say{\emph{Zeitlinien}}. Deshalb kann er unter anderem eine verschlossene Tür öffnen, die später für die \say{\emph{Grundzeitlinie}} geöffnet wird. Da jede \say{\emph{Zeitlinie}} einen bestimmten Start-Zeitpunkt besitzt, kann nach einem Wechsel auf die Basis \say{\emph{Zeitlinie}} nun zu dem entsprechenden Zeitpunkt des Kontinuums diese aufgenommene \say{\emph{Zeitlinie}} ausgeführt werden. Während diese \say{\emph{Zeitlinie}} in der Welt, in Form des entsprechenden Ichs des Chronologen, umhergeht, hat diese \say{\emph{Zeitlinie}} eine Auswirkung auf den ursprünglichen Chronologen. Wenn diese \say{\emph{Zeitlinie}} nun eine Druckplatte oder einen Hebel betätigt, so wird für den Chronologen eine Tür  geöffnet, die vorher noch verschlossen war und nun geöffnet wurde, durchgehen und hat somit eines von vielen Rätseln, auf die er stoßen wird, gelöst.
+
+Einen Sprung von einer abgespaltenen, neu erzeugten \say{\emph{Zeitlinie}} auf den referenzierten Ursprung kann man als Sprung in die Vergangenheit sehen, da der Spieler nun wieder auf einen zurückliegenden Punkt in der Zeit, auf den letzten Zeitwert, den diese \say{\emph{Zeitlinie}} erlebt hat, zurückgesetzt und erfährt dadurch, welche Auswirkungen die erzeugte \say{\emph{Zeitlinie}} auf ihn hat.
+
+Der Spieler hat die Möglichkeit ab einem bestimmten Zeitpunkt der Geschichte in sein Labor zurückzureisen und kann von dort aus bereits absolvierte Level erneut starten. Nach Abschließen eines jeden Levels erhält der Spieler eine Belohnung. Diese Belohnungen können neu freigeschalteten Ichs aus anderen Zeitsträngen sein, oder Gegenstände, die der Spieler im weiteren Verlauf des Spiels einsetzen kann, um sich das Spiel leichter zu gestalten. Jedes Level wird ab einem bestimmten Zeitpunkt der Geschichte auch dazu dienen, dass der Spieler mit einer größeren Anzahl an verfügbaren Ichs andere Wege gehen kann, um dadurch weitere Level freizuschalten oder weitere Gegenstände zu finden. Beides wird im Kapitel \say{\emph{Belohnung}} aufgegriffen und beschrieben.
+Das Erzeugen einer \say{\emph{Zeitlinie}} wird im Sprachgebrauch dieser Thesis als \say{\emph{Splitting}} bezeichnet, dieser Begriff wird noch einmal im gleichnamigen Abschnitt erklärt. Gleiches gilt für den Begriff \say{\emph{Merging}}, der für das Zurückspringen von einer erzeugten \say{\emph{Zeitlinie}} auf seiner Referenzierten \say{\emph{Zeitlinie}} verwendet wird.
+
+\section{Spielablauf}
+Die Spielabläufe des Spiels können in drei verschiedene Abschnitte unterteilt werden. Zum einen den Spielablauf des gesamten Spiels, den Ablauf eines einzelnen Levels und anschließend den Ablauf des Labors.
+
+\subsection{Spielablauf des Spiels}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\linewidth]{content/pictures/main_loop.jpg}
+\caption{Ablauf des gesamten Spiels (Quelle: eigene Darstellung)}
+\label{fig:main_loop}
+\end{figure}
+
+Sobald das Spiel gestartet ist und das Startmenü geladen hat, kann der Spieler zwischen vier verschiedenen Optionen auswählen. Zunächst kann er aus dem Hauptmenü heraus Einstellungen bezüglich der sichtbaren \ac{UI} tätigen, der Grafik, der Ton-Einstellung sowie der Kamera-Einstellung. Er kann das Spiel ebenfalls wieder beenden. Sofern der Spieler bereits einen Spielstand besitzt oder erzielt hat, kann er an diesem weiterspielen und würde entweder in seinem Labor beginnen, oder er startet das letzte freigeschaltete Level. Hat er das Spiel zum ersten Mal gestartet, so beginnt der Spieler im Tutorial. Zu Beginn des Tutorials kann der Spieler entscheiden, ob er das Tutorial Level als ein Tutorial spielen möchte, oder ob er das Level auf seine Art ohne den geführten Dialog meistern will. Mit geführtem Dialog bekommt der Spieler Hinweise über Objekte, die er anfangs betätigen muss. Zudem bekommt der Spieler mit, wie der Chronologe seine Erkenntnisse bezüglich der Mechanik des Spiels äußert. Dadurch wird dem Spieler erklärt, was bei den Prozessen des \say{\emph{Splittings}} und des \say{\emph{Mergings}} genau passiert und was diese Prozesse für eine Wirkung besitzen. Zudem erklärt der Chronologe so auch die Bedeutung der \ac{UI}, die der Spieler zur Laufzeit sehen kann. Der Spieler kann durch die Auswahl auch ohne diese Dialoge spielen. So erhält er nur über erhaltene Informationspakete Informationen über das Geschehen des Spiels. Diese Informationen werden auch bei einem geführten Tutorial an den Spieler übergeben.
+Nach Abschließen des Tutorials erhält der Spieler ein Überblick über den Graphen, eine Bündelung aller entstandenen Zeitlinien zur Laufzeit des Levels, und welches Level er jetzt als Nächstes starten wird. Daraufhin sieht der Spieler in Form einer Zeichensequenz, wie der Chronologe durch ein Zeitportal geht und in eine weitere Zeitlinie übergeht. Bevor er nun das zweite Level starten kann, sieht der Spieler eine Zeichensequenz, wie der Chronologe die neue Spielwelt betritt und sich die Umgebung inspiziert. Anschließend startet das Level für den Spieler. Die ersten fünf Level, inbegriffen das Tutorial, sind im selben Muster aufgebaut, wie es beim Tutorial beschrieben wurde. Im fünften Level erhält der Spieler die Information, auf welche Weise er in sein Labor zurückreisen kann. Allerdings befindet sich dieses nicht da, wo es vor dem Start der Maschine war, sondern in einem Zwischenraum der unterschiedlichen Zeitlinien des Kontinuums. Aus dem Labor aus kann der Spieler nun die bereits abgeschlossenen Level erneut spielen und kann diese nun auf denselben Weg abschließen wie bislang, oder er kann durch das Besitzen weiterer verfügbaren Zeitlinien das Level auch durch einen anderen Weg freischalten, oder bislang unerreichbare Gegenstände einsammeln. Dadurch können neue Level freigeschaltet werden, um in der Spielhandlung voranzuschreiten. Über den Computer des Chronologen im Labor kann der Spieler nun seine Auswahl treffen und reist fortan in ausgewählte Zeitlinien. Auf diese Weise kann der Spieler nun von Spielwelt zu Spielwelt reisen, bis er das Ende der Story erreicht. Nach Beendigung des Levels kann er das gesamte Spiel neu starten oder an dem Spielstand nach dem letzten Level fortführen.
+
+\subsection{Level Ablauf}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.3\linewidth]{content/pictures/level_loop.jpg}
+\caption{Ablauf eines Levels (Quelle: eigene Darstellung)}
+\label{fig:level_loop}
+\end{figure}
+
+Sobald das Level geladen hat, wird der Spieler auf dem Startpunkt des Levels gesetzt. Von dort aus steuert der Spieler den Chronologen in der Spielwelt umher, bis er auf ein Hindernis oder Rätsel trifft. Ab diesem Zeitpunkt muss der Spieler ein Ich aus einer anderen Zeitlinie über die Steuereinheit auswählen. Dadurch wird die Zeitlinie dieses Ichs an die Zeitlinie des Chronologen gehängt und der Spieler kann dieses Ich nun steuern. Auf diese Weise kann der Spieler den Mechanismus suchen und finden, welcher das Rätsel lösen lässt oder welches das Hindernis beseitigt. Bspw. muss er auf ein Gerüst klettern, auf welchem sich eine Druckplatte befindet, welche eine verschlossene Tür öffnet. Sobald er sich auf die Druckplatte gestellt hat, wird zu diesem Zeitpunkt das Hindernis beseitigt werden. Aufgrund dessen kann er über die Steuereinheit den Chronologen der Hauptzeitlinie auswählen und sieht jetzt, wie die Tür durch die Druckplatte geöffnet wird. Solange das gesamte Level noch nicht absolviert ist und weitere Rätsel bzw. Hindernisse in den Weg gestellt werden, wird der Spieler diese, auf die eben beschrieben Weise lösen. Es kann sein, dass der Spieler sein Jump 'n´Run Fähigkeiten beweisen muss, allerdings ist das nicht immer der Fall. Der Spieler wird primär damit beschäftigt sein, wie er seine Charaktere in die richtige Reihenfolge \say{\emph{Splitten}} muss, um die entsprechenden Rätsel zu lösen. Dabei hat er anfangs keine Zeitbegrenzung. Sein einziges Limit wird die Stabilität des Kontinuums sein, das er durch entsprechendes \say{\emph{Splitting}} und \say{\emph{Merging}} seiner diversen Chronologen beschädigen wird. Es wird allerdings auch Rätsel geben, an denen der Spieler seine Chronologen auf bestimmten Plattformen zu stellen, durch welche bestimmte Muster nachgebildet werden. 
+Fällt die Stabilität des Kontinuums durch zu häufiges und zu langem Splitten dreimal an einen Grenzwert im roten Bereich, so entsteht eine Zeitlinienkonvergenz, durch welchen der Chronologe in der Zeit verloren geht und der Spieler das Level verliert. Nachdem der Spieler das Level neu gestartet hat, erscheint der Chronologe wieder in seinem Labor und der Spieler kann das Level erneut starten.
+Die Begrifflichkeiten \say{\emph{Splitting}} und \say{\emph{Merging}} werden in ihrem entsprechenden Kapitel angesprochen.
+
+\subsection{Labor Ablauf}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.3\linewidth]{content/pictures/labor_loop.jpg}
+\caption{Ablauf des Labors (Quelle: eigene Darstellung)}
+\label{fig:labor_loop}
+\end{figure}
+
+Nach dem Abschließen des ersten Kapitels, dem Moment an dem der Spieler einen Hinweis und die entsprechenden Informationen erhält, wie der Chronologe in sein Labor zurückreisen kann, kann der Spieler das erste Mal in sein Labor zurückreisen. Von dort aus wird der Spieler für den Rest des Spiels seine Reisen in andere Zeitlinien starten. Das Labor dient dem Spieler künftig als Hub. Beim erstmaligen Betreten des Labors wird der Chronologe das Labor nach Schäden jeglicher Art absuchen. Er stellt dabei fest, dass alles noch so aussieht, wie zum Startzeitpunkt der Maschine. Als Erstes überträgt er seine gesammelten Notizen der ersten Level in seinen Computer. Über den Computer wird der Spieler noch mehr Informationen über die Welten erhalten. Der Computer kann aus den erhaltenen Information mehr Rückschlüsse über die Welt herführen, welche der Spieler auslesen kann. Nachdem der Chronologe seine gesammelten Notizen an seinen Computer übertragen hat, kann der Spieler an die Steuereinheit der Maschine im Labor gehen und das nächste Level auswählen. Nachdem dieses ausgewählt wurde, kann er das Portal betreten und starten. Auf diese Weise wird der Spieler in weitere Level der verschiedenen Zeitlinien wechseln können. Einige Level sind dabei jeweils in derselben Zeitlinie, sie können manchmal auch vor oder nach dem zuvor gespielten Level in der Zeithierarchie stattfinden. Nach jedem erfolgreich abgeschlossenen Level geht der Chronologe zuerst an seinen Computer und trägt seine Funde in sein System ein. Sobald der Spieler ein Level aufgrund eines zerstörten Zeitkontinuums verliert, wird er wieder im Labor landen, allerdings so als ob sein Versuch niemals stattgefunden hätte.
+
+\section{Zeitkontinuum}
+Das Zeitkontinuum ist die überwachende Instanz dieses gesamten Spiels. Sie misst Auswirkungen und Einflüsse aller parallel laufenden Zeitlinien dieser Spielwelt. Solange die Zeitlinien in sich geschlossen bleiben und nicht versucht wird, miteinander Kontakt aufzunehmen, kann das Kontinuum nicht gefährdet werden. Anders ist es jedoch, wenn versucht wird, die Barriere der Zeitlinien zu durchbrechen und zu erforschen, wie andere Szenarien aussehen würden, wenn andere Entscheidungen getroffen wurden. Ein dadurch entstehendes Wanken und Beschädigen des Kontinuums hat zur Folge, dass Zeitlinien nicht nur für Einflüsse von anderen Zeitlinien anfällig werden, sondern zusätzlich auch noch für Einflüsse aus der Zukunft oder der Vergangenheit. Durch die Wirkung anderer Zeitlinien steigt die Gefahr der Entstehung von Paradoxen. Das Zeitkontinuum kann eine begrenzte Anzahl von Paradoxen durch ihre Stärke kompensieren. Zu viele Paradoxen sollten sich in den verschiedenen Zeitlinien allerdings nicht bilden, sonst kann es passieren, dass das Kontinuum zerfällt und es zu Rissen in der Zeit kommt. Da das Kontinuum ein allumfassendes Konstrukt ist, wird es für den Gebrauch dieses Spiels die Zeitlinie des Chronologen betrachten, welcher dem Bestreben nachging, parallele Zeitlinien zu erforschen. Diese Zeitlinie gilt von nun als Hauptbezugspunkt des Kontinuums. Allerdings bezieht es seine Auswirkungen auf das Gebiet aller anderen Zeitlinien ebenfalls mit ein, wie die Auswirkungen auf die Zeitlinie des Chronologen. Das Kontinuum überwacht dabei das Entstehen von Paradoxen, die der Chronologe durch das Nutzen seiner Steuereinheit versehentlich erzeugen kann. Zudem misst er, ab welchem Zeitpunkt das Parallelisieren von Zeitlinien auf einer Zeitlinie zu Konvergenzen in der Zeit führen kann.
+
+\subsection{Zeitlinienkonvergenz}\label{sec:konvergenz}
+Die Zeitlinienkonvergenz ist eine Katastrophe, die entsteht, wenn die Stabilität des Kontinuums zu häufig auf einen gekennzeichneten Tiefpunkt gerät. Dadurch kann das Kontinuum die verschiedenen Zeitlinien und die Zeit nicht mehr ordnen und selbige fallen alle auf einen Zeitpunkt. Dadurch wird das ganze Kontinuum zerstört. Sobald eine Zeitlinienkonvergenz entsteht, verliert der Spieler das aktuelle Level und wird entweder zurück in das Labor versetzt oder er muss das zuvor gestartete Level neu starten.
+
+noch dazu schreiben dass das auch gameperformance gründe hat
+
+\subsection{Graph}
+Der Graph ist ein Gerüst in dieser Konzeption und dient als Unterstützung bzw. Visualisierung des Zeitkontinuums, das auf die Zeitlinie des Chronologen gerichtet ist. Er dient auf der visuellen Seite der Darstellung der \say{\emph{erzeugten}} Zeitlinien, die in abhängiger Verästlung an die Bezugszeitlinie des Kontinuums gehängt werden. Dabei sind diese Zeitlinien im Geflecht eines gesamten Kontinuums nicht \say{\emph{neu}} sondern lediglich in diese Zeitlinie integriert, sodass der Chronologe aus dieser Zeitlinie in der aktuellen Zeitlinie interagieren kann. Auf technischer Seite dient der Graph der Strukturierung der Zeitlinien. Durch ihn kann man feststellen, wann und in Bezug auf welche andere Zeitlinie man eine integrierte Zeitlinie nutzen möchte. Den entstehenden Graphen kann der Spieler jederzeit betrachten und inspizieren. Durch eine Zeitskala kann der Spieler sehen, zu welchem Zeitpunkt des Spiels er welche Zeitlinie ausgewählt hat und wie lange diese Zeitlinie integriert wurde. Einen endgültigen Überblick über den Graphen erhält der Spieler nach erfolgreichem Absolvieren eines Levels des Spiels. Dieser Graph kann sich von dem dargestellten Graphen, den der Spieler zur Laufzeit einsehen kann, unterscheiden, da er bereits laufende Zeitlinien unterbrechen oder abbrechen kann. Dazu in Abschnitt \say{\emph{Zeitlinien löschen}} mehr.
+
+\subsection{Zeitlinie}
+Eine Zeitlinie beschreibt den Verlauf eines Lebens einer Person und die Leben der Personen, die in genau dieser Umgebung leben. Jede Entscheidung, die dabei getroffen wird, hat einen Einfluss auf jedes Leben der Personen in dieser Zeitlinie. Im Kontext der Konzeption dieses Spiels bildet die Zeitlinie das Leben eines Ichs des Chronologen ab, welchen der Spieler später steuern wird. Man kann festhalten, der Chronologe hat vor, in das Leben eines anderen Ichs einzutauchen, um zu erfahren, wie das Leben aus der Perspektive dieses Ichs wäre, wenn andere Entscheidungen getroffen wurden. Dabei sähe der Chronologe ebenfalls eine andere Welt, die andere Ereignisse in der Vergangenheit erlebt hat und auch andere Ereignisse in der Zukunft erleben wird. Im Kontext dieses Spiels werden diese Zeitlinien in der Zeitlinie des Chronologen verankert. Dadurch entsteht der Effekt, dass Zeitlinien und ihre Ichs der Chronologen interaktiv mit der Zeitlinie des Haupt-Chronologen zusammenarbeiten können. Infolgedessen kann durch diesen Ansatz und dieses Verständnis auf der technischen Entwicklungs-Seite eine Abhängigkeit zwischen Zeitlinien erzeugen, auf welchen die gesteuerten Ichs des Chronologen abgebildet werden. Jede Zeitlinie bleibt in sich geschlossen und eigenständig, allerdings kann durch ein Konstrukt wie den Graphen eine Abhängigkeit voneinander erzeugt werden, welche für eine spätere Umsetzung notwendig ist.
+
+\subsubsection{Splitting}\label{sec:split}
+\say{\emph{Splitting}} bedeutet in dem Kontext dieses Spiel das Erzeugen einer neuen Zeitlinie, auf der ein Ich des Chronologen lebt und gesteuert werden kann. Diese Zeitlinie wird an die bestehende Zeitlinie als Kind angehängt, wodurch eine Abhängigkeit zwischen den Zeitlinien entsteht.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\linewidth]{content/pictures/Split.jpg}
+\caption{Neu entstandene Zeitlinie nach Split (Quelle: eigene Darstellung)}
+\label{fig:split}
+\end{figure}
+
+Diese neu erzeugte Zeitlinie wird nun an die bisherige Zeitlinie angehängt. Dabei ist diese Zeitlinie keinesfalls neu, sondern lediglich die bislang bereits bestehende Zeitlinie eines Ichs des Chronologen, die in die Zeitlinie des Chronologen gelegt wird. Diese Zeitlinie besteht so lange, wie der Spieler das Ich des Chronologen steuert.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\linewidth]{content/pictures/Timeline.jpg}
+\caption{derzeitige Zeitlinie (Quelle: eigene Darstellung)}
+\label{fig:timeline}
+\end{figure}
+Durch mehrmaliges Splitten ergibt sich solch ein Schaubild:
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Merge.jpg}
+\caption{Entstehender Baum (Graph) mit Verzweigungen (Zeitlinien) (Quelle: eigene Darstellung)}
+\label{fig:graph}
+\end{figure}
+Wie in Abbildung \ref{fig:graph}: \nameref{fig:graph} zu sehen ist, ergibt sich daraus eine aneinander Reihung der eingegliederten Zeitlinien. Durch das Konstrukt des Graphen ist es nun möglich, diese angegliederten Zeitlinien auf technischer und visueller Ebene darzustellen und zu nutzen.
+Nach einem \say{\emph{Split-Vorgang}} werden die Bewegungen und Interaktionen des Ichs des Chronologen aufgenommen, sodass diese nach einem \say{\emph{Merge-Vorgang}} abgespielt werden können und einen Einfluss auf die Spielwelt haben. Jede Bewegung und Interaktion bekommt dabei einen eindeutigen Zeitpunkt, um sie später reproduzieren zu können.
+
+\subsubsection{Merging}\label{sec:merge}
+\say{\emph{Merging}} beschreibt den Vorgang des Zurückspringens von einer neu erstellten Zeitlinie auf eine bereits existierende. Daraus folgend werden die aufgenommenen Bewegungen und Interaktionen anhand ihres Zeitpunktes genau reproduziert.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/merge_definition_grafik.jpg}
+\caption{Entstandener Baum mit Knotenpunkten (Quelle: eigene Darstellung)}
+\label{fig:merge-definition}
+\end{figure}
+Nach jedem \say{\emph{Split-Vorgang}} wird eine \say{neue} Zeitlinie an die bislang bestehende angesetzt. Daraufhin entsteht an dem Zeitpunkt, an dem die Zeitlinie ihre Verbindung erhält, ein Knotenpunkt (vgl. Abbildung \ref{fig:merge-definition}: \nameref{fig:merge-definition}, Markierung 2). Wenn der Spieler sich nach einem \say{\emph{Split}} an der Markierung 1 in Abbildung \ref{fig:merge-definition}: \nameref{fig:merge-definition} befindet, so kann er für einen, \say{\emph{Merge-Vorgang}} das Ich aus der roten oder der schwarzen Zeitlinie auswählen. Aus der Sicht der Spielzeit wird der Spieler jetzt an den Punkt zurückgesetzt, an denen einer der Knotenpunkte (Markierung mit der Zahl zwei) liegt. Wählt er beispielhaft den Knotenpunkt auf der schwarzen Zeitlinie aus, so wird zum selben Zeitpunkt die rote Zeitlinie aktiv und das Ich der roten Zeitlinie erscheint in der Szene. Nach einer bestimmten Zeit wird die blaue Zeitlinie aktiv und das Ich dieser Zeitlinie wird ebenfalls erscheinen. Diese Knotenpunkte entstehen nur bei einer Verankerung einer weiteren Zeitlinie an die derzeitige. 
+
+\subsubsection{Paradoxen} 
+Paradoxen können auftreten, indem der Spieler einer aufgezeichneten und bereits in der Welt verankerten Zeitlinie die Zustände der Spielwelt verändert. Das kann zum Beispiel dann passieren, wenn dem \say{Ich} dieser verankerten Zeitlinie Gegenstände in den Weg gestellt werden, gegen die dieser Charakter nun stoßen wird. Aufgrund der Tatsache, dass dieser Zustand bei der Aufnahme der Zeitlinie nicht gegeben war, entsteht nun ein Paradoxon, das dazu führt, dass die aufgenommene Zeitlinie und die an ihr angehängten Zeitlinien nun aus dem Kontinuum entfernt werden und dem Kontinuum Schaden zuführen. Diese Schäden spiegeln sich in das Verändern der Welt wider, die in Kapitel \ref{sec:paradoxon-stability}: \nameref{sec:paradoxon-stability} näher beschrieben werden. Durch zu viele entstehende Paradoxen kann es auch dazu kommen, dass es zu einer Zeitlinienkonvergenz kommt, durch welche der Spieler das Level erneut starten muss. Ein weiteres Beispiel wäre, wenn der Spieler während der \say{\emph{Splitphase}} einen Hebel betätigen würde, der bislang noch inaktiv war. Nachdem er durch das \say{\emph{Merging}} an einen Knotenpunkt zurückgesprungen ist, hätte er nun die Möglichkeit diesen Hebel ebenfalls zu betätigen. Tut der Spieler dies, bevor das Ich des aufgenommenen Charakters an den Hebel gelangt und hält ihn aktiv, bis dieser ihn aktivieren würde, so würde ein Paradoxon entstehen. Der Zustand des Hebels wurde nun geändert und führt dazu, dass ein inaktiver Hebel nicht mehr aktiviert werden kann. Das folgende Paradoxon würde die Gefahr einer auftretenden Zeitlinienkonvergenz vergrößern.
+
+\subsubsection{Zeitlinien löschen}
+Bereits eingegliederte Zeitlinien können nicht erneut eingegliedert werden, solange sie schon eingegliedert sind. Das bedeutet, würde der Spieler sehen, dass er zu kurz auf einer Druckplatte stehen geblieben ist, so müsste er die Zeitlinie löschen und damit in Kauf nehmen, dass das Kontinuum einen Schaden davontragen werde, um das Ich der Zeitlinie erneut und für eine längere Zeit auf die Druckplatte zu stellen. Gleichwohl kann er das auch machen, wenn er mit der Aufnahme der Zeitlinie nicht zufrieden ist und mehrmals an einer Stelle gestürzt ist und einen Parcours nicht erfolgreich meistern konnte.
+
+\subsection{Timer}
+Der Timer zeigt dem Spieler an, wie lange er bereits in dem Level spielt. Er dient als Orientierung, ab welchem Zeitpunkt bis zu welchem Zeitpunkt der Spieler mit einem Ich aus einer anderen Zeitlinie spielt. So kann er abschätzen, wann die Zeitlinie seines gespeicherten Ichs nicht mehr in der Welt verfügbar ist und wann dementsprechend der Charakter der Zeitlinie nicht mehr bspw. auf einer Druckplatte stehen wird. Der Timer ist die zählende Komponente des Spiels, über die das Zeitkontinuum wacht. Durch den Timer kann nun auch bestimmt werden, wann eine Zeitlinie aus dem Kontinuum an die Zeitlinie des Chronologen angegliedert wird und wann der Spieler durch das \say{\emph{Merging}} an einen Knotenpunkt zurückgesprungen ist. Quasi wieder in die Vergangenheit gereist ist.
+
+\subsection{Charaktere}
+Der Spieler sieht im  Spiel über die Steuereinheit die Namen seiner Ichs aus anderen Zeitlinien. Über eine Ansicht der verschieden verfügbaren Zeitlinien erhält er ebenfalls nur die Ansicht des Ichs aus dieser Zeitlinie. Ein Charakter ist in dem Kontext des Spiels der eigentliche Chronologe aus der fokussierten Zeitlinie des Kontinuums und seine abgewandelten Persönlichkeiten aus den erforschten Zeitlinien. Der Spieler steuert jeweils das Selbst des Chronologen in all seinen Facetten.
+
+\subsection{Bewegungen und Interaktionen}
+Der Spieler durch den Chronologen die Spielwelt erkunden. Dabei kann der Chronologe mit Gegenständen wie Hebeln interagieren. Er kann Gegenstände tragen, er kann an bestimmten Stellen auf Gegenstände klettern und er kann sie verschieben. Zudem ist es ihm möglich auf Objekte zu stehen und diese dadurch zu aktivieren. Außerdem ist es ihm möglich, über kleinere Abgründe hinwegzuspringen und zu rennen. All diese Bewegungs- und Interaktionsmöglichkeiten werden auf der Zeitlinie des ausgewählten Chronologen gespeichert und mit einem Zeitpunkt versehen, damit diese chronologisch wieder rekonstruiert werden können. Steuert der Spieler den Haupt-Chronologen, so werden seine Bewegungen und Interaktionen nicht aufgenommen.
+
+\subsection{Einflüsse auf die Spielwelt}\label{sec:paradoxon-stability}
+Ein instabiles Zeitkontinuum hat direkte Auswirkungen auf die Spielwelt, in der sich der Spieler mit dem Chronologen befindet. Durch die Gegebenheit, dass es viele verschiedene Zeitlinien gibt, die parallel verlaufen, existieren auch viele verschiedene Version des Raumes bzw. des Ortes an dem sich der Spieler jetzt gerade in dem Moment befindet. Durch ein instabiles Zeitkontinuum sind die Grenzen der in sich geschlossenen Zeitlinien brüchig und können auf andere Zeitlinien übergehen. Das hat zur Folge, dass Gegenstände oder gar Wandelemente plötzlich in der Spielwelt auftauchen und manche Bereiche des Levels nicht mehr betreten werden können, da an dieser Stelle plötzlich eine Wand erscheint. Es kann allerdings auch dazu führen, dass Elemente aus der Spielwelt verschwinden und plötzlich in einer anderen Zeitlinie in einer anderen Umgebung auftauchen. Der Spieler muss also Sorge tragen, dass durch sein Handeln die Spielwelt nicht beschädigt wird. Durch eine Beschädigung würde der Spieler ein Level verlieren oder ihm würden unüberwindbare Hindernisse in den Weg gestellt werden. Er muss warten, bis sich das Kontinuum wieder erholt hat.
+
+Unabhängig der Instabilität des Kontinuums kann sich die Welt aus der Perspektive der anderen Ichs des Chronologen auch verändern. Jedes Ich ist in seiner Zeitlinie unterschiedlich zu anderen Zeitlinien. Das bedeutet auch, dass diese Ichs bestimmte Dinge auf eine andere Art wahrnehmen oder andere Dinge sehen können. Zum Beispiel können sich bestimmte Dekorationsobjekte unterscheiden oder Teile der Wände sind anders. So wird sich das Leveldesign aus Sicht der Ichs des Chronologen teilweise unterscheiden. Die Kernelemente der Rätsel bleiben jedoch aus jeder Sicht der Ichs identisch. So wird einer Verwirrung des Spielers vorgebeugt.
+
+\section{Belohnungen}
+Nach Abschließen eines Levels, erhält der Spieler das Ich des Chronologen aus dieser Zeitlinie zur Auswahl als Belohnung. Damit hat er für die kommenden und bereits absolvierten Rätsel eine Auswahlmöglichkeit mehr, seine Ichs anzuordnen. Das ermöglicht dem Spieler, die Level über ein anderes Ziel abzuschließen.
+
+\section{Labor}
+Nachdem der Spieler nach Abschließen des ersten Kapitels der Story das Labor wieder entdeckt hat, kann er von dort aus bereits abgeschlossene Level erneut starten und zu neuen Levels reisen. Außerdem kann der Chronologe seine Erkenntnisse aus den abgeschlossenen Level hier abspeichern und erfährt dadurch mehr über die Spielwelten, in welche er reist.
+
+\section{Aufnahmen des Chronologen}\label{sec:npc}
+Im Kontext dieses Spiels unterscheiden wir zwischen zwei Arten von \say{None-Playable} Charakteren, die ein Abbild des Chronologen darstellen, aber nicht vom Spieler gesteuert werden. Es wird im Sprachgebrauch von Platzhaltern und Geistern gesprochen.
+
+\subsection{Platzhalter}
+Sobald der Spieler in ein anderes Ich des Chronologen springt, wird an der letzten Stelle, an dem sich der bisherige Spielercharakter befand, ein Platzhalter gesetzt. Dieser Platzhalter dient dazu, zu zeigen, dass sich dieses Ich des Chronologen in der Zeit noch nicht fortbewegt hat, genauer gesagt zu diesen Zeitpunkten, die der Spieler nach dem \say{\emph{Splitting}} erlebt, noch nicht erlebt hat. Der Chronologe, der vor dem \say{\emph{Mergeprozess}} noch ein Platzhalter war, wird nach dem \say{\emph{Mergeprozess}} diese kommenden Zeitpunkte erleben. Er besitzt eine durchscheinend transparente Gestalt, welche dem Spieler vermittelt, er würde zum einen an dieser Stelle wieder beginnen und zum anderen auch anzeigen, dass dies kein paralleler Chronologe ist.
+
+\subsection{Geister}
+Nach einem \say{\emph{Merge-Prozess}} wird der Chronologe der gespielten Zeitlinie in die Spielwelt verankert.
+Er besitzt das Aussehen des Ichs des Chronologen, das der Spieler bereits beim Spielen des Ichs gesehen hat. Dies zeigt an, dass das Ich des Chronologen, den der Spieler gesteuert hat, die aufgenommenen Interaktionen und Bewegungen ausführt. Er ist die kooperative Komponente des Spiels. Auf das Verhalten dieses Ichs kann der Spieler nun reagieren, um die laufenden Rätsel zu lösen. 
+Alle 3D Modelle des Chronologen, die nicht transparent sind, haben einen direkten Einfluss auf die Spielwelt und das Kontinuum.
+
+\section{Gebrauchsgegenstände}
+Zu Beginn des Spiels besitzt der Chronologe zwei Gebrauchsgegenstände, die auf die anderen Ichs des Chronologen übertragen werden können. Durch diese kann der Spieler seine im Labor befindliche Maschine ferngesteuert bedienen und er kann seine notierten Erkenntnisse und Notizen über die Welt aufschreiben.
+
+\subsection{Steuereinheit}
+Seine Erfindung im Labor besitzt eine Steuereinheit, um sie zu bedienen. Sie ist Teil seines Computers, der ebenfalls im Labor steht. Um seine Maschine auch außerhalb des Levels zu bedienen, hat er sich eine mobile Steuereinheit gebaut. Durch diese kann der Spieler die verschiedenen Versionen des Chronologen überblicken und auswählen. Er erhält dadurch eine Übersicht über die Namen und den derzeitigen Status in der Szene der Ichs.
+
+\subsection{Datenleser}\label{sec:concept_datenleser}
+Über den Datenleser kann der Chronologe seine Erkenntnisse und Notizen sammeln. Der Spieler kann diesen Datenleser öffnen, um über ihn Informationen über die Welt und die einzelnen Zeitlinien zu bekommen. Zusätzlich werden wichtige Abläufe und Informationen des Spiels darüber einsehbar. Der Spieler kann ihn, als Journal nutzen, um Wissen über das Spiel zu sammeln.
+
+Im Laufe der Handlung des Spiels und beim wachsendem Fortschritt der Erkundung der verschiedenen Zeitlinien erhält der Chronologe weitere Gegenstände, die ihm, als Hilfsmittel zur Lösung der Rätsel dienen. Durch den Erhalt von neuen Gebrauchsgegenständen steigt die Anforderung des Spiels an den Spieler. Er muss diese Gegenstände nun zielführend einsetzen, um die Rätsel lösen zu können. Er kann dadurch seinen Spielfluss verbessern, allerdings wird seine Umgebung auch herausfordernder.
+
+\subsection{Imitator}\label{sec:concept_imitator}
+Der Chronologe findet im Laufe des Spiels die Auswirkungen der Steuereinheit auf den Ablauf immer besser kennen. Daher beschließt er, mit der Hilfe und den Informationen aus den Ichs der anderen Zeitlinien einen Imitator zu bauen, der begrenzt nutzbar einen Platzhalter auf eine Druckplatte oder Ähnliches stellt. Dadurch muss der Spieler keinen \say{\emph{Split}} ausführen und auf der Druckplatte warten, bis sein Ich nach einem \say{\emph{Merge}} über den daraus resultierenden Freiraum gegangen ist. Wie bereits erwähnt, führen viele \say{\emph{Splits}} und \say{\emph{Merges}} zu einer Instabilität des Kontinuums. Dieser Imitator soll das verhindern, er kann aber nicht so oft genutzt werden. Er soll lediglich an den bestimmten Stellen nützlich sein, an denen es zu einer Knappheit der verfügbaren Ichs in der Steuereinheit kommt oder die Gefahr besteht, das Level zu verlieren. 
+
+Durch den Imitator wird der Spieler nicht mehr genötigt, seinen anderen Ichs Zeit zu schaffen, indem er die bestimmte Zeit, die er benötigen würde, für eine andere Interaktion, abzuwarten.
+\subsection{Pager}
+Einen Pager findet der Spieler auch zu einem bestimmten Zeitpunkt des Spiels gegen Ende der Story. Zu diesem Zeitpunkt sind die Rätsel komplexer geworden und der Spieler muss seine \say{\emph{Splits}} und \say{\emph{Merges}} nun genau abstimmen, damit zum richtigen Zeitpunkt die richtigen Auswirkungen auf die Spielwelt ausgeführt werden können. Ein Pager hilft ihm, seinem zu steuernden Chronologen nach einem \say{\emph{Merge}} Bescheid zu geben, wann bspw. ein Hebel umgelegt wird. Der Spieler erhält dabei eine Nachricht, die wie folgt aussehen kann: \say{[Chronologe Ich Variante] legt jetzt Hebel um}. Durch diese erhaltene Nachricht weiß er nun, wann der Hebel umgelegt wird und kann darauf reagieren. Sofern der derzeitig gesteuerte Chronologe nicht der ursprüngliche Chronologe ist, kann der Spieler nun auch weiteren zu steuernden Chronologen eine Nachricht senden. Jede Ich-Variante des Chronologen kann also sowohl Nachrichten empfangen als auch Nachrichten versenden. Der ursprüngliche Chronologe kann jedoch nur Nachrichten empfangen, um darauf zu reagieren.
+
+\section{Leveldesign}
+ einfügen wie man beim rätsel erstellen vorgenagen ist
+Ein großer Teil des Spiels beruht auf dem Leveldesign der einzelnen Schauplätze, in denen die verschiedenen Rätsel integriert sind. Im Folgenden werden die bisher umgesetzten Rätsel und ihre Lösungen aufgezählt und vorgestellt. Zudem wird es einen Ausblick darauf geben, welche weiteren Rätsel bereits konzipiert und noch nicht umgesetzt wurden. Des Weiteren wird beschrieben, welche weiteren Rätsel für das Spiel möglich wären.
+Ein weiterer Teil sind die Objekte, mit denen interagiert werden können. Diese werden im Folgenden aufgelistet. Im Abschnitt \ref{sec:design} \nameref{sec:design} dieser Thesis werden diese Objekte visuell dargestellt.
+
+\subsection{Interaktionsobjekte}
+In den Spielwelten des Spiels gibt es verschiedene Objekte, mit denen der Chronologe interagieren kann. Im Folgenden werden diese Objekte konzeptionell vorgestellt.
+
+\subsubsection{Druckplatte}
+Druckplatten befinden sich auf dem Boden und können durch das Körpergewicht des Chronologen ausgelöst werden. Nachdem Druckplatten ausgelöst wurden, aktivieren diese weiteren Objekte wie  Türen, Kräne oder Plattformen an der Wand. Geht der Spieler wieder von der Druckplatte herunter, so deaktiviert sie sich und ihre verknüpften Objekte. Eine Druckplatte bleibt nur aktiv, sobald ein Ich des Chronologen auf ihr steht. 
+
+\subsubsection{Hebel}
+Hebel können sich auf dem Boden oder an Wänden befinden. Der Spieler kann ebenfalls mit diesem interagieren. Der Chronologe drückt den Hebel-Stab auf seine aktive Position. Diese muss der Chronologe aber halten. Solange der Hebel-Stab auf der aktiv Position des Hebels steht, ist der Hebel wirksam. Dadurch können Lampen angestellt werden, Tore geöffnet oder Plattformen aktiviert werden. Entfernt sich der Spieler aber zu weit vom Hebel weg, deaktiviert sich dieser und seine verknüpften Objekte werden ebenfalls deaktiviert. Zum Beispiel schließt sich eine Tür oder ausgefahrene Plattformen fahren wieder ein.
+
+\subsubsection{Ventil}\label{sec:ventil}
+Ventile befinden sich an der Wand oder an Rohren. Sie dienen dazu, um entweder Rohrflüsse zu aktivieren oder um bewegliche Plattformen zu verschieben. Durch einmalige Interaktion mit einem Ventil ist sowohl der Rohfluss geöffnet oder geschlossen als auch die Plattform an ihrem entsprechenden Zielort.
+
+\subsubsection{Kletterkanten}
+Der Chronologe kann auf höher gelegene Objekte klettern. Diese Objekte, wie  Plattformen oder Stützen, besitzen eine greifbare Kante, an der sich der Chronologe hochziehen kann. 
+
+\subsubsection{Tragbare Objekte}
+Dem Chronologen ist es möglich, bestimmte Objekte zu tragen. Dadurch kann er Klettermöglichkeiten für einen anderen Spieler erzeugen, oder selbst über Abgründe hinwegzuspringen.
+
+\subsubsection{Portal Steuereinheit}
+Im Labor befindet sich eine stationäre Steuereinheit seiner Maschine. Diese dient dazu, das nächste Ziel, das nächste Level in einer Zeitlinie auszuwählen. Aktiviert er nun die Maschine in einem geschaffenen Portal, so wird er an das Ziel befördert.
+
+\subsubsection{Objekte zum Schieben}
+Der Chronologe kann nicht nur bestimmte Objekte tragen, sondern auch schieben. Dadurch kann er etwa Wege freiräumen oder vorteilhaftere Positionen schaffen, von denen der Chronologe auf höher gelegene Objekte klettern kann.
+
+\subsection{Rätsel}
+Die Rätsel der einzelnen Spielwelten können variieren. Es gibt Abschnitte, in denen durch Betätigen einzelner Abschnitte andere Abschnitte freigelegt werden. Es kann aber auch sein, dass durch das Anwenden eines \say{\emph{Split}}- und \say{\emph{Merge}}-Vorganges der richtige Weg ans Ziel gefunden werden muss. Oder aber es ist notwendig, zu bestimmten Zeitpunkten, mit den richtigen Ichs des Chronologen an bestimmten Stellen zu stehen, um Mechanismen auszulösen. Anschließend wird auf das Rätsel-Design vorgestellt. Dabei wird zwischen bereits umgesetzten und konzipierten Rätsel unterschieden.
+
+% Dieser Abschnitt enthält Spoiler und Lösungen.
+\subsubsection{Umgesetzte Rätsel}
+Im Folgenden werden nun die umgesetzten Rätsel mit ihrer jeweiligen Lösungsmethode vorgestellt. 
+
+Im Tutorial hat der Spieler zwei weitere Ichs des Chronologen zur Auswahl. Diese drei verschiedenen Zeitlinien haben eine jeweils eindeutige Farbe.
+
+\paragraph{Tutorial, Raum 1:}
+% \medskip
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L01_R01_R01.jpg}
+\caption{Rätsel im ersten Tutorial Raum (Quelle: eigene Darstellung)}
+\label{fig:L01_R01_R01}
+\end{figure}
+
+Zu Beginn trifft der Spieler auf eine verschlossene Tür (siehe Abbildung \ref{fig:L01_R01_R01}: \nameref{fig:L01_R01_R01}). Über die Druckplatte auf dem Gerüst kann der Spieler die Tür öffnen. Dazu muss er auf das Gerüst klettern, das ohne Probleme funktioniert. Um final mit dem Chronologen durch die Tür zu gelangen, muss der Spieler ein weiteres Ich des Chronologen zur Hilfe nehmen, der daraus resultierende Graph in Abbildung \ref{fig:L01_R01_R01_L}: \nameref{fig:L01_R01_R01_L} hat eine solche Form:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L01_R01_R01_Loesung.jpg}
+\caption{Lösung zu Rätsel im ersten Tutorial Raum (Quelle: eigene Darstellung)}
+\label{fig:L01_R01_R01_L}
+\end{figure}
+
+\paragraph{Tutorial, Raum 2, Element 1:}
+% \medskip
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L01_R02_R01.jpg}
+\caption{Element 1 im zweiten Tutorial Raum (Quelle: eigene Darstellung)}
+\label{fig:L01_R02_R01}
+\end{figure}
+
+Durch eine kleine Öffnung in der Wand kann der Spieler die eingefahrenen Plattformen an der Wand aktivieren. Er muss allerdings am Hebel stehen bleiben, damit dieser nicht wieder einfährt und die Plattformen einfahren lässt. 
+
+Der Spieler benötigt also erneut eine Ich-Version des Chronisten, die den Hebel aktiv hält. Daraus ergibt der Graph aus Abbildung \ref{fig:L01_R01_R01_L}: \nameref{fig:L01_R01_R01_L}:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=00.8\linewidth]{content/pictures/Raetsel-L01_R01_R01_Loesung.jpg}
+\caption{Graph zu Element 1 im zweiten Raum (Quelle: eigene Darstellung)}
+\label{fig:L01_R01_R01_L_}
+\end{figure}
+
+\paragraph{Tutorial, Raum 2, Element 2:}
+% \medskip
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L01_R02_R02.jpg}
+\caption{Element 2 im zweiten Tutorial Raum (Quelle: eigene Darstellung)}
+\label{fig:L01_R02_R02}
+\end{figure}
+
+Nachdem der Spieler auf das Gerüst geklettert ist, kann er über die Druckplatte die Zieltür öffnen. Durch diese Tür gelangt der Spieler in den nächsten Raum. Daraus ergibt sich folgender Graph in Abbildung \ref{fig:L01_R02_R02_L}: \nameref{fig:L01_R02_R02_L}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L01_R02_R02_Loesung.jpg}
+\caption{Lösung Element 2 im zweiten Tutorial Raum (Quelle: eigene Darstellung)}
+\label{fig:L01_R02_R02_L}
+\end{figure}
+
+Betrachtet man die Elemente des zweiten Raumes als ganzes, so kann man ihn auf 2 Wege lösen. Zunächst \say{\emph{splittet}} der Spieler entweder in das blaue oder rote Ich des Chronologen. Anschließend \say{\emph{splittet}} er sich in das verbleibende Ich des Chronologen. Mit diesem betätigt der Spieler den Hebel. Hat der Spieler den Hebel lange genug umgelegt, \say{\emph{mergt}} er auf das Ich vom ersten \say{\emph{Split}}. Mit diesem klettert er die Plattformen an der Wand hoch und aktiviert die Druckplatte. Anschließend \say{\emph{mergt}} der Spieler auf den ursprünglichen Chronologen zurück. Mit diesem kann er, sobald das Ich aus dem ersten \say{\emph{Split}} auf der Druckplatte steht, durch die Tür in den nächsten Raum. Daraus resultiert der Graph aus Abbildung \ref{fig:L01_R02_V01_L}: \nameref{fig:L01_R02_V01_L}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L01_R02_V01_Loesung.jpg}
+\caption{Lösung Variante 1 im zweiten Tutorial Raum (Quelle: eigene Darstellung)}
+\label{fig:L01_R02_V01_L}
+\end{figure}
+
+Eine andere Möglichkeit wäre es, anstatt des Zweiten \say{\emph{Splits}} vom Roten auf das blaue Ich, ein \say{\emph{Merge}} zurück auf den Chronologen. Anschließend \say{\emph{splittet}} der Spieler auf das verbleibende ich. Nach dem Ersten \say{\emph{Split}} aktiviert der Spieler den Hebel, nach dem Zweiten \say{\emph{Split}} nachdem er zurück \say{\emph{gemergt}} hat, klettert der Spieler auf das Gerüst und öffnet die Tür. Hat der Spieler lange genug gewartet, so kann er auf den Chronologen zurück \say{\emph{mergen}} um in den nächsten Raum zu gelangen. Der dargestellte Graph ist in Abbildung \ref{fig:L01_R02_V02_L}: \nameref{fig:L01_R02_V02_L} ersichtlich.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L01_R02_V02_Loesung.jpg}
+\caption{Lösung Variante 2 im zweiten Tutorial Raum (Quelle: eigene Darstellung)}
+\label{fig:L01_R02_V02_L}
+\end{figure}
+
+\paragraph{Tutorial, Raum 3, Element 1:}
+% \medskip
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L01_R03_R01.jpg}
+\caption{Element 1 im dritten Tutorial Raum (Quelle: eigene Darstellung)}
+\label{fig:L01_R03_R01}
+\end{figure}
+
+Über die Druckplatte, mit der Kennnummer 1 in Abbildung \ref{fig:L01_R03_R01}: \nameref{fig:L01_R03_R01} markiert, kann der Spieler die Plattformen an der Wand aktivieren. Über die neu ausgefahrenen Plattformen kann der Spieler mithilfe der statischen Plattformen auf das Gerüst am Ende des Raumes klettern. Für diesen betrachteten Einzelfall ergibt sich derselbe Graph, wie er bereits in Abbildung \ref{fig:L01_R02_R02_L}: \nameref{fig:L01_R02_R02_L} dargestellt wird.
+
+\paragraph{Tutorial, Raum 3, Element 2:}
+\medskip
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L01_R03_R02.jpg}
+\caption{Element 2 im dritten Tutorial Raum (Quelle: eigene Darstellung)}
+\label{fig:L01_R03_R02}
+\end{figure}
+
+Damit der Spieler das Level beenden kann, muss er zuletzt die hochgefahrene Brücke überwinden. Über die Druckplatte auf dem Gerüst, auf das er nach erfolgreichem Abschließen von Element 1 kommt, kann der Spieler die Brücke herunterfahren. Dazu benötigt er eine weitere Zeitlinie als Hilfsmittel. Daraus ergibt sich ein Graph, der aussehen kann, wie in Abbildung \ref{fig:L01_R01_R01_L_}: \nameref{fig:L01_R01_R01_L_} oder \ref{fig:L01_R02_R02_L}: \nameref{fig:L01_R02_R02_L}.
+
+Es ist möglich, diesen dritten Raum ebenfalls als Ganzes zu betrachten. Dabei kann sich der Spieler mit dem Chronologen direkt vor der Brücke positionieren oder an der Stelle, bevor er auf das erste Gerüst in Abbildung \ref{fig:L01_R03_R01}: \nameref{fig:L01_R03_R01} springt. Nun \say{\emph{splittet}} der Spieler in eines der möglichen Ichs aus einer anderen Zeitlinie. Er wiederholt den Vorgang erneut und geht nun mit diesem zweiten Ich auf die Druckplatte. Dort wartet er so lange, wie er glaubt, dass er über die Plattformen auf das Gerüst bräuchte. Nachdem er gewartet hat, \say{\emph{mergt}} er auf das als erstes \say{\emph{abgesplitteten}} Ich des Chronologen zurück. Mit diesem kann er, sobald die Plattformen aktiviert worden, über die Plattform auf das Gerüst klettern und die Druckplatte für die Brücke aktivieren. Der Spieler \say{\emph{mergt}} nun auf den Chronologen zurück und kann über die bald aktivierte Brücke springen. Zudem kann er das Tutorial beenden.
+Aus diesem beschriebenem Ablauf ergibt sich folgender Graph, der bereits in Abbildung \ref{fig:L01_R02_V01_L}: \nameref{fig:L01_R02_V01_L} dargestellt wurde.
+
+Hierbei ist es ebenfalls möglich, den Raum im Ganzen auf eine zweite Art zu lösen. Nachdem der Spieler das erste Mal auf sein Ich des Chronologen \say{\emph{gesplittet}} ist und anschließend die Druckplatte von Element 1 aktiv hält, kann er wieder zurück auf den Chronologen \say{\emph{mergen}}. Anschließend kann der Spieler auf das verbleibende ich des Chronologen \say{\emph{splitten}}. Sobald das bereits \say{\emph{gesplittete}} ich auf der Druckplatte steht, kann der Spieler mit dem derzeitig \say{\emph{gesplitteten}} Ich über die Plattformen auf die Druckplatte in Element 2 steigen. Nach einem \say{\emph{Merge}} zurück auf den Chronologen kann der Spieler nun über die Brücke gehen. Daraus ergibt sich der Graph, der bereits in Abbildung \ref{fig:L01_R02_V02_L}: \nameref{fig:L01_R02_V02_L} dargestellt wurde.
+
+Im zweiten Level diese Prototypen hat der Spieler zwei weitere Ichs des Chronologen zur Auswahl. Das zweite Level wird Labor genannt und hat einen fertig bestehenden Raum. Dieser wird im Kontext dieser Aufzählung Stromkammer genannt.
+
+\paragraph{Labor, Stromkammer, Element 1:}\label{p:lse1}
+% \medskip
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R01_R01.jpg}
+\caption{Element 1 in der Stromkammer (Quelle: eigene Darstellung)}
+\label{fig:L02_R01_R01}
+\end{figure}
+
+Folgt der Spieler den Stromkabeln in die Stromkammer, so findet er sich in einer kleinen Kammer wieder, in die er zunächst eingesperrt wird. Über eine Druckplatte kann der Spieler Plattformen an der aktivieren, durch welche der Spieler aus der Kammer in die große Grotte gelangt.
+Dazu benötigt er ein Ich des Chronologen, in welchen der Spieler \say{\emph{splittet}} um im Anschluss auf den Chronologen zurück zu  \say{\emph{mergen}}. Daraus ergibt sich wiederum ein Graph, der ähnlich zu Abbildung \ref{fig:L01_R01_R01_L_}: \nameref{fig:L01_R01_R01_L_} oder \ref{fig:L01_R02_R02_L}: \nameref{fig:L01_R02_R02_L} aussehen kann.
+
+\paragraph{Labor, Stromkammer, Element 2:}\label{p:lse2}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R01_R02.jpg}
+\caption{Element 2 in der Stromkammer (Quelle: eigene Darstellung)}
+\label{fig:L02_R01_R02}
+\end{figure}
+
+Sobald der Spieler aus der Eingangsraum herausgefunden hat, kann er mithilfe des Krans erneut wieder in die Kammer gehen. Außerdem kann der Spieler über den ersten Kran mit dem zweiten Kran in Kombination auf das Gerüst am Ende der Grotte gelangen. Um das zu erreichen ist allerdings mehr nötig als ausschließlich den Kran zu aktivieren. Über die Druckplatte kann der Spieler den Kran aktivieren. Daraus erfolgt derselbe Graph, der ähnlich wie Abbildung\ref{fig:L01_R01_R01_L_}: \nameref{fig:L01_R01_R01_L_} oder \ref{fig:L01_R02_R02_L}: \nameref{fig:L01_R02_R02_L} aussehen kann.
+
+\paragraph{Labor, Stromkammer, Element 3:}\label{p:lse3}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R01_R03.jpg}
+\caption{Element 3 in der Stromkammer (Quelle: eigene Darstellung)}
+\label{fig:L02_R01_R03}
+\end{figure}
+
+Die Druckplatte auf der Kranplattform aktiviert weitere Plattformen an der Wand. Diese Plattformen sind wichtig, um letztlich an den Stromansteller zu gelangen. Um hierbei nicht mit dem Chronologen die Druckplatte zu aktivieren, wird wiederum ein weiteres Ich des Chronologen benötigt. 
+
+Nachfolgend wird kein Abbild des Graphen gezeigt, da der Weg über die beiden Kräne als einen zusammenhängenden Teil darstellen. Später wird darauf noch einmal separat eingegangen.
+
+\paragraph{Labor, Stromkammer, Element 4:}\label{p:lse4}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R01_R04.jpg}
+\caption{Element 4 in der Stromkammer (Quelle: eigene Darstellung)}
+\label{fig:L02_R01_R04}
+\end{figure}
+
+Durch die Druckplatte in \nameref{p:lse3}, werden an der Wand nun die Plattformen aktiv und der Spieler kann auf eine neu erschienene Druckplatte steigen. Diese Druckplatte aktiviert zum einen den zweiten Kran und zum anderen Druckplatten an der Wand neben dem Hochstand, der ein Zwischenziel darstellt. Um auf diese Druckplatte zu gelangen, benötigt der Spieler ein weiteres Ich des Chronologen, um mit diesem den zweiten Kran zu aktivieren. Über den zweiten Kran gelangt der Spieler nun auf diesen Hochstand.
+
+Im Anschluss werden die Elemente \nameref{p:lse2} bis \nameref{p:lse4} aus der Stromkammer benutzt, um den daraus resultierenden Graphen als ein ganzes zusammenzusetzen.
+
+Wie erwähnt muss der Spieler zum einen den Kran in Bewegung setzen, damit er an die Schnittstelle der zwei Kräne gelangt. Der zweite Kran muss nun auch aktiviert werden, das geschieht zum einen durch die Druckplatte auf dem ersten Kran aus Element \nameref{p:lse3} und zum anderen durch die frei werdende Druckplatte in Element \nameref{p:lse4}. Der zweite Kran fährt nach der Aktivierung zur Schnittstelle der zwei Kräne und anschließend wieder zurück zum Hochstand. Der Spieler bräuchte für diesen Zwischenschritt insgesamt drei weitere Ichs des Chronologen. Der Graph, der diesen Weg ebnen lässt, sieht folgendermaßen aus. Er wird in Abbildung \ref{fig:L02_E02_04_L01}: \nameref{fig:L02_E02_04_L01} gezeigt.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_E02_4_V01_Loesung}
+\caption{Lösungsweg gesamt Element 2 bis 4 (Quelle: eigene Darstellung)}
+\label{fig:L02_E02_04_L01}
+\end{figure}
+
+Die rote Zeitlinie repräsentiert das Ich des Chronologen, welches auf die Druckplatte steigt, welche den Kran in Bewegung setzt. Er muss die Druckplatte so lange aktiv halten, bis der Spieler vom ersten auf den zweiten Kran gesprungen ist. Der Spieler \say{\emph{mergt}} in den Chronologen zurück, um auf den zweiten Kran zu gelangen. Anschließend \say{\emph{splittet}} der Spieler in die blaue Zeitlinie, von dort aus in die Grüne. Mit dem Chronologen der grünen Zeitlinie stellt sich der Spieler auf die Druckplatte der Kranplattform. Diese öffnet die Plattformen an der Wand von Abbildung \ref{fig:L02_R01_R03}: \nameref{fig:L02_R01_R03}. Nachdem er lange genug gewartet hat \say{\emph{mergt}} der Spieler zurück auf den Chronologen der blauen Zeitlinie. Mit diesem Ich des Chronologen steigt der Spieler nun auf die geöffnete Druckplatte aus Abbildung \ref{fig:L02_R01_R03}: \nameref{fig:L02_R01_R03}. Dadurch setzt sich der zweite Kran in Bewegung und fährt zur Schnittstelle und wieder zurück. Anschließend \say{\emph{mergt}} der Spieler zurück auf den eigentlichen Chronologen und wird nun auf den zweiten Kran springen und hat das Zwischenziel, das Gerüst, erreicht.
+
+\paragraph{Labor, Stromkammer, Element 5:}\label{p:lse5}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R01_R05.jpg}
+\caption{Element 5 in der Stromkammer (Quelle: eigene Darstellung)}
+\label{fig:L02_R01_R05}
+\end{figure}
+
+Wie in Abbildung \ref{fig:L02_R01_R04}: \nameref{fig:L02_R01_R04} bereits gezeigt, öffnet ebenfalls die Druckplatte auf dem zweiten Kran die unteren drei Plattformen, die in Abbildung \ref{fig:L02_R01_R05}: \nameref{fig:L02_R01_R05} gekennzeichnet sind. Eine der ausfahrbaren Plattformen enthält eine Druckplatte, welche für das letzte Stück des Weges aktiviert. Hierfür wird wieder ein Ich des Chronologen benötigt. Möglich ist es auch, dass erzeugten Zeitlinien von oben noch aktiv sind, dann wären die Plattformen bereits ausgefahren. Wenn man nicht von diesem Fall ausgeht, sieht der Graph aus wie in Abbildung \ref{fig:L01_R01_R01_L_}: \nameref{fig:L01_R01_R01_L_} oder \ref{fig:L01_R02_R02_L}: \nameref{fig:L01_R02_R02_L} bereits dargestellt.
+
+\paragraph{Labor, Stromkammer, Element 6:}\label{p:lse6}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R01_R06.jpg}
+\caption{Element 6 in der Stromkammer (Quelle: eigene Darstellung)}
+\label{fig:L02_R01_R06}
+\end{figure}
+
+Die Druckplatte aus Abbildung \ref{fig:L02_R01_R06}: \nameref{fig:L02_R01_R06} öffnet nun die letzten Plattformen, um in den Raum zu gelangen, indem der Strom angeschlossen werden kann. Hierfür wird ebenfalls ein weiteres Ich des Chronologen benötigt.
+
+Fasst man die Schritte aus Element \nameref{p:lse5} und \nameref{p:lse6} zusammen, so würde das entweder einem Graphen aus Abbildung 14 oder 15 gleichen. Der Spieler muss in ein Ich des Chronologen \say{\emph{splitten}} um über die Druckplatte auf der Kranplattform die Plattformen an der Wand aktivieren. Das wären in Abbildung \ref{fig:L01_R02_V01_L}: \nameref{fig:L01_R02_V01_L} und \ref{fig:L01_R02_V02_L}: \nameref{fig:L01_R02_V02_L} jeweils die blaue Zeitlinie. Anschließend \say{\emph{mergt}} der Spieler wie in Abbildung \ref{fig:L01_R02_V02_L}: \nameref{fig:L01_R02_V02_L} zurück auf den Chronologen und \say{\emph{splittet}} in ein weiteres Ich. Denkbar ist es auch, dass der Spieler wie in Abbildung \ref{fig:L01_R02_V01_L}: \nameref{fig:L01_R02_V01_L} auf die rote Zeitlinie zurück \say{\emph{mergt}} um anschließend die geöffnete Druckplatte zu aktivieren. Nachdem diese Plattform eine Zeit aktiv war, \say{\emph{mergt}} der Spieler zurück auf den Chronologen und gelangt so in den Raum, in dem er den Strom einschalten kann.
+
+\paragraph{Labor, Stromkammer, Element 7:}\label{p:lse7}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R01_R07.jpg}
+\caption{Element 7 in der Stromkammer (Quelle: eigene Darstellung)}
+\label{fig:L02_R01_R07}
+\end{figure}
+
+Angekommen in der Stromschaltzentrale, muss der Spieler über die 2 Stromaktivaktoren den Strom für das Labor anstellen. Hierzu muss der Spieler zunächst in ein weiteres Ich des Chronologen \say{\emph{splitten}} damit nach einem folgenden \say{\emph{Merge}} beide Hebel der Aktivatoren betätigt werden können. Ein Graph, der diese Interaktion beschreibt, ist in Abbildung \ref{fig:L01_R01_R01_L_}: \nameref{fig:L01_R01_R01_L_} oder \ref{fig:L01_R02_R02_L}: \nameref{fig:L01_R02_R02_L} zu finden. Nachdem der Strom angestellt wurde, gelangt der Spieler wieder in die Grotte zurück.
+
+Es fehlt jetzt nur noch die Öffnung des Ausgangs.
+
+\paragraph{Labor, Stromkammer, Element 8:}\label{p:lse8}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R01_R08.jpg}
+\caption{Element 8 in der Stromkammer (Quelle: eigene Darstellung)}
+\label{fig:L02_R01_R08}
+\end{figure}
+
+Auf dem Felsen an der Wand des Raumes, in dem der Spieler zuvor den Strom aktiviert hat, befindet sich ein Hebel, der das Tor zum Ausgang der Grotte öffnet. Dieser Hebel benötigt Strom. Um auf den Felsen zu kommen, benötigt der Spieler einen Teil der Treppe, um von diesem auf den bestehenden Teil der Treppe zu springen. Das fehlende Stück befindet sich in der Eingangskammer, aus der der Spieler am Anfang über die Plattformen herausgeklettert ist. Zunächst muss der Spieler wieder in diese Kammer. Die Kammer kann über einen zweiten Weg geöffnet werden. Das Portal, durch das man aus der Eingangskammer herauskommen würde oder wieder rein, wird wie in Abbildung \ref{fig:L02_R01_R10}: \nameref{fig:L02_R01_R10} über 2 Hebel geöffnet.
+
+\paragraph{Labor, Stromkammer, Element 9:}\label{p:lse9}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R01_R10.jpg}
+\caption{Element 9 in der Stromkammer (Quelle: eigene Darstellung)}
+\label{fig:L02_R01_R10}
+\end{figure}
+
+Der Spieler muss nun mit einem Ich des Chronologen in die Kammer zurück, um den Hebel in der Kammer umzulegen. Dafür benötigt der Spieler erneut ein Ich des Chronologen, da der Kran hierfür aktiviert werden muss. Vom Hochstand, der neben dem Portal am Ausgang steht, kann der Spieler auf die Plattform des Kranes springen. Der Kran fährt eine Runde von der Öffnung an der Wand zum Hochstand und wieder zurück, ehe er weiter zur Schnittstelle mit dem zweiten Kran fährt. So kann der Spieler nun mit einer \say{\emph{gesplitteten}} Version des Chronologen in die Kammer gelangen. Auf der Außenseite der Kammer benötigt der Spieler ebenfalls ein weiteres Ich. Sobald die beiden Hebel gleichzeitig aktiviert wurden, öffnet sich das Portal und der Spieler kann die darin liegende Treppe heraustragen. Diese muss er, wie in Abbildung \ref{fig:L02_R01_R08}: \nameref{fig:L02_R01_R08} gezeigt, vor die bestehende Treppe legen, damit der Spieler nun auf den Felsen springen kann. Der dabei entstehende Graph wird in Abbildung \ref{fig:L02_E08_9_V01}: \nameref{fig:L02_E08_9_V01} gezeigt.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Raetsel-L02_E08_9_V01_Loesung.jpg}
+\caption{Lösungsweg gesamt Element 8 bis 9 (Quelle: eigene Darstellung)}
+\label{fig:L02_E08_9_V01}
+\end{figure}
+
+Das grüne Ich des Chronologen aktiviert den Kran, sodass das blaue Ich über den Kran in die Kammer gelangt. In der Kammer angelangt, aktiviert der Spieler den inneren Hebel. Nach einem \say{\emph{Merge}} zurück auf den Chronologen, \say{\emph{splittet}} er in das rote Ich und öffnet mit ihm gleichzeitig mit dem blauen Ich den zweiten Hebel und damit das Portal. Anschließend \say{\emph{mergt}} er auf den Chronologen zurück, um durch das offene Portal in die Kammer zu gelangen. Anschließend trägt er die Treppe an die in Abbildung \ref{fig:L02_R01_R08}: \nameref{fig:L02_R01_R08} gekennzeichnete Stelle.
+
+\paragraph{Labor, Stromkammer, Element 10:}\label{p:lse10}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Raetsel-L02_R01_R09.jpg}
+\caption{Element 10 in der Stromkammer (Quelle: eigene Darstellung)}
+\label{fig:L02_R01_R09}
+\end{figure}
+
+Im letzten Schritt muss der Spieler über die Treppe auf den Felsen springen und kann durch den Hebel das Portal am Ausgang öffnen. Der Hebel besitzt nun Strom und das Portal kann geöffnet werden. So gelangt der Spieler zurück zum Eingang des Labors.
+
+\subsubsection{Konzipierte Rätsel}
+
+Im Anschluss folgen nun die konzipierten Rätsel, diese kommenden Rätsel werden allesamt im zweiten Level des Prototyps zu finden sein. Den ersten Raum, um den es gleich gehen wird, wird Laboreingang genannt und wurde in der Szene umgesetzt, allerdings besitzt dieser Raum noch keine  Interaktivität.
+
+Zuerst wird auf die einzelnen Elemente des Laboreingangs eingegangen. Anschließend wird die Lösung mitsamt einem daraus entstehenden Graphen gezeigt.
+
+\paragraph{Labor, Laboreingang, Element 1:}\label{p:lle1}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R02_R01.jpg}
+\caption{Element 1 im Laboreingang (Quelle: eigene Darstellung)}
+\label{fig:L02_R02_R01}
+\end{figure}
+
+Wie in Abbildung \ref{fig:L02_R02_R01}: \nameref{fig:L02_R02_R01} besitzt der Eingang eine bewegbare Plattform, die sich zwischen der Rückwand des Einganges und dem anliegenden Begrenzer bewegen kann. Zudem ist es möglich, diese Plattform auch auf die Höhe des Begrenzers anzuheben. Der Spieler hat dazu zwei Ventile zur Auswahl. Mit dem einen Ventil kann der Spieler die Plattform an die Wand oder wieder zurückfahren. Mit dem anderen Ventil kann er die Plattform auf die Höhe des Begrenzers oder wieder auf den Boden fahren lassen. Das ermöglicht einem \say{\emph{gesplitteten}} Ich des Chronologen die Stützen an der Wand vor die Hebel zu stellen.
+
+Durch die bewegende Plattform kann der Spieler jetzt Stützen aufeinander stellen. Sobald der Chronologe ein Objekt trägt, kann dieser nicht springen.
+
+\paragraph{Labor, Laboreingang, Element 2:}\label{p:lle2}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R02_R02.jpg}
+\caption{Element 2 im Laboreingang (Quelle: eigene Darstellung)}
+\label{fig:L02_R02_R02}
+\end{figure}
+
+Wie eben dargestellt und in Abbildung \ref{fig:L02_R02_R02}: \nameref{fig:L02_R02_R02} zu sehen, sind an einer der Seiten des Einganges Hebel an der Wand befestigt. Jeweils unter den einzelnen Hebeln ist ein kleiner Vorsprung, der dem Spieler anzeigen soll, an welche Stelle die Stütze gestellt werden muss. Der Spieler hat die Möglichkeit, auf die Stützen 4 und 2 zu klettern. Durch die Hilfe zwei weiterer Chronologen kann der Spieler nun mit einem Ich die Stützen in der richtigen Reihenfolge aufzustellen, damit ein weiteres Ich zu den Hebeln klettern kann.
+
+\paragraph{Labor, Laboreingang, Element 3:}\label{p:lle3}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R02_R03.jpg}
+\caption{Element 3 im Laboreingang (Quelle: eigene Darstellung)}
+\label{fig:L02_R02_R03}
+\end{figure}
+
+Die Hebel, in Abbildung \ref{fig:L02_R02_R03}: \nameref{fig:L02_R02_R03}, an der Wand mit der Markierung 1 öffnen jeweils eine Plattform an der gegenüberliegenden Wand, welche mit einer 2 markiert ist. Ein Ich des Chronologen muss nun, wie in Element 2 angesprochen, die Hebel in der richtigen Reihenfolge betätigen. Dadurch kann ein weiteres Ich auf der gegenüberliegenden Seite über die ausgefahrenen Plattformen in die nächste Etage des Einganges klettern kann. 
+
+\paragraph{Labor, Laboreingang, Element 4:}\label{p:lle4}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R02_R04.jpg}
+\caption{Element 4 im Laboreingang (Quelle: eigene Darstellung)}
+\label{fig:L02_R02_R04}
+\end{figure}
+
+Das Ich, das über die Hebel die Plattformen auf der gegenüberliegenden Wand betätigt, kann ebenfalls auf die zweite Etage des Eingangs klettern. Auf der oberen Etage befinden sich zwei von vier Hebeln, die aktiviert werden müssen, damit der Spieler in das Labor gehen kann. Außerdem befinden sich jeweils neben dem Eingang in diesen Eingangsraum zwei weitere Hebel, die der Spieler aktivieren muss. Über der schweren Eisentür befinden sich vier Lampen, die die Aktivität der vier Hebel anzeigt (Licht an/ aktiv – Licht aus/ inaktiv). Wird ein Hebel betätigt, so leuchtet die jeweilige Lampe. Sobald alle vier Hebel gleichzeitig aktiviert wurden, kann der Spieler durch die Tür gehen. Die Hebel müssen allerdings aktiviert bleiben, bewegt sich ein \say{\emph{gesplittetes}} Ich vom Hebel weg, so schließt sich die Tür (vgl. Abbildung \ref{fig:L02_R02_R04}: \nameref{fig:L02_R02_R04}).
+
+Da diese vier Elemente miteinander in einer abgestimmten Reihenfolge betätigt werden müssen, ergibt sich ein in Abbildung \ref{fig:L02_R02_E01_4_V01}: \nameref{fig:L02_R02_E01_4_V01} abgebildeter Graph.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Raetsel-L02_R02_E01_4_V01_Loesung}
+\caption{Lösungsweg gesamt Element 1 bis 4 (Quelle: eigene Darstellung)}
+\label{fig:L02_R02_E01_4_V01}
+\end{figure}
+
+Zuerst muss der Spieler in das rote Ich des Chronologen \say{\emph{splitten}}. Durch diesen kann der Spieler die am Boden liegende Plattform bewegen. Der Spieler muss jetzt für einen späteren Zeitpunkt die Plattform jeweils so positionieren, dass er die Stützen für ein weiteres Ich richtig positionieren kann. Bevor der Spieler \say{\emph{zurückmergt}} betätigt er den Hebel, der neben den zwei Ventilen zu finden ist. Dadurch wird eine der vier Lampen aktiviert. . Anschließend \say{\emph{mergt}} der Spieler zurück auf den Chronologen. Von da aus \say{\emph{splittet}} er auf das gelbe Ich. Mit diesem stellt der Spieler nun einem weiteren Ich die Stützen an die Hebel, damit er später diese aktivieren kann. Der Spieler muss zunächst die Stützen so anordnen, wie sie in Abbildung \ref{fig:L02_R02_R02}: \nameref{fig:L02_R02_R02} dargestellt sind. Anschließend muss der Spieler die Stütze 4 neben Stütze 3 stellen, damit der dort positionierte Hebel umgelegt werden kann. Danach stellt der Spieler die Säule 3 zwischen Säule 1 und 2. Und stellt die Stütze 4 auf diese. Mithilfe der Plattform und der Stütze kann der Spieler nun den Hebel bei Stütze 1 betätigen. Anschließend kann er auf Stütze 2 klettern. Zum Schluss klettert er in die zweite Etage und betätigt den Hebel, der den Zugang zum Labor öffnet. Das Ich, das die Stützen positioniert, betätigt nun den Hebel, der links neben dem der Stütze 4 zu finden ist. Dadurch wird die zweite Lampe aktiviert.
+Anschließend muss der Spieler auf den Chronologen zurück \say{\emph{mergen}}. Von dort aus \say{\emph{splittet}} er in das grüne Ich, um nun über die Stützen an die Hebel zu gelangen. Mit diesen Hebeln aktiviert der Spieler nun einem weiteren Ich an der gegenüberliegenden Wand die Plattformen und damit den Weg. Am Schluss klettert er, wie eben beschrieben, in die zweite Etage und betätigt den Hebel. Jetzt wird die dritte Lampe aktiviert und der Spieler benötigt nur noch ein weiteres Ich.
+Hierfür \say{\emph{mergt}} der Spieler zurück auf den Chronologen und \say{\emph{splittet}} in das verbleibende blaue Ich. Mit diesem klettert er nun über die, sich öffneten, Plattformen auf die zweite Etage. Dort aktiviert er den verbleibenden vierten Hebel. Nach einem \say{\emph{Merge}} auf den Chronologen muss der Spieler nur noch warten und kann, nachdem alle Hebel aktiviert wurden, in das Labor eintreten.
+
+
+\section{Informationen für den Spieler}
+Ein wichtiger Bestandteil des Spiels ist es, dass der Spieler Informationen über das Geschehene und das bereits Geschehene in der Welt erhält. Hierbei wird es so dargestellt, dass der Chronologe Notizen des Gesehenen und Geschehenen macht. Diese Notizen kann der Spieler über den Datenleser zu jeder Zeit wieder aufrufen. Es wird als ein Journal mit mehreren Unterkategorien dargestellt werden. 
+Im Folgenden werden die einzelnen Unterkategorien, über die der Spieler Informationen erhält, aufgezählt.
+
+\subsection{Informationen über die Spielwelt}
+Der Chronologe macht sich Notizen zu den einzelnen Spielwelten in den verschiedenen Zeitlinien. Dabei beschreibt er das Aussehen des Ortes, in dem er sich befindet und was mit diesem passiert sein könnte. Der Spieler wird vereinzelt auch auf die Menschen dieser Zeitlinie stoßen. Diese erzählen ihm mehr über den Ort und die Geschehnisse. Durch das Reisen in eine neue Zeitlinie erhält der Spieler ein weiteres Ich des Chronologen zur Auswahl. Dieses Ich des Chronologen kann, sobald der Spieler dieses Ich nutzt, weitere Hintergrundinformationen erhalten. Dieses Ich lebt in dieser derzeitigen Zeitlinie und kann daher aus der Geschichte der Zeitlinie sprechen. 
+Dabei ist es auch für den Spieler interessant zu erfahren, welche Entscheidungen in dieser Zeitlinie getroffen wurden. Diese erhält der Chronologe ebenfalls über andere Menschen dieser Zeitlinie und dem Ich des Chronologen.
+
+\subsection{Informationen über Szeneobjekte}
+Sobald der Spieler das erste Mal mit einem Interaktionsobjekt der Spielwelt interagiert hat, macht er sich Notizen über das Beobachtete. Er notiert sich die Objekte, die z. B. mit einer Druckplatte zusammenhängen und dass sie nur aktiv ist, solange er auf ihr stehen bleibt. Gleichwohl werden hierbei auch wichtige Informationen über die Steuerung dieser Objekte notiert. So erfährt der Spieler, mit welchen Tasten er diese Objekte bedienen kann.
+
+\subsection{Informationen über das User-Interface}
+Die User-Interfaces, die der Spieler während des Spiels sieht, sind zum Teil die Oberflächen der Gerätschaften des Chronologen. Der Spieler erhält darüber über den Dialog Informationen. Die wichtigsten Informationen aus dem Dialog werden im Datenleser des Chronologen gespeichert, sodass der Spieler sie jederzeit nachlesen kann. Zusätzlich werden die \ac{HUD}, die der Spieler in der Spielwelt sieht, als Notiz in den Datenleser eingetragen. 
+
+\subsection{Informationen über den derzeitigen Storystand}
+Das Spiel verfolgt eine bestimmte Geschichte, die das Handeln des Chronologen bestimmt. Den aktuellen Stand dieser Geschichte kann der Spieler im Datenleser nachlesen. Dabei notiert der Chronologen auch eigene Gedankengänge im, Story-Journal. Diese helfen dem Spieler einzuschätzen, wie sich der Chronologe fühlt und auch wie man den derzeitigen Stand der Spielwelt verstehen muss. Wichtige Schlüsseldialoge werden dabei auch in den Datenleser übernommen. Der Spieler kann sie sich dadurch jederzeit erneut durchlesen.
+
+\subsection{Informationen über die Maschine}
+Der Chronologe war einige Jahre damit beschäftigt, diese Maschine zu entwerfen und zu entwickeln. Die Maschine besitzt verschiedene Kontrolleinheiten, wie den Graphen im \ac{UI}, oder das Überwachen der Stabilität des Kontinuums. Die Erklärungen zum \ac{UI} des Spielers erfährt der Spieler ebenfalls über den Datenleser. Die Informationen umfassen das gesamte \ac{UI} des Spielers und deren Hintergründe.
+
+\section{Dialoge, die im Spiel vorkommen}
+Ein weiterer wichtiger Bestandteil als Informationsquelle für den Spieler ist der Dialog des Chronologen und seiner Ichs. Der Dialog ist dabei in verschiedene Kategorien eingeteilt, welche im Folgenden vorgestellt werden.
+Die Art der Dialoge kann in sich einer Hinsicht unterscheiden. Es gibt Dialoge, die der Spieler anhören muss und sie bei Bedarf überspringen kann. Es gibt auch Dialoge, die nicht vom Spieler gesteuert werden, sondern parallel erzählt werden.
+
+\subsection{Eingeworfene Dialoge}
+Diese nicht zu überspringenden Dialoge sind eingeworfene Dialoge des Chronologen. Generell ist es so, dass Dialoge dazu führen, dass der Spieler zunächst keine weitere Interaktionsmöglichkeit besitzt, als den Dialog weiterzuführen. Eingeworfene Dialoge laufen parallel zum Spielgeschehen ab und können dem Spieler Hinweise vermitteln. Darunter zählen Hinweise zu den Zuständen von bestimmten Objekten. Nach längerem Ausprobieren, wie der Spieler die Rätselelemente anordnen muss, kann der Chronologe vereinzelt Hinweise einbringen.
+
+\subsubsection{Hinweise über Zustände}
+Beim erstmaligen Interagieren mit einem Objekt wirft der Spieler die Interaktionshinweise des Objektes ein. So ist unter anderem ein Hebel nur dann aktiviert, wenn man bei ihm stehen bleibt, entfernt sich der Spieler, so wirft der Chronologe ein, dass sich der Hebel nach kurzer Zeit deaktivieren wird und man mehr Zeit einplanen muss. Sofern der Chronologe sehen kann, welches Objekt sich nach einer Interaktion bewegt, teilt er es dem Spieler mit. Diese Option kann über das Einstellungsmenü deaktiviert werden. So kann der Spieler sich ganz auf das Ausprobieren konzentrieren.
+
+\subsubsection{Hinweise über Rätsel}
+Benötigt der Spieler für bestimmte Abschnitte zu lang, so kann der Chronologe Hinweise einwerfen. Er hilft dem Spieler dadurch, die richtige Reihenfolge der zuerst zu aktivierenden Elemente zu finden. Er sagt dabei etwa Folgendes: „Ich muss diesen Kran bewegen, vielleicht ist hier etwas, das den Kran bewegt“. 
+
+\subsection{Story relevante Dialoge}
+Der Spieler erfährt durch Dialoge und Textsequenzen vor und nach den Levels die Geschichte des Spiels. Diese Dialoge im Spiel sind für den Spieler überspringbar. Allerdings kann der Spieler während eines relevanten Dialogs keine Bewegungen ausführen. Der Dialog findet zumeist als den Monolog des Chronologen statt. Allerdings spricht der Chronologe in den entsprechenden Sequenzen auch mit den Ichs der anderen Zeitlinien. 
+
+\section{Sounddesign}
+Das Sounddesign des Spiels unterstützt den visuellen Eindruck des Spielers durch ein auditives Feedback. Dabei erzeugen unter anderem der Chronologe und die Objekte, mit denen der Spieler interagieren kann, Geräusche. Dieses auditive Feedback hat ein höheres immersives Wirken auf den Spieler.
+
+Das entsprechende Sounddesign wird im Folgenden in unterschiedliche Kategorien aufgeteilt. Dabei sind atmosphärische und unterstützende Soundelemente zu unterscheiden.
+
+\subsection{Hintergrund Musik}
+Die Hintergrundmusik des Spiels dient als atmosphärische Unterstützung des Spiels. Sie gibt einen Rahmen für das Visuelle und beschreibt durch ihre Töne den aufkommenden Ausdruck. So wird etwa eine Höhle mit einem eher düsteren; tropfenden; ein Steinbruch einen hallenden und rauen Ton unterlegt.
+
+Es wird hierbei zwischen dem Spielhintergrund und dem Pause-Menü unterschieden.
+
+\subsubsection{Pause Menü}
+Das Pause-Menü wird immer mit derselben Melodie unterlegt, dass dem Spieler Ruhe und Sicherheit vermitteln soll. 
+
+\subsubsection{Spiel Hintergrund}
+Die Hintergrundmusik der Level ist durch die Charakteristik des Levels definiert. Sie dient der atmosphärischen Unterstützung des Levels und soll den auditiven Eindruck des Level-Szenarios vermitteln. Durch den atmosphärischen auditiven Eindruck fühlt sich der Spieler in die Welt integriert.
+
+\subsection{Umgebungsgeräusche}
+Alle Interaktionsobjekte der Spielwelten geben ein Geräusch von sich, nachdem diese verschoben waren, betätigt oder aktiviert wurden. So erklingt z. B. beim Aktivieren einer Druckplatte ein schleifendes Geräusch, da die Druckplatte durch ihre Öffnung geschoben wurde und Holz auf Metall und Holz stößt. Des Weiteren macht z. B. das Klicken auf Buttons im Menü einen entsprechenden Ton.
+
+\subsection{Charakter Geräusche}
+Der Chronologe ist kein stiller Teilnehmer des Spiels. Sobald der Chronologe über Abgründe hinweg springen muss, strengt ihn das an und er gibt einen angestrengten Laut von sich. Jeder Aktivität des Chronologen erzeugt seinen eigenen Laut. Zum Beispiel hört der Spieler die Fußstapfen, wenn der Chronologe sich bewegt oder aber rascheln in der Kleidung, sobald der Chronologe klettert oder einen Hebel umlegt.
+
+\subsection{Dialoge}
+Der Spieler kann den Dialog des Spiels über seinen Untertitel verfolgen. Zusätzlich zum Untertitel gibt es einen gesprochenen Dialog. Der Chronologe hat dabei eine tiefere und staubige Stimme. Der Spieler kann den Untertitel des Dialogs über das Einstellungsmenü ausstellen. 
+
+\chapter{Visuelles Design des Prototyps}\label{sec:design}
+In diesem Kapitel wird auf das visuelle Design des Spiels konzeptionell und in der Prototypisierung eingegangen. Es beinhaltet sowohl \ac{GUI} als auch die Vorgabe für den Art-Stil.
+
+\section{Moodboard}\label{sec:moodboard}
+Um einen ersten visuellen Eindruck für dieses Spiel gewinnen  zu können, wurde das in Abbildung \ref{fig:moodboard} abgebildete Moodboard entworfen. Es zeigt erste visuelle Ideen, wie man sich einen Geist in der Szene vorstellen kann und wie Steampunk in Low-Poly integriert werden kann.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Game_Atmo.jpg}
+\caption{Moodboard des Spiel (Quelle: Moodboard, 2023)}
+\label{fig:moodboard}
+\end{figure}
+
+
+\section{Art-Stil}
+Wie bereits im Kapitel \nameref{sec:moodboard} angesprochen wurde, wird der Art-Stil des Spiels Low-Poly sein. Denkbar wäre es auch in \ac{HD} Texturen zu wechseln, um dadurch ebenfalls auf grafischer und Post-Processing Ebene mehr aus der Umwelt herauszuholen. Dazu aber im \nameref{sec:ausblick} mehr. Da das Spiel sich dem Steam-Punk Genre anschließen wird, wird die Welt eher maschinell und viktorianisch aussehen.
+
+\section{Aussehen des Chronologen}
+Der Chronologe ist durch sein Aussehen und sein Verhalten ebenfalls in das Spielgenre und den Art-Stil integriert. Er wirkt wie ein vor sich hin tüftelnder Wissenschaftler, der eher wenig aus seinem Labor kommt. Er trägt eine eckig-runde Brille mit großen milchigen Brillengläser. Dazu trägt er eine Weste mit einem Hemd darunter. Zu seiner Weste mit Hemd trägt er eine ledrige, festsitzende Hose. Außerdem trägt er in die Jahre gekommene Lederschuhe (vgl. Abbildung \ref{fig:chronologe}: \nameref{fig:chronologe}).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Chronologe.jpg}
+\caption{3D Modell Chronologe (Quelle: eigene Darstellung)}
+\label{fig:chronologe}
+\end{figure}
+
+Im Kontext dieses Prototyps besitzen die Ich-Versionen des Chronologen unterschiedlich farbige Westen. Zum Beispiel hat der Chronologe aus den Zeitlinien des Tutorials eine blaue oder gelbe Weste. Diese Versionen des Chronologen kann man in Abbildung \ref{fig:chronologe_b} oder Abbildung \ref{fig:chronologe_y} sehen. Durch die farbliche Unterscheidung ist der Chronologe für den Spieler unterscheidbar. Beim Lösen der Rätsel ist es wichtig zu wissen, welches Ich des Chronologen gerade an den jeweiligen Elementen der Rätsel steht. Diese farbliche Unterscheidung wird im Laufe dieses Kapitel in Abschnitt \nameref{sec:user-interface} im Unterabschnitt \ref{sec:character-overview} \nameref{sec:character-overview} ausgeführt.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Chronologe_y.jpg}
+\caption{3D Modell Chronologe, gelbe Weste (Quelle: eigene Darstellung)}
+\label{fig:chronologe_y}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Chronologe_b.jpg}
+\caption{3D Modell Chronologe, blaue Weste (Quelle: eigene Darstellung)}
+\label{fig:chronologe_b}
+\end{figure}
+
+Im Kontext der allgemeinen Konzeption besitzen die Chronologen, außer der Farbe, weitere Unterscheidungen, die aber nicht im Prototyp umgesetzt wurden. So tragen die Chronologen unterschiedliche Kleidungen und Accessoires. Zudem sind die Körper der Chronologen unterschiedlich entwickelt und besitzen dadurch auch eine unterschiedliche Größe. Es kann aber auch zu Arbeitsunfällen oder dergleichen gekommen sein, wodurch ein Arm oder Bein amputiert werden musste. Diese Unterschiede in der Geschichte der einzelnen Chronologen spiegelt sich auch auf das äußere des \ac{3D} Modells wider. 
+
+Der Spieler erhält dadurch für jede Zeitlinie ein unterscheidbares Aussehen des Chronologen. Dadurch kann er im Verlauf des Spiels die einzelnen Aufnahmen der jeweiligen Chronologen unterscheiden und zuordnen.
+
+\subsection{Nicht mehr vom Spieler gesteuerte Chronologen}
+Wie bereits in \nameref{sec:npc} beschrieben, wird der Platzhalter des Chronologen transparent in der Szene dargestellt. Wie in den Abbildungen \ref{fig:ghost_b}: \nameref{fig:ghost_b} und \ref{fig:ghost}: \nameref{fig:ghost} zu sehen, haben die \ac{3D}-Körper des Chronologen transparente Materialien. Dadurch wird der Eindruck erweckt, dieses Ich im Moment der Spielzeit noch nicht existiert und zeitlich gesehen in der Vergangenheit an dieser Stelle steht.
+
+Das aufgenommene Ich des Chronologen, das in den Abbildungen \ref{fig:chronologe}: \nameref{fig:chronologe},\ref{fig:chronologe_y}: \nameref{fig:chronologe_y} und \ref{fig:chronologe_b}: \nameref{fig:chronologe_b}, wird als solches in der Szene dargestellt. Ein nicht transparentes Aussehen des Chronologen bewirkt hierbei den Eindruck, dass das Ich des Chronologen aus der entsprechenden Zeitlinie einen Einfluss auf die Spielwelt besitzt. Der Spieler kann sich nun anhand dieses Ichs orientieren und weiß, dass dieses Ich gerade in der Szene aktiv ist und nicht zu diesem Zeitpunkt nur in der Vergangenheit existiert.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Ghost_b.jpg}
+\caption{3D Modell Geist, blaue Weste (Quelle: eigene Darstellung)}
+\label{fig:ghost_b}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Ghost.jpg}
+\caption{3D Modell Geist (Quelle: eigene Darstellung)}
+\label{fig:ghost}
+\end{figure}
+
+\section{User Interface}\label{sec:user-interface}
+Im Folgenden werden die einzelnen Elemente der User-Interfaces vorgestellt und durch Mockups prototypisch visualisiert. Es handelt sich hierbei zum einen um das gesamte \ac{UI}, das der Spieler während des Spiels zu sehen bekommt und zum anderen um das \ac{UI} des Datenlesers, welches der Chronologe immer zur Hand hat.
+\subsection{Graph}
+\subsection{Timer}\label{sec:user_timer}
+\subsection{Zeitkontinuum}
+\subsection{Charakter Übersicht}\label{sec:character-overview}
+\subsection{Steuerhinweis}
+\subsection{Dialoge}
+\subsection{Systemfehler}
+\subsection{Tragen von Objekten}
+\subsection{Datenleser}\label{sec:datenleser_ui}
+\section{Führung durch das Level}
+Der Spieler ist nicht hilflos in der Spielwelt. Der Spieler erhält durch unterschiedliche Arten eine Führung durch das Level. Dazu gehören unter anderem Partikelsysteme, Kletterkanten und Tooltips.
+\subsection{Partikelsysteme}\label{sec:particle-system}
+Dem Spieler soll an bestimmten Stellen wie an einer Druckplatte vermittelt werden, dass er auf diese stehen soll, um einen Mechanismus auszulösen.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Pressureplate_tooltip.jpg}
+\caption{Partikelsystem Druckplatte, (Quelle: eigene Darstellung)}
+\label{fig:pressureplate_tooltip}
+\end{figure}
+
+Wie in Abbildung \ref{fig:pressureplate_tooltip}: \nameref{fig:pressureplate_tooltip} zu sehen, wird, sobald der Chronologe nahe an einer Druckplatte steht, das Partikelsystem der Druckplatte aktiviert. Es zeigt durch seinen Fluss auf die Druckplatte dem Spieler an, er muss auf diese Druckplatte gehen, um sie durch seinen Körper zu aktivieren.
+
+\subsection{Kletterkanten}\label{sec:leadge}
+Ein Bestandteil der Bewegungsmöglichkeiten des Spielers ist es, auf Gerüste oder Stützen zu klettern. Hierbei benötigt der Spieler auf zwei Wege einen Hinweis darauf, wo und wie er auf Objekte klettern kann.
+Der Spieler kann durch ein Kabel, das an der Kante des entsprechenden Objektes liegt, erkennen, dass er auf selbiges klettern kann. Das Kabel wird unterstützt, durch eine Schraffierung der Kante.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/leadge_wireframe.jpg}
+\caption{Kantenmarkierung an Spielweltobjekten, (Quelle: eigene Darstellung)}
+\label{fig:leadge}
+\end{figure}
+
+Wie in Abbildung \ref{fig:leadge}: \nameref{fig:leadge} zu sehen ist, markiert die weiße Linie die Schraffierung der Kletterkante. Die Kante ist abgenutzt, weil bereits einige Menschen vor dem Chronologen auf dieses Gerüst geklettert sind. 
+Die schwarze Markierung auf der Abbildung stellt ein Kabel dar, das von der Kante als Sicherung befestigt ist. Über dieses Kabel kann man sich hochziehen, ohne abzurutschen.
+
+\subsection{Tooltips}\label{sec:tooltip}
+
+In Bezug auf die Kletterkante aus Kapitel \ref{sec:leadge} \nameref{sec:leadge} erhält der Spieler eine zusätzliche visuelle Aufforderung, wie er mit der Kante zu interagieren hat. Diese Aufforderungen werden im Kontext dieser Arbeit Tooltips genannt. Diese Tooltips beinhalten einen Keycode der Tastatur, durch welchen der Spieler den Chronologen auf das Gerüst klettern lassen kann. Im Fall der Kletterkante ist es die Leertaste.
+
+Weitere Gegenstände, mit denen der Chronologe interagieren kann, enthalten ein Tooltip. Zum Beispiel wird ein Tooltip angezeigt, sobald sich der Spieler einem Hebel nähert. Dies ist in Abbildung \ref{fig:lever_tooltip}: \nameref{fig:lever_tooltip} oder in Abbildung \ref{fig:stair_tooltip}: \nameref{fig:stair_tooltip} zu sehen. Bei der Treppe handelt es sich hierbei um ein tragbares Objekt. Der Spieler muss dieses Treppenbruchstück an einen anderen Ort platzieren.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/lever_tooltip.jpg}
+\caption{Hebel mit Tooltip, (Quelle: eigene Darstellung)}
+\label{fig:lever_tooltip}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/carry_tooltip.jpg}
+\caption{Treppe mit Tooltip, (Quelle: eigene Darstellung)}
+\label{fig:stair_tooltip}
+\end{figure}
+
+Damit der Spieler ein besseres Verständnis dafür erhält, welche Interaktion er durch das Betätigen der Taste auslöst, wird der Name der Interaktion neben den Keycode positioniert. Diese Änderungen werden zu dem bislang implementierten Stand ergänzt und in den folgenden Abbildungen \ref{fig:stair_tooltip_title}, \ref{fig:lever_tooltip_title} und \ref{fig:leadge_title} dargestellt.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/stair_tooltip_title.jpg}
+\caption{Treppe mit Tooltip und Aufforderung, (Quelle: eigene Darstellung)}
+\label{fig:stair_tooltip_title}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/lever_tooltip_title.jpg}
+\caption{Hebel mit Tooltip und Aufforderung, (Quelle: eigene Darstellung)}
+\label{fig:lever_tooltip_title}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/leadge_tooltip_title.jpg}
+\caption{Kante mit Tooltip und Aufforderung, (Quelle: eigene Darstellung)}
+\label{fig:leadge_title}
+\end{figure}
+
+Dadurch versteht der Spieler schneller und besser, welche Interaktion er bewirkt. Er muss nicht zuerst im Datenleser nachlesen, welche Auswirkung seine Interaktion haben wird, sondern ist beim Betrachten des Tooltips bereits ersichtlich.
+
+\section{Interaktionsgegenstände}
+Im folgenden Kapitel werden verschiedene Objekte dargestellt, mit denen der Chronologe interagieren kann. In der Aufzählung werden zum einen die bislang bestehenden Objekte aufgezählt und zum anderen konzeptionelle Anpassungen, die die Objekte ergänzen, vorgestellt.
+\subsection{Druckplatte}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Pressureplate.jpg}
+\caption{Druckplatte, (Quelle: eigene Darstellung)}
+\label{fig:pressureplate_interactable}
+\end{figure}
+
+Abbildung \ref{fig:pressureplate_interactable}: \nameref{fig:pressureplate_interactable} zeigt eine Druckplatte, wie sie in der Spielwelt eingebaut wurde. Der hölzerne Kern, stellt den Sensor dar, der eingedrückt wird, sobald das Gewicht des Chronologen auf ihm lastet. Jede Druckplatte enthält ein Partikelsystem, wie es in Abschnitt \ref{sec:particle-system} \nameref{sec:particle-system} bereits erklärt wurde.
+
+\subsection{Hebel}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Lever.jpg}
+\caption{Hebel, (Quelle: eigene Darstellung)}
+\label{fig:lever_interactable}
+\end{figure}
+
+Derzeit sind Hebel, wie sie in Abbildung \ref{fig:lever_interactable}: \nameref{fig:lever_interactable} zu sehen sind, in der Spielwelt verbaut. Sobald der Chronologe mit einem Hebel interagiert, fährt der Hebelstab nach oben und signalisiert dem Spieler, dass er aktiviert wurde. Abbildung \ref{fig:lever_interactable_active}: \nameref{fig:lever_interactable_active} zeigt einen aktivierten Hebel.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Lever_active.jpg}
+\caption{Mit Hebel wurde interagiert, (Quelle: eigene Darstellung)}
+\label{fig:lever_interactable_active}
+\end{figure}
+
+Der Hebel bekommt ein separates Interface an die Seite gehängt, auf dem zwei Lampen zu sehen sind (vgl. Abbildung \ref{fig:lever_interactable_active_diods}: \nameref{fig:lever_interactable_active_diods}). Sobald die nur die obere grüne Lampe leuchtet, ist der Hebel aktiviert. Leuchtet nur die untere Lampe rot, so ist er deaktiviert. So erfährt der Spieler zusätzlich, wann ein Hebel aktiviert wurde und wann er deaktiviert ist.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Lever_activator_diod.jpg}
+\caption{Hebel mit Lampeninterface, (Quelle: eigene Darstellung)}
+\label{fig:lever_interactable_active_diods}
+\end{figure}
+
+\subsection{Ventil}
+Die Abbildungen \ref{fig:valve_01}: \nameref{fig:valve_01}, \ref{fig:valve_02}: \nameref{fig:valve_02} und \ref{fig:valve_03}: \nameref{fig:valve_03} zeigen drei unterschiedliche Versionen eines Ventils, mit denen der Spieler interagieren kann. 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Vault.jpg}
+\caption{Ventil Version 1, (Quelle: eigene Darstellung)}
+\label{fig:valve_01}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Vault_02.jpg}
+\caption{Ventil Version 2, (Quelle: eigene Darstellung)}
+\label{fig:valve_02}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Vault_03.jpg}
+\caption{Ventil Version 3, (Quelle: eigene Darstellung)}
+\label{fig:valve_03}
+\end{figure}
+
+Wie bereits in Kapitel \ref{sec:ventil} \nameref{sec:ventil} angesprochen, muss der aktiv Zustandes des Ventils nicht dauerhaft gehalten werden. Ein Ventil ist entweder dauerhaft aktiv oder inaktiv.
+
+\subsection{Stützen}
+Abbildung \ref{fig:stuetze_01}: \nameref{fig:stuetze_01} zeigt eine Zeichnung einer Stütze, die der Spieler tragen muss und auf welcher er klettern kann. Diese dient als ein erster Entwurfsversuch für die im Level eingebaute Stütze, die in Abbildung \ref{fig:L02_R02_R02}: \nameref{fig:L02_R02_R02} durch einen gestreckten Würfel dargestellt wird. Jede Stütze hat Zahnräder an ihrer Oberfläche montiert, wodurch diese Stützen an laufende Zahnräder angeschlossen werden können, welche in späteren Leveln zu finden sein werden.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.2\linewidth]{content/pictures/Stuetze_01.jpg}
+\caption{Zeichnung einer einfachen Stütze mit Zahnrädern, (Quelle: eigene Darstellung)}
+\label{fig:stuetze_01}
+\end{figure}
+
+In Abbildung \ref{fig:stuetze_02}: \nameref{fig:stuetze_02} kann diese Anreihung besser betrachtet werden.  
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.4\linewidth]{content/pictures/Stuetze_02.jpg}
+\caption{Zeichnung einer Reihe an Stützen angeschlossen an Mechanismus, (Quelle: eigene Darstellung)}
+\label{fig:stuetze_02}
+\end{figure}
+
+Die erste Stütze wird an den Beginn des Mechanismus´, ein aus der Wand ragendes Zahnrad, gestellt, sodass das Drehmoment des entsprechenden Zahnrades die Zahnräder an der Stütze drehen lässt. Anschließend muss eine zweite oder dritte Stütze an die erste Stütze gestellt werden, damit das Drehmoment weitergegeben werden kann. Diese Stützen werden verteilt in einem Raum zu finden sein. Die Aufgabe des Spielers ist es dann, diese in eine richtige Reihenfolge zu stellen.
+
+\subsubsection{Treppe}
+Die Stütze dient nicht als einziges tragbares Objekt in der Spielwelt, sondern es können auch verschiedenste Objekte sein. Als Beispiel für das in der Spielwelt integrierte tragbare Objekt dient eine Treppe, wie sie in Abbildung \ref{fig:stairs}: \nameref{fig:stairs} zu sehen ist.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{content/pictures/Stairs.jpg}
+\caption{tragbares Treppenelement, (Quelle: eigene Darstellung)}
+\label{fig:stairs}
+\end{figure}
+
+Dieses Treppenstück ist das Endstück einer Treppe, die der Spieler vervollständigen muss, um darüber auf bestimmte Objekte zu gelangen.
+
+\subsection{Portal Steuereinheit}\label{sec:portal}
+In der folgenden Abbildung \ref{fig:bsp_computer_03}: \nameref{fig:bsp_computer_03} ist ein erster Entwurf des Computers des Chronologen zu sehen. Das Interface, mit dem der Chronologe interagieren wird, besteht aus Kurbeln und vereinzelten Zahnrädern. Der Wissenschaftler kann über den kleinen Bildschirm seine Eingaben überprüfen und dem visuellen \ac{UI} des Computers folgen. Auf der Rückseite des Computers befinden sich weitere Zahnräder, die die Eingaben an die Dienste des Computers übermittelt. 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\linewidth]{content/pictures/bsp_computer_03.jpg}
+\caption{Computer des Chronologen, erstes Konzept, (Quelle: Stable Diffusion)}
+\label{fig:bsp_computer_03}
+\end{figure}
+
+Der Computer dient nicht nur der Aufnahme und Speicherung von Notizen, sondern auch dem Bedienen der Erfindung des Chronologen. Über diesen Computer kann der Spieler im Labor seine nächsten Ziele auswählen.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\linewidth]{content/pictures/portal_01.jpg}
+\caption{Erster Entwurf Portal der Maschine, (Quelle: Stable Diffusion)}
+\label{fig:portal_01}
+\end{figure}
+
+Über das Portal, das in Abbildung \ref{fig:portal_01}: \nameref{fig:portal_01} als ein erster Entwurf skizziert ist, kann der Spieler seine Entdeckungsreisen beginnen.
+
+\subsection{Lore}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\linewidth]{content/pictures/Lore.jpg}
+\caption{Lore, (Quelle: eigene Darstellung)}
+\label{fig:lore}
+\end{figure}
+
+Wie in Abbildung \ref{fig:lore}: \nameref{fig:lore} abgebildet, kann der Spieler Loren in der Spielwelt verschieben. Es sind nicht nur Loren, die der Spieler verschieben kann, sondern alle Objekte mit einem entsprechendem Tooltip. Die Lore aus der oben genannten Abbildung, kann vom Spieler nach Abschließen des ersten Kapitels an das Gerüst schieben, dadurch hat er die Möglichkeit das Gerüst hinaufzuklettern.
+
+\section{Gebrauchsgegenstände}
+Im folgenden Kapitel werden visuelle Konzepte den Gebrauchsgegenständen vorgestellt. Es wird darauf eingegangen, welche Gegenstände bereits in ihrer Form umgesetzt wurden und welche nur auf konzeptioneller Ebene existieren.
+
+\subsection{Steuereinheit}
+Die Steuereinheit ist in zwei Teile zu unterteilen. Zum einen ist sie Teil der Maschine, die der Chronologe erfunden hat. Dabei besteht der stationäre Teil der Maschine aus den Abbildungen \ref{fig:bsp_computer_03}: \nameref{fig:bsp_computer_03} und \ref{fig:portal_01}: \nameref{fig:portal_01}. Der Chronologe hat das tragbare Gegenstück dazu immer bei sich.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\linewidth]{content/pictures/SplitDevice_markers.jpg}
+\caption{Steuereinheit, (Quelle: eigene Darstellung)}
+\label{fig:split_device_marker}
+\end{figure}
+
+Sobald der Spieler die Steuereinheit öffnet, sieht er das Gerät aus der Abbildung \ref{fig:split_device_marker}: \nameref{fig:split_device_marker}.
+
+Diese Steuereinheit ist in fünf Abschnitte eingeteilt.
+
+\subsubsection{1. Abschnitt, Zahnrad}
+Jede Zacke des Zahnrades steht für das Ich aus den anderen Zeitlinien, die der Spieler zur Verfügung hat. Dabei wird jede Zacke des Zahnrades nach der Farbe des verfügbaren Ichs markiert. Die Farben dienen der Unterscheidbarkeit für den Spieler.
+\subsubsection{2. Abschnitt, aktive Zacke}
+Sobald der Spieler ein Ich des Chronologen über das Rad auswählt, so dreht er das Zahnrad entweder mit oder gegen den Uhrzeigersinn. Sobald eine Zacke des Zahnrades an die Position der Markierung 2 gedreht wird, wird der darin enthaltene Chronologe ausgewählt. 
+\subsubsection{3. Abschnitt, Status des Chronologen}
+Sobald über das Zahnrad ein Chronologe ausgewählt wurde, wird im Feld der Markierung 3, der Status des Chronologen, genauer gesagt seine einhergehende Zeitlinie im Zeitkontinuum angezeigt. Dabei geht der Betrachtungswinkel der Steuereinheit vom derzeitig gesteuerten Chronologen aus.
+% \paragraph{Gesplittete Zeitlinie}:
+\paragraph{Gesplittete Zeitlinie:}
+Abbildung \ref{fig:split_status}: \nameref{fig:split_status} zeigt den Status einer gesplitteten Zeitlinie. Das bedeutet, der Spieler hat von seinem jetzigen Standpunkt in der Zeitlinien Hierarchie bereits einen \say{\emph{Split}} zu diesem Ich des Chronologen absolviert und ist auf seinen jetzigen anschließend \say{\emph{zurückgemergt}}. Zu diesem Chronologen kann der Spieler erst wieder wechseln, sobald die Zeitlinie dieses Chronologen nicht mehr aktiv ist.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.1\linewidth]{content/pictures/Splitet_icon_trnsp.jpg}
+\caption{gesplitteter Zeitlinien Status, (Quelle: eigene Darstellung)}
+\label{fig:split_status}
+\end{figure}
+
+\paragraph{Aktuelle Zeitlinie:}
+
+Abbildung \ref{fig:current_status}: \nameref{fig:current_status} zeigt das Statussymbol der Zeitlinie, wenn eine Zacke an das Auswahlfeld gedreht wird, an dem der derzeitige Chronologe farblich markiert wurde.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.05\linewidth]{content/pictures/Current_icon_trnsp.jpg}
+\caption{aktueller Zeitlinien Status, (Quelle: eigene Darstellung)}
+\label{fig:current_status}
+\end{figure}
+
+\paragraph{Zeitlinie zum Zurückmergen:}
+
+Sobald eine Zeitlinie den Status aus Abbildung \ref{fig:merge_status}: \nameref{fig:merge_status} besitzt, kann der Spieler auf dieses Ich des Chronologen \say{\emph{zurückmergen}}. 
+Dabei springt er in der Zeit auf den letzten Zeitpunkt, die diese Zeitlinie erlebt hat, zurück. 
+Nach der Auswahl dieses Ichs startet der \say{\emph{Mergvorgang}}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.15\linewidth]{content/pictures/Merge_icon_trnsp.jpg}
+\caption{Zeitlinienstatus zum Zurückmergen, (Quelle: eigene Darstellung)}
+\label{fig:merge_status}
+\end{figure}
+
+\paragraph{Verfügbare Zeitlinie:}
+
+Erscheint auf dem Feld keins der drei Symbole aus den Abbildungen \ref{fig:split_status}: \nameref{fig:split_status}, \ref{fig:current_status}: \nameref{fig:current_status} und \ref{fig:merge_status}: \nameref{fig:merge_status} so ist dieses Ich frei und kann für einen \say{\emph{Splitvorgang}} ausgewählt werden.
+
+\subsubsection{4. Abschnitt, Name des Chronologen}
+
+Auf dem oberen Anzeigeelement erscheint der Name des ausgewählten Chronologen. Zusätzlich zu der Position des Zahnrades kann der Spieler hierdurch feststellen, dass er das richtige Ich des Chronologen ausgewählt hat.
+
+\subsubsection{5. Abschnitt, Auswahl bestätigen}
+
+Über den Knopf auf dem Zahnrad kann der Spieler seine Auswahl bestätigen. Der Knopf verändert in Abhängigkeit der Auswahl seine Farbe. Die Farben weisen den Spieler darauf hin, ob er seine Auswahl bestätigen kann oder ob er gerade einen nicht verfügbaren Chronologen auswählen möchte. Der Knopf leuchtet grün, sobald die Auswahl auf einen freien Chronologen gefallen ist oder er auf einen Chronologen \say{\emph{zurückmergen}} möchte, oder rot, sobald er sein derzeitiges Ich oder ein \say{\emph{gesplittetes}} Ich ausgewählt hat.
+
+\subsection{Datenleser}
+Wie bereits in Kapitel \ref{sec:concept_datenleser} \nameref{sec:concept_datenleser} angesprochen, kann der Spieler über den Datenleser wichtige Informationen nachlesen. 
+Im derzeitigen Prototypen ist der Datenleser ein skalierter Würfel. Dieser dient lediglich als ein Platzhalter für das eigentliche \ac{3D}-Modell des Datenlesers.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.5\linewidth]{content/pictures/Datenleser_vorderseite.jpg}
+\caption{Vorderseite Datenleser, Konzeptzeichnung, (Quelle: Stable Diffusion)}
+\label{fig:datenleser_front}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.5\linewidth]{content/pictures/Datenleser_rueckseite.jpg}
+\caption{Rückseite Datenleser, Konzeptzeichnung, (Quelle: Stable Diffusion)}
+\label{fig:datenleser_back}
+\end{figure}
+
+Die Abbildungen \ref{fig:datenleser_front}: \nameref{fig:datenleser_front} und \ref{fig:datenleser_back}: \nameref{fig:datenleser_back} zeigen einen ersten Konzeptentwurf, wie der spätere Datenleser aussehen kann.
+Der Datenleser enthält ähnlich wie der Computer des Chronologen mechanische Elemente, über die die Eingaben erfolgen können. Diese Eingabeelemente wie Zahnräder und Kurbel befinden sich auf der Rückseite des Datenlesers. Über die Vorderseite erhält der Spieler nun das visuelle Interface, das bereits in Kapitel \ref{sec:datenleser_ui} \nameref{sec:datenleser_ui} vorgestellt wurde.
+
+\subsection{Pager}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.5\linewidth]{content/pictures/Pager_marks.jpg}
+\caption{Pager, (Quelle: Stable Diffusion)}
+\label{fig:pager}
+\end{figure}
+
+Die Abbildung \ref{fig:pager}: \nameref{fig:pager} zeigt ein erstes Konzept des Pagers, den der Spieler im späteren Verlauf des Spiels findet und erhält.
+
+Über die mit der 1 markierten haptischen Interfaces aus Joystick ähnlichen Elementen und mechanischen Tasten kann der Chronologe die Eingabe des Spielers in das Gerät eingeben. Auf dem kleinen Bildschirm, der mit der 2 markiert ist, kann der Spieler seine Eingabe kontrollieren, ehe er sie mit einem Knopfdruck abschickt. Der Knopf ist das Element, das mit der 3 markiert wurde.
+
+\subsection{Imitator}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Imitator.jpg}
+\caption{Imitator, (Quelle: eigene Darstellung)}
+\label{fig:imitator}
+\end{figure}
+
+Wie in Abschnitt \ref{sec:concept_imitator} \nameref{sec:concept_imitator} angesprochen, erhält der Spieler nach Erreichen eines bestimmten Levels einen Imitator. Die Umsetzung des Imitators ist in Abbildung \ref{fig:imitator}: \nameref{fig:imitator} dargestellt.
+
+Der Imitator ist in vier Abschnitte unterteilt.
+
+\subsubsection{1. Abschnitt, Auswahlrad}
+Über das Auswahlzahnrad kann der Chronologe die Zeit einstellen, wie lange die Kopie von ihm an der gesetzten Stelle stehen soll. Durch das Drehen des Zahnrades wird ein Mechanismus in der Sanduhr freigesetzt, die diese Zeit einstellt.
+
+\subsubsection{2. Abschnitt, Bildschirm}
+Über den Bildschirm, der auf der Oberseite des Imitators zu finden ist, kann der Spieler den über das Zahnrad gestellten Timer einsehen. Er hat die Wahlmöglichkeit zwischen 5, 10, 15, 30, 45, 60 und 90 Sekunden, die die Kopie des derzeitig aktiven Ichs des Chronologen an der derzeitigen Stelle imitiert. 
+
+\subsubsection{3. Abschnitt, Auswahl bestätigen}
+Über den Knopf in der Mitte des Zahnrades kann der Spieler seine Auswahl bestätigen.
+
+\subsubsection{4. Abschnitt, Erstellung der Kopie}
+Nachdem der Spieler seine Auswahl bestätigt hat, legt der Chronologe den Imitator an seine derzeitige Position. Dadurch wird die Kopie des derzeitigen Ichs in die Spielwelt gesetzt. Im Anschluss an den erfolgreichen Kopiervorgang hebt der Chronologe den Imitator wieder auf und verstaut ihn in seinen Taschen. Der Spieler erhält, wie in Abschnitt \ref{sec:user_timer} \nameref{sec:user_timer} gezeigt, unterhalb des Timers eine Ansicht, wie lange die Kopie noch aktiv ist.
+
+\section{Menü}
+Das Spiel besitzt zwei Arten von Menüs. Zum einen das Startmenü und zum anderen das Pausemenü. Das Startmenü erscheint jeweils immer nach dem Start der Anwendung. Das Pausemenü kann dabei in jedem Level des Spiels geöffnet werden. 
+
+\subsection{Pause}
+
+Der Spieler kann das Spiel über die \ac{ESC}-Taste pausieren. Dadurch öffnet sich der Datenleser des Chronologen und das Pausemenü erscheint. Das Interface des Pausemenüs erscheint dabei auf dem Monitor des Datenlesers, worüber der Spieler Informationen über das Spiel nachlesen kann.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/StartScreen.jpg}
+\caption{Pausemenü, (Quelle: eigene Darstellung)}
+\label{fig:pausemenu}
+\end{figure}
+
+In der Abbildung \ref{fig:pausemenu}: \nameref{fig:pausemenu} ist ein Mockup des Pausemenüs zusehen, über das der Spieler das Spiel beenden kann, bestimmte Einstellungen ändern und das Spiel wieder fortsetzen kann.
+
+\subsection{Start}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/StartScreen.jpg}
+\caption{Startmenü, (Quelle: eigene Darstellung)}
+\label{fig:mainmenu}
+\end{figure}
+
+Sobald das Spiel geladen hat, erscheint das in Abbildung \ref{fig:mainmenu}: \nameref{fig:mainmenu} zu sehende Startmenü des Spiels. Über das Startmenü kann der Spieler an seinem aktuellen Spielstand fortsetzen, ein neues Spiel starten, die Einstellungen öffnen oder das Spiel wieder verlassen.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/SoundSetting.jpg}
+\caption{Toneinstellungen, (Quelle: eigene Darstellung)}
+\label{fig:sound_settings}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/CamSetting.jpg}
+\caption{Kameraeinstellungen, (Quelle: eigene Darstellung)}
+\label{fig:cam_settings}
+\end{figure}
+
+Im derzeitigen Prototyp kann der Spieler über das Einstellungsmenü in den Abbildungen \ref{fig:sound_settings}: \nameref{fig:sound_settings} und \ref{fig:cam_settings}: \nameref{fig:cam_settings} Ton- und Kameraeinstellungen tätigen. Über dieses Menü werden weitere Einstellungen getätigt werden können.
+
+\section{Leveldesign}
+
+Im Folgenden wird auf die umgesetzten Level des Prototyps eingegangen.
+
+\subsection{Tutorial}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Tutorial - A Fraction of Time.jpg}
+\caption{Collage Tutorial, (Quelle: eigene Darstellung)}
+\label{fig:collage_tutorial}
+\end{figure}
+
+Das erste Level im Prototypen ist das in Abbildung \ref{fig:collage_tutorial} \nameref{fig:collage_tutorial} gezeigte Tutorial. Es dient als Einführung für den Spieler an das Spiel. 
+
+Das Setting des Tutorials ist ein verlassener Steinbruch, der nach dem Start der Maschine des Chronologen verlassen werden musste, weil die Arbeiter Angst vor einer Zeitlinienkonvergenz (vgl. Kapitel \ref{sec:konvergenz} \nameref{sec:konvergenz}) hatten. Der Spieler muss versuchen zu verstehen, wie er den Steinbruch für seine ehemaligen Bewohner wieder sicher gestalten und einen Schutz gegen eine Konvergenz aufbauen kann.
+Dafür muss der Spieler das Level gründlich erforschen, um zu verstehen, wie er den Steinbruch und dessen Bewohner schützen kann. In der Spielwelt sind Hinweise darauf versteckt, die der Spiele finden muss.
+
+Nachdem der Spieler das erste Kapitel erfolgreich abschließen konnte, ist es ihm möglich in den Steinbruch erneut zurückzureisen, um ihn weitere Male zu erkunden. Dadurch hat er die Möglichkeit andere Wege zu gehen und andere neue Elemente zu entdecken, wie  versteckte Gegenstände oder einen neuen Weg das Level abzuschließen.
+
+Diese Hinweise sind jedoch in dieser Version des Steinbruchs nicht integriert. Diese Spielwelt dient in diesem Prototyp als ein Tutorial, in dem der Hauptfokus auf dem Erlernen der Spielmechanik liegt. Im Vergleich zu einer fertigen Version des Spiels hat der Spieler in diesem Prototyp die Auswahl zwischen zwei weiteren Ichs des Chronologen. In einer fertigen Version wird der Spieler in seinem ersten Level nur mit einer weiteren Person des Chronologen starten. Dieser Steinbruch ist dabei ein zweites Level und nicht mehr das Tutorial. Diese Spielwelt wurde, deshalb als Tutorial ausgewählt, da sie zum einen dafür im Gamedesign Workshop konzipiert wurde und so die Spielmechanik verstanden werden konnte und zum anderen war sie bereits umgesetzt und konnte erneut verwendet werden. Ein neues Szenario für das Tutorial zu entwickeln war aus diesem Grund nicht sinnvoll, da der Fokus auch darauf bestand ein weiteres Szenario zu entwickeln, in dem neuartige Rätsel zu lösen sind.
+
+\subsection{Labor}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Labor - A Fraction of Time.jpg}
+\caption{Collage Labor, (Quelle: eigene Darstellung)}
+\label{fig:collage_labor}
+\end{figure}
+
+Dieser Prototyp umfasst ein zweites Level, welches Labor genannt wird. Dieses Level ist das letzte Level, um Kapitel 1 abzuschließen. Durch das Bestehen dieses Levels findet der Spieler einen Weg zurück in das Labor des Chronologen.
+
+Wie in Abbildung \ref{fig:collage_labor} \nameref{fig:collage_labor} zu sehen ist, enthält das Laborlevel zusätzlich zu seinem Labor zwei verschiedene Räume. Der Spieler muss die Rätsel beider Räume lösen, um den Weg in das Labor zu öffnen. Sobald der Spieler in die Spielwelt eintaucht, macht er sich auf Anweisung des Ichs des Chronologen aus der Zeitlinie, in der sich das Labor befindet, auf den Weg zum Laboreingang. Im Eingangsraum zum Labor muss der Spieler und das Ich des Chronologen allerdings feststellen, dass die Eingangstür verschlossen ist und auch kein Strom angeschaltet wurde. Der Spieler muss sich nun auf den Weg machen in den Raum der zwei Kräne aus der Abbildung zu machen, da er dort den Strom anstellen kann. Nachdem der Strom angestellt wurde, betritt der Spieler das Labor und findet einen Weg zurück in sein eigenes Labor.
+
+Nach dem Betreten des Labors fällt dem Chronologen eine Ähnlichkeit zu seinem eigenen Labor auf. Es muss sich also um eine andere Version seines Labors handeln. Die Ähnlichkeit der Labore beruht darauf, dass durch die Zeitlinien Konvergenz am Anfang des Spiels Teile des Labors vom Chronologen in dieses Labor aus einer anderen Zeitlinie übergegangen sind. Darunter ist ein Teil der Maschine, durch welche der Chronologe in eine andere Zeitlinie reisen kann. Durch das gefundene Teil seiner Maschine kommt er in  sein eigentliches Labor zurück. Es befindet sich allerdings nicht mehr in der Zeitlinie des Chronologen, sondern an einem Ort ohne Raum und Zeit.
+
+Der genaue Grund, wieso dieses Maschinenteil den Chronologen in sein Labor zurückführt, wird für den Spieler in der Handlung des fertigen Spiels behandelt. Sie wird in diesem Prototyp nicht erzählt.
+
+Das Ich aus dieser Zeitlinie ist selbst kein Chronologe geworden. Allerdings forscht er ebenso wie der Chronologe in einem Labor in einer anderen Disziplin. Das Ich war in seiner Vergangenheit einmal in diesem Labor und wusste daher, wo sich der Eingang befinden würde und wo sich der Strom anstellen lässt.
+
+Das gesamte Level besteht aus einem Höhlen- und Laborkomplex, welche mit einer alten Kanalisation verbunden sind. Durch die alten Röhren der Kanalisation kann der Spieler die einzelnen Räume der Spielwelt betreten.
+
+Der Spieler hat für das Meistern des zweiten Levels zwei weitere Ichs zur Verfügung, da es sich im Vergleich zum Tutorial an einem späteren Zeitpunkt der Handlung befindet. 
+
+\subsection{Labor des Chronologen}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Collage Labor Chronologist.jpg}
+\caption{Collage Labor des Chronologen, (Quelle: Stable Diffusion, UFO Laboratory by CG Plane)}
+\label{fig:collage_labor_chron}
+\end{figure}
+
+Abbildung \ref{fig:collage_labor_chron} \nameref{fig:collage_labor_chron} gibt einen ersten Eindruck, wie das Labor des Chronologen aussehen wird. Zusätzlich zu dieser Collage besitzt das Labor, das aus Abschnitt \ref{sec:portal} \nameref{sec:portal} beschriebene Portal und seinen Computer. Über dieses Labor kann der Spieler wie bereits beschrieben seine zuvor erlebten Level erneut besuchen, ebenso seine kommenden Reisen starten.
+
+Das Labor befindet sich wie bereits erwähnt an einem Ort ohne Raum und Zeit. Durch das erstmalige Benutzen der Zeitlinien-Reisemaschine erfolgte eine Zeitlinien Konvergenz, wodurch Teile des Labors in eine parallele Zeitlinie katapultiert wurden. Es entstanden Kopien des Labors, auf welche der Spieler am Ende des ersten Kapitels stößt. Das Labor als ganzes blieb unbeschädigt, jedoch befindet es sich nicht mehr in der Zeitlinie des Chronologen.
+
+\chapter{Umsetzung des Prototyps}\label{sec:dev}
+Im Folgenden wird auf die Umsetzung des entwickelten Prototyps eingegangen. Zunächst wird die Ausgangslage des Entwicklungsstands eingegangen. Dieser Entwicklungsstand beruht aus dem Endstand des Prototyps aus dem Gamedesign Workshop. Im Anschluss werden die verwendeten Packages in Unity vorgestellt. Danach erfolgt die Umsetzung des Prototyps in den vorgestellten Unterkapiteln.
+
+\section{Verwendete Technologien}
+In der kommenden Aufzählung werden die verwendeten Unity Packages vorgestellt. Im Package Manager des auf der beiliegenden \ac{DVD} der Arbeit befinden sich mehr Packages im Registry, als hier aufgezählt werden. Das liegt daran, dass die hier genannten Pakete genutzt und die zusätzlichen Pakete im Registry zum Testen und für den Ausblick eingebunden wurden.
+
+\subsection{Unity Version 2021.3.16f1}
+Der Prototyp wurde in der Version 2021.3.16f1 \ac{LTS} umgesetzt. Diese Version war zum Startzeitpunkt der Thesis die aktuellste \ac{LTS} der 2021er-Version des Unity Editors. In ihr ist es für den Ausblick ebenfalls möglich, den Experimental-Release von \ac{DOTS} einzubinden. 
+(vgl. \cite{noauthor_official_nodate})
+
+\subsection{Blender 3.3.1}
+Blender dient in der Umsetzung als Bearbeitungstool von \ac{3D} Objekten. Aufgrund der Tatsache, dass Blender (.blend) Dateien direkt in Unity integriert werden können, und nicht als \ac{FBX} exportiert und importiert werden müssen (vgl. \cite{technologies_unity_nodate}). Als die Umsetzung des Prototyps begann, war die Version 3.3.1 von Blender die aktuellste, die heruntergeladen wurde.
+
+\subsection{Cinemachine}
+Die Cinemachine wird für die Kamerafahrt des Spiels verwendet. Durch sie ist es möglich, eine Third-Person-Sicht in das Spiel zu haben. Zusätzlich ist es möglich verschiedene virtuelle Kameras zu besitzen, durch welche ein Wechsel zwischen Third- und First-Person Sicht des Spielers gewechselt werden kann. Die Cinemachine übernimmt dabei das Wechseln zwischen den verschiedenen Kameras und die Kamerafahrt zwischen diesen. Durch sie ist es möglich, dass der Spieler den Chronologen in einer Third-Person Ansicht zu steuern und in einer First-Person-Ansicht seine Gebrauchsgegenstände zu sehen. Dadurch hat das Spiel eine immersive Wirkung.
+
+\subsection{Filmbox Exporter}
+Da der Prototyp dieser Arbeit auf einem grundlegenden Prototyp aus dem Gamedesign Workshop aufbaut, für den bereits einzelne \ac{3D} Modelle erstellt und eingebraut wurden, existieren schon einige \ac{3D} Modelle in der Bibliothek. Allerdings reichen diese nicht vollends aus, um den Bedarf an \ac{3D} Objekte zu decken. Aufgrund dessen mussten Bibliotheken hinzugefügt werden, diese werden in Abschnitt \ref{sec:extra-assets} \nameref{sec:extra-assets} aufgezählt. Diese \ac{3D}-Model Packages enthielten teilweise keine \ac{FBX} Dateien, weshalb über den \ac{FBX} Exporter diese aus Unity Prefabs erzeugt werden konnten. Das war insofern notwendig, da nicht alle \ac{3D} Modell dem direkten Anspruch genügten und nicht editierbar waren. Durch das Erstellen von \ac{FBX} Dateien aus den Prefabs, konnten diese in Blender importiert und bearbeitet werden. Um sie letztlich benutzen zu können, wurden diese wiederum im Unity Projekt abgespeichert und importiert.
+
+\subsection{TextMeshPro}
+TextMeshPro wird in der Kombination mit dem veralteten \say{Unity UI} und \say{legacy Text Mesh} als Darstellung und Text verwendet. Durch TextMeshPro werden alle \ac{UI} Elemente auf einer Canvas angezeigt. Das ermöglicht unter anderem, dass in einer späteren Version auch bspw. Videos im Datenleser eingebunden werden können.
+
+\subsection{Universal Render Pipeline}
+Im Unity Editor hat man die Möglichkeit eine Render Pipeline einzubinden oder nicht. In diesem Fall wurde entschieden, die \ac{URP} einzubinden. Dadurch besteht die Möglichkeit der Kamera ein Post-Processing einzubinden, wodurch spezielle Effekte und das Rendering der Spielwelt verändert werden kann. Im Abschnitt \ref{sec:paradoxon-stability} \nameref{sec:paradoxon-stability} wurden Effekte erwähnt, die auf das visuelle der Spielwelt wirken werden. Diese Effekte werden zukünftig über die \ac{URP} eingebunden und visualisiert.
+
+\subsection{Unity Prefab Assets}\label{sec:extra-assets}
+Wie bereits erwähnt gab, es zum Start der Entwicklung dieses Prototyps einige erstellte \ac{3D} Modelle, die in den Szenen eingebaut wurden. Die im Gamedesign Workshop erstellen \ac{3D} Modell haben allerdings nicht ausgereicht und so wurden aus anderen Packages \ac{3D} Modell importiert. Welche Packages das waren, wird im Folgenden aufgezählt.
+
+\subsubsection{Fissure: Low Poly Caverns}
+Das zweite Level des Prototyps spielt wie bereits erwähnt in einem Labor- und Höhlensystem. Für das Höhlensystem wurden Assets aus diesem Package verwendet.
+
+\subsubsection{Low Poly Rock Models}
+Um die Höhle weitere auszugestalten, wurden über dieses kostenlose Asset Package weitere Stein Modelle eingebunden.
+
+\subsubsection{Low Poly Underground Mega Pack}
+Das Höhlensystem im zweiten Level wurde zum Teil aus den Modellen des \say{Low Poly Underground Mega Packs} gebaut. Sie inkludieren weitere Tunnelsysteme, welche für weitere Rätsel- und Level-Elemente genutzt werden kann. 
+
+\subsubsection{Steampunk Low Poly Pack}
+Das Genre des Spiels liegt im Steampunk. Für dieses Setting wurden weitere \ac{3D}-Assets benötigt, um das vorhandene Level auszuschmücken und das zweite Level aus ihnen zu bauen.
+
+\subsubsection{Victorian Low Poly Pack}
+Selbiges gilt für das \say{Victorian Pack}, das, wie es der Name sagt, auch in ein Steampunk Setting passt. Steampunk spielt zur Zeit der Viktorianischen Zeit und ergänzt das oben benannte \say{Steampunk Pack}.
+
+
+\section{Ausgangssituation}
+Wie in Kapitel \ref{sec:intro} \nameref{sec:intro} beschrieben, existiert ein erster kleiner Prototyp des Spiels aus dem Gamedesign Workshop. Dieser ist jedoch sehr anfällig für Fehler und unstrukturiert. Das liegt zum einen daran, dass vier verschiedene Personen mit einem unterschiedlichen Wissensstand in Unity an diesem Prototyp gearbeitet haben. Zum anderen liegt es daran, dass im grundlegenden Aufbau der Mechanik von einem falschen Ausgangspunkt ausgegangen wurde. Zusätzlich war ein Teil des damaligen Konzepts eine Ursache dafür, dass das Bauen des Graphen-Baums zu Fehlern führte. Dabei war die Idee, dass der Spieler eine bereits erstellte Zeitlinie erneut \say{\emph{Splitten}} kann, um sie zu ändern. In dem überarbeiteten Konzept ist diese Möglichkeit nun verschwunden. Im Folgenden werden auf die Aspekte eingegangen, die von ihrer Grundidee wichtig für die Umsetzung sind. Ebenso werden die  Aspekte beschrieben, die es zu überarbeiten gilt.
+\subsection{Übernommene Aspekte}
+\subsubsection{Aufbau eines Baumes aus Zeitlinien}\label{sec:good_01}
+Der Spieler erstellt durch die Auswahl eines Ichs des Chronologen eine Zeitlinie, auf welcher sich dieses Ich zeitlich bewegen wird. Dazu wird zunächst eine Hauptwurzel des Baumes benötigt, welcher im folgenden Codeausschnitt zu sehen ist:
+\begin{lstlisting}[caption={Ausschnitt aus GraphController aus dem alten Prototypen}, label={sec:old_graphController}]
+public class GraphController : Controller
+{
+    [SerializeField]
+    private Timeline rootTimeline;
+    [SerializeField]
+    private Timeline currentTimeline;
+    [SerializeField]
+    private List<Timeline> timelinesToHandle = new List<Timeline>();
+...
+}
+\end{lstlisting}
+\label{sec:rootTimeline_pld}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Schaubild Timeline.jpg}
+\caption{Schaubild zu Codeausschnitt „Ausschnitt aus Timeline aus dem alten Prototyp“, (Quelle: eigene Darstellung)}
+\label{fig:collage_labor_chron}
+\end{figure}
+
+Sowohl diese Hauptzeitlinie als auch die angegliederten Zeitlinien besitzen eine Liste an angegliederten Zeitlinien und eine Referenz an die Zeitlinie, an welche sie angegliedert wurden. Zudem erhalten diese Zeitlinien ein Level, auf welcher Ebene der Verschachtelung sie sich befinden (vgl.: folgender Codeausschnitt \ref{sec:old_timeline}).
+
+\begin{lstlisting}[caption={Ausschnitt aus Timeline aus dem alten Prototyp}, label={sec:old_timeline}]
+public class Timeline
+{
+    [SerializeField]
+    private int level = 0;
+    [SerializeField]
+    private List<Timeline> children = new List<Timeline>();
+    [SerializeField]
+    private float startTimestamp;
+    [SerializeField]
+    private CharacterData player;
+    [SerializeField]
+    private Timeline parent = null;
+    [SerializeField]
+    private Shadow ghost = null;
+    [SerializeField]
+    private string ID;
+    [SerializeField]
+    private float[] startPosition = new float[3];
+    private SavePlayerData data = null;
+    ...
+    public void InsertChild(Timeline child)
+    {
+        if(!children.Contains(child))
+        {
+            children.Add(child);
+        }
+        else
+        {
+            children.Insert(children.FindIndex(a => a.GetId() == child.GetId()),child);
+        }
+    }
+    ...
+}
+\end{lstlisting}
+
+In Abbildung \ref{fig:L02_E02_04_L01} \nameref{fig:L02_E02_04_L01} wird ein solcher Baum aufgezeigt. Die schwarze Zeitlinie ist dabei die $rootTimeline$ aus \ref{sec:rootTimeline_pld} \nameref{sec:rootTimeline_pld}. Diese Zeitlinie besitzt das Level 0. Umso weiter die Zeitlinien ineinander verschachtelt werden, steigt das Level der Zeitlinien. Sobald der Spieler nun das erste mal \say{\emph{Splittet}}, wird diese neue Zeitlinie (aus der Abbildung die blaue Zeitlinie) über die Methode $InsertChild(Timeline ~child)$ an die $rootTimeline$ angegliedert. Zusätzlich erhält dieses Child auch eine Referenz auf seinen Parent. Jedes angegliederte Child besitzt das Level des Parents plus 1: $level = parent.level +1$. Das Level der blauen Zeitlinie beträgt nun 1. Erzeugt der Spieler viele parallele  Zeitlinien, so wie die rote Zeitlinie aus der Abbildung \ref{fig:L02_E02_04_L01} \nameref{fig:L02_E02_04_L01}, so haben diese ebenfalls das Level 1. Hierbei wird nicht unterschieden, die wievielte Zeitlinie in den Children diese ist. 
+
+\subsubsection{Welche Zeitlinien müssen nach einem Mergevorgang betrachtet werden?}\label{sec:good_02}
+Nach einem \say{\emph{Mergevorgang}} wird die aktuelle Zeitlinie durch eine bereits existierende Zeitlinie ersetzt. Befindet sich der Spieler in Abbildung \ref{fig:merge-definition} auf der blauen Zeitlinie, so wechselt er zum Beispiel auf die schwarze Zeitlinie zurück. Ist dieser Wechsel abgeschlossen, so müssen die nach einem Split entstandenen rote und blaue Zeitlinie betrachtet werden.
+
+\begin{lstlisting}[caption={HandleMerge Methode aus dem alten Prototyp}, label={sec:old_merge}]
+public class GraphController
+{
+...
+    private void HandleMerge(Player player)
+    {
+        float startPoint = -1;
+        Timeline timeline = GetTimelineOfNewPlayer(player.GetCharacterData());
+        if (timeline != null)
+        {
+            List<Timeline> childrenOfNewTimeline = timeline.GetChildren();
+            if (childrenOfNewTimeline.Count > 1)
+            {
+                foreach (Timeline child in childrenOfNewTimeline)
+                {
+                    if (child.GetId().Equals(currentTimeline.GetId()))
+                    {
+                        startPoint = child.GetStartTimestamp();
+                    }
+                }
+            }
+            if (childrenOfNewTimeline.Count == 1)
+            {
+                foreach (Timeline child in childrenOfNewTimeline)
+                {
+                    startPoint = child.GetStartTimestamp();
+                }
+            }
+            if (startPoint != -1)
+            {
+                TimeController.Instance.SetGameTime(startPoint);
+                currentTimeline = timeline;
+            }
+            HandleRemoveOldCharacter(rootTimeline);
+            timelinesToHandle = new List<Timeline>();
+            CheckForInteractions(rootTimeline);
+        }
+    }
+    ...
+}
+\end{lstlisting}
+
+
+Durch das \say{\emph{Splitting}} werden neue Verzweigungen in der $rootTimeline$ hinzugefügt, welche nun durch eine rekursive Methode durchforstet werden können. Folgende Methode wird wie im vorherigen Codeausschnitt \ref{sec:old_merge} am Ende der $HandleMerge()$ Methode aufgerufen. Es wird überprüft, welche Zeitlinien in dem Baum das gleiche oder ein höheres Level haben als die derzeitig aktive Zeitlinie. Durch die Überprüfung $!timeline.GetId().Equals(currentTimeline.GetId())$ wird ausgeschlossen, dass es sich hierbei um die aktuelle Zeitlinie handelt.
+
+\begin{lstlisting}[caption={HandleMerge Methode aus dem alten Prototyp}, label={sec:old_checkForInteractions}]
+public class GraphController
+{
+...
+    private void CheckForInteractions(Timeline timeline)
+    {
+        if (timeline.GetLevel() >= currentTimeline.GetLevel())
+        {
+            if (!timeline.GetId().Equals(currentTimeline.GetId()))
+            {
+                timeline.ResetData();
+                timelinesToHandle.Add(timeline);
+            }
+        }
+
+        List<Timeline> children = timeline.GetChildren();
+        if (children.Count > 0)
+        {
+            foreach (Timeline child in children)
+            {
+                CheckForInteractions(child);
+            }
+        }
+    }
+    ...
+}
+\end{lstlisting}
+
+Trifft der Fall zu, dass $timeline.GetLevel() >= currentTimeline.GetLevel()$ dem Wert \say{true} entspricht, so werden diese Zeitlinien in eine Liste abgespeichert, welche die zu beachtenden Zeitlinien enthält.
+
+\subsubsection{Wann sind die zu beachtenden Zeitlinien aktiv?}\label{sec:good_03}
+\begin{lstlisting}[caption={Haupt Gameloop der Mechanik aus dem Gamedesign Workshop}, label={sec:handleGameTime_old}]
+public class GraphController
+{
+...
+    public void HandleGameTime(float gametime)
+    {
+        PurgeOldTimelines(gametime);
+        if (timelinesToHandle != null && timelinesToHandle.Count > 0)
+        {
+            foreach (Timeline timeline in timelinesToHandle.ToArray())
+            {
+                Shadow ghost = timeline.GetGhost();
+                if (ghost != null)
+                {
+                    ghost.ReconstructRecord(gametime);
+                }
+                else
+                {
+                    if (timeline.IsTimestampStillValid(gametime))
+                    {
+                        if (timeline.GetStartTimestamp() <= gametime)
+                        {
+                            Shadow shadow = playerController.CreateShadow(timeline.GetPlayer());
+                            Vector3 positionVector = new Vector3(timeline.GetPosition()[0], timeline.GetPosition()[1], timeline.GetPosition()[2]);
+                            shadow.gameObject.transform.position = positionVector;
+                            timeline.InsertGhost(shadow);
+                            shadow.ReconstructRecord(gametime);
+                        }
+                    }
+                }
+                if (!timeline.IsTimestampStillValid(gametime))
+                {
+                    timelinesToHandle.Remove(timeline);
+                }
+            }
+        }
+    }
+
+    private void PurgeOldTimelines(float gametime)
+    {
+        if (currentTimeline.GetId().Equals(rootTimeline.GetId()))
+        {
+            HandlePurge(gametime, rootTimeline);
+        }
+    }
+    private void HandlePurge(float gametime, Timeline timeline)
+    {
+        List<Timeline> children = timeline.GetChildren();
+        if (children.Count > 0)
+        {
+            foreach (Timeline child in children.ToArray())
+            {
+                HandlePurge(gametime, child);
+            }
+        }
+        else
+        {
+            if (!timeline.IsTimestampStillValid(gametime))
+            {
+                timeline.GetParent()?.GetChildren()?.Remove(timeline);
+            }
+        }
+    }
+    ...
+}
+\end{lstlisting}
+
+Der $TimeController$ des Prototyps übergibt an den $GameController$ über die Methode $HandleGameTime(float ~gametime)$ den aktuellen Zeitpunkt des Timers. Sofern ein \say{\emph{Mergvorgang}} absolviert wurde, existiert auch eine Liste an zu beachtenden Zeitlinien. Diese $timelinesToHandle$ werden nun seriell durchgegangen. Dabei wird zunächst geschaut, ob diese Zeitlinie eine Kopie des Chronologen besitzt, der die Aufnahme der Zeitlinie reproduziert. Falls bislang noch keine Kopie existiert, wird geschaut, ob die übergebene $gametime$ bereits größer ist als die letzte in der Zeitlinie aufgenommene Interaktion. Trifft das zu, wir die Zeitlinie aus der Liste, der $timelineToHandle$ entfernt. Trifft der Fall nicht zu und ist der übergebene Zeitpunkt größer oder gleich des Startpunktes der Zeitlinie, so wird eine Kopie erstellt und der Zeitpunkt wird an diese Kopie übergeben.
+
+Im letzten Schritt wird in der Methode $HandlePurge()$ überprüft, welche erstellten Zeitlinien gelöscht werden können, da ihre letzte aufgenommene Interaktion im Vergleich zur $gametime$ in der Vergangenheit erfolgte und sie deshalb nicht mehr beachtet werden muss. Diese Methode wird allerdings nur dann aufgerufen, sofern der Spieler den Hauptchronologen steuert und sich auf der $rootTimeline$ befindet.
+
+\subsubsection{Wie rekonstruiert die Kopie des Chronologen die aufgenommene Interaktion?}\label{sec:good_04}
+\begin{lstlisting}[caption={Rekonstruktionsmethode der Kopie des Chronologen}, label={sec:reconstructing_old}]
+public class Shadow : Player
+{ 
+...
+    public void ReconstructRecord(float timestamp)
+    {
+        if(_interactions.Count > 0)
+        {
+            _lastInteraction  = interactions.OrderByDescending(item => item.TimeStamp).First();
+        }
+        InteractionSaveData interaction = interactions.Find(i => (float.Equals(i.TimeStamp,timestamp)));
+        SetLastTimestamp(timestamp);
+        if(interaction != null)
+        {
+            InteractionType type = (InteractionType)Enum.Parse(typeof(InteractionType),interaction.Type);
+            switch(type)
+            {
+                case InteractionType.WALK:
+                    MoveShadow(interaction.Target);
+                    break;
+
+                case InteractionType.JUMPSTART:
+                    MoveShadow(interaction.Source);
+                    gameObject.GetComponent<AnimationHandler>().jump();
+                    break;
+
+                case InteractionType.JUMPSTOP:
+                    MoveShadow(interaction.Source);
+                    gameObject.GetComponent<AnimationHandler>().stopJump();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        if(_lastInteraction != null && _lastInteraction.TimeStamp < timestamp)
+        {
+            Destroy(this.gameObject);
+            DestroyShadow?.Invoke();
+        }
+    }
+    private void MoveShadow(GameObjectSaveData data)
+    {
+        Vector3 positionVector = new Vector3(data.Position[0], data.Position[1], data.Position[2]);
+        Vector3 moveVector = new Vector3(positionVector.x - transform.position.x, 0, positionVector.z - transform.position.z);
+        transform.forward = moveVector;
+        transform.position = positionVector;
+        transform.localScale = new Vector3(data.Scale[0], data.Scale[1], data.Scale[2]);
+        gameObject.GetComponent<AnimationHandler>().SetGhostPosition(positionVector);
+    }
+    ...
+}
+\end{lstlisting}
+
+Der GraphController übergibt in der $HandleGameTime$ Methode den derzeitigen Zeitpunkt des Timers über die Methode $ shadow.ReconstructRecord(gametime);$ das Shadow Skript weiter. In der dieser Methode wird aus der Liste der aufgenommenen Interaktionen die Interaktion gesucht, die an diesem übergebenen Zeitpunkt passiert ist. Die durch diesen Aufruf gefundene Interaktion: $interactions.Find(i => (float.Equals(i.TimeStamp,timestamp)))$ wird nun in dem Switch Case ausgewertet. Bei diesem Prototyp konnte der Spieler nur laufen und springen.
+Der Mechanismus der Rekonstruktion erfolgt nur im Shadow Skript.
+
+\subsubsection{Wie wurden die Interaktionen aufgenommen?}\label{sec:good_05}
+
+\begin{lstlisting}[caption={Aufnahme von Bewegungen}, label={sec:movementAbility_old}]
+public class MovementAbility : Ability
+{
+    ...
+    protected override void HandleInput()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        if (direction.magnitude >= 0.1)
+        {
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(_playerTransform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, _turnSmoothTime);
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            if (!GetComponent<Animator>().GetBool("isJump"))
+            {
+                _playerTransform.rotation = Quaternion.Euler(0f, angle, 0f);
+                _controller.Move(moveDir.normalized * _speed * Time.deltaTime);
+                if (!_cam.parent.GetChild(2).GetChild(3).GetComponent<AudioSource>().enabled)
+                {
+                    AudioPlayerScript.instance.playSpecificAudio("walking");
+                }
+            }
+            if (GetComponent<Animator>().GetBool("isJump"))
+            {
+                _controller.Move(GetComponent<JumpAbility>().GetJumpdirection() * _speed / 3 * Time.deltaTime);
+            }
+            SubmitAction(InteractionType.WALK, this.gameObject.GetComponent<Player>(), this.gameObject, this.gameObject.transform, TimeController.Instance.GetGameTime());
+        }
+        else
+        {
+            if (_cam.parent.GetChild(2).GetChild(3).GetComponent<AudioSource>().enabled)
+            {
+                AudioPlayerScript.instance.stopSpecificAudio("walking");
+            }
+        }
+        if (GetComponent<Animator>().GetBool("isJump"))
+        {
+            _controller.Move(GetComponent<JumpAbility>().GetJumpdirection() * _speed / 3 * Time.deltaTime);
+        }
+    }
+    ...
+}
+\end{lstlisting}
+
+Wie bereits in den Grundlagen erwähnt, muss das Aufnehmen und Abspielen der Interaktionen in einem deterministischen System stattfinden. Unity ist grundlegend nicht deterministisch. Deswegen werden beim Abspeichern der Bewegungen des Spielercharakters alle Zustände in den gerenderten Frames abgespeichert. Dieses Vorgehen hat Jonathan Blow beim Rewind-System in the Braid verwendet (vgl. \cite{gdc_implementation_2016}). Sein Vorgehen besagt, dass Positionen oder in diesem Fall Interaktionen nicht interpoliert werden sollen, sondern in einem 1:1 Abbild abgespeichert werden sollen. Dadurch wird ein fehlerhaftes Reproduzieren vermieden. Aufgrund dessen war die Überlegung, die Bewegungs-Interaktion des Spielercharakters in jedem seiner bewegenden Frames in Form einer Interaktionsklasse abzuspeichern. Die Methode $SubmitAction()$ wird daher immer ausgeführt, sobald sich der Spielercharakter durch die Eingabe des Spielers bewegt. Die dabei erzeugten Interaktionen (vgl. Quellcode in Abbildung \ref{sec:interaction_old}) werden im Charakter Skript, genauer gesagt der entsprechenden Zeitlinie abgespeichert. Diese vollständig abgespeicherten Interaktionen können nun auf dem oben beschriebenen Weg reproduziert werden.
+
+\begin{lstlisting}[caption={Interaktionsklasse}, label={sec:interaction_old}]
+public class Interaction
+{
+    public InteractionType type;
+    public Player actor;
+    public GameObject interactedObject;
+    public Transform interactionPosition;
+    public float timestamp;
+    public Interaction(InteractionType i,Player p,GameObject g,Transform t,float ti)
+    {
+        type = i;
+        actor = p;
+        interactedObject = g;
+        interactionPosition = t;
+        timestamp = ti;
+    }
+}
+
+\end{lstlisting}
+
+\subsection{Aspekte zum Überarbeiten}
+Die in den Abschnitten \ref{sec:good_01} bis \ref{sec:good_05} beschriebenen Aspekte sind in ihrer Grundart gut und richtig umgesetzt, allerdings ist auch dabei Verbesserungspotenzial. Diese Aspekte werden mit den jetzt kommenden Aspekten in der Weiterentwicklung im kommenden Kapitel \ref{sec:rework} \nameref{sec:rework} aufgegriffen und verbessert.
+\subsubsection{Falscher Bezug bei der Spielmechanik}
+\begin{lstlisting}[caption={HandleCharacterSelection im PlayerController Skript}, label={sec:playercontroller_old}]
+public class PlayerController : Controller
+{
+    ...
+    public void HandleCharacterSelection(String name)
+    {
+        TimeController.Instance.SetActive(true);
+        _currentSelection = name;
+        
+        if(IsMerge())
+        {
+            HandleMerge();
+        }
+        else
+        {
+            HandleSplit();
+        }
+    }
+    ...
+    private bool IsMerge()
+    {
+        GraphController graphController = this.gameObject.GetComponent<GraphController>();
+        bool isM = graphController.IsSelectionInTimelineYet(_currentSelection);
+        if(isM)
+        {   
+            Debug.Log("habe ich grad gemerget: " + isM);
+        }
+        else
+        {
+            Debug.Log("habe ich grad gesplittet: " + !isM);
+        }
+        return isM;
+    }
+}
+\end{lstlisting}
+Der grundlegende Fokus der Hauptmechanik ist falsch fokussiert. Im Gamedesign Workshop wurde damals das Handling des Spielercharakters als Hauptpunkt der Mechanik ausgemacht, das hatte aber zur Folge, dass das Erstellen des Graphen daran angegliedert werden musste. Das macht in dem Prinzip der Mechanik keinen Sinn, da der Spieler und dessen Charakter nicht der Kernpunkt ist, sondern lediglich ein Teil der Mechanik. Es ist nicht die Steuereinheit, sondern eine ausführende Einheit. Im $PlayerController$ wurde durch die Mithilfe des $GraphController$ entschieden, wann eine Auswahl ein \say{\emph{Split}}- und wann ein \say{\emph{Mergeprozess}} stattzufinden hat. Daher stellt sich die Frage, wieso nicht der GraphController dies bestimmen soll und das $PlayerController$ lediglich eine ausführende Instanz wird?
+
+\subsubsection{Undurchdachte Split und Merge Methoden}
+Eine weitere Ursache aus dem falschen Fokus der Hauptmechanik wurden die $HandleSplit$ und $HandleMerge$ mit nebensächlichen Aktionen überladen und nur auf den Spielercharakter bezogen.
+
+\begin{lstlisting}[caption={Alte HandleSplit und HandleMerge Methoden}, label={sec:split_merge_old}]
+public class PlayerController : Controller
+{
+    ...
+    private void HandleSplit()
+    {
+        BeforeCharacterCreated?.Invoke(_currentCharacter);
+        ChangeSpawnPoint(_currentCharacter);
+        Destroy(_currentCharacter.gameObject);
+        CharacterData newCharacter = GetCharacterData(_currentSelection);
+        if(newCharacter)
+        {
+            RemoveShadow(newCharacter);
+            GameObject playerObject = InstantiateCharacter(newCharacter.PREFAB);
+            Player player = playerObject.AddComponent<Player>();
+            player.Init(newCharacter);
+            AfterCharacterCreated?.Invoke(player);
+            Split?.Invoke(player.GetCharacterData());
+        }
+        GameObject shadow = InstantiateCharacter(_temporalOldPlayer.GetCharacterData().PREFAB_GHOST);
+        shadow.GetComponent<AnimationHandler>().SetGhostMode(true);
+        _temporalOldPlayer = null;
+    }
+    ...
+    private void HandleMerge()
+    {
+        BeforeCharacterCreated?.Invoke(_currentCharacter);
+        RemoveCharacter(_currentCharacter.GetCharacterData());
+        SavePlayerData player = StateManager.LoadPlayer(_currentSelection);
+        CharacterData playerData = GetCharacterData(_currentSelection);
+        RemoveShadow(playerData);
+        GameObject newSpawn = new GameObject();
+        newSpawn.hideFlags = HideFlags.HideInHierarchy;
+        float[] position = player.Position.Position;
+        float[] rotation = player.Position.Rotation;
+        newSpawn.transform.position = new Vector3(position[0],position[1],position[2]);
+        newSpawn.transform.rotation = Quaternion.Euler(new Vector3(rotation[0],rotation[1],rotation[2]));
+        newSpawn.transform.localScale = new Vector3(1,1,1);
+        _spawnPoint = newSpawn.transform;
+        GameObject newPlayer = InstantiateCharacter(playerData.PREFAB);
+        Player newPlayerScript = newPlayer.AddComponent<Player>();
+        newPlayerScript.Init(playerData);
+        Merge?.Invoke(newPlayerScript);
+        AfterCharacterCreated?.Invoke(newPlayerScript);
+        _temporalOldPlayer = null;
+    }
+}
+\end{lstlisting}
+
+Sowohl die $HandleSplit$ als auch die $HandleMerge$ löschen den alten Placeholder des ausgewählten Spielercharakters, ohne dabei zu wissen, ob es noch mehr dieser Placeholder geben kann. Sobald der Programmablauf eine der beiden Methoden aufruft, weiß das $PlayerController$ Skript nicht, welche anderen Placeholder oder Kopien des Chronologen in der Welt aktiv sind. Dieser Zustand birgt Gefahren vor Fehlern und muss durch ein zentraleres System ausgetauscht werden. Außerdem kann hier ein richtiges Positionieren der neuen Charaktere nach einem \say{\emph{Merge}} nicht gewährleistet werden, da ein verschachteltes \say{\emph{Mergen}} und \say{\emph{Splitten}} zu fehlerhaften Referenzen in der Startposition führen kann. Würde der Spieler nach einem \say{\emph{Split}} \say{\emph{zurückmergen}} und nach einer Zeit wieder \say{\emph{Splitten}} und erneut, \say{\emph{zurückmergen}} so würd der im ersten \say{\emph{Split}} erstellte Charakter zum einen verschwinden, da das System keinen Zugriff auf den Graphen hat oder zum anderen an den Startpunkt seiner Zeitlinie gesetzt und dadurch an einem falschen Ort stehen würde.
+
+\subsubsection{Das Erstellen des Graphen ist ein Nebenprodukt}
+So greift man die Thematik aus dem vorherigen Kapitel auf, so sieht man, dass das Bauen des Graphen durch den falschen Fokus ein schwieriges Unterfangen ist. 
+
+\begin{lstlisting}[caption={Split und Merge listener}, label={sec:split_merge_old_graph}]
+public class GraphController : Controller
+{
+    ...
+     void Start()
+    {
+        playerController = this.gameObject.GetComponent<PlayerController>();
+        playerController.InitTimeline += HandleInitTimeline;
+        playerController.Split += HandleAddChild;
+        playerController.Merge += HandleMerge;
+        timelinesToHandle = new List<Timeline>();
+        CheckForInteractions(rootTimeline);
+    }
+    ...
+    private void HandleMerge(Player player)
+    {
+        float startPoint = -1;
+        Timeline timeline = GetTimelineOfNewPlayer(player.GetCharacterData());
+        if (timeline != null)
+        {
+            List<Timeline> childrenOfNewTimeline = timeline.GetChildren();
+            if (childrenOfNewTimeline.Count > 1)
+            {
+                foreach (Timeline child in childrenOfNewTimeline)
+                {
+                    if (child.GetId().Equals(currentTimeline.GetId()))
+                    {
+                        startPoint = child.GetStartTimestamp();
+                    }
+                }
+            }
+            if (childrenOfNewTimeline.Count == 1)
+            {
+                foreach (Timeline child in childrenOfNewTimeline)
+                {
+                    startPoint = child.GetStartTimestamp();
+                }
+            }
+            if (startPoint != -1)
+            {
+                TimeController.Instance.SetGameTime(startPoint);
+                currentTimeline = timeline;
+            }
+            HandleRemoveOldCharacter(rootTimeline);
+            timelinesToHandle = new List<Timeline>();
+            CheckForInteractions(rootTimeline);
+        }
+    }
+    ...
+    private void HandleAddChild(CharacterData playerData)
+    {
+        Timeline timeline = new Timeline(currentTimeline.GetLevel() + 1, TimeController.Instance.GetGameTime(), playerData, currentTimeline, playerController.GetSpawn());
+        currentTimeline.InsertChild(timeline);
+        currentTimeline = timeline;
+    }
+    ...
+}
+\end{lstlisting}
+
+In Abbildung \ref{sec:split_merge_old} in der $HandleSplit$ Methode wird die Action $Split?.Invoke()$ gefeuert auf welche im $GraphController$ ein Listener existiert, der das Verhalten nach einem Split ausführen soll. Dieses Ausführen ist in diesem Fall das Erzeugen einer neuen Zeitlinie und das Angliedern dieser Zeitlinie an die derzeitige. Außerdem wird diese neu erzeugte Zeitlinie die neue $currentTimeline$.
+In der $HandleMerge$ Methode in Abbildung \ref{sec:split_merge_old} wird die $Merge?.Invoke()$ Action getriggert, welche ebenfalls im $GraphController$ einen Listener mit der Methode $HandleMerge$ besitzt. In dieser Methode wird auf eine umständliche Art ermittelt, welche bereits existierende Zeitlinie nun die neue $currentTimeline$ wird und zu welchem Zeitpunkt diese Zeitlinie das letzte Mal aktiv war. 
+
+\subsubsection{Eine Zeitlinie besitzt keinen offiziellen Endzeitpunkt}
+Die Zeitlinien im alten Prototyp aus dem Gamedesign Workshop besitzen keine Referenz auf einen Endzeitpunkt. Dieser Endzeitpunkt wurde entweder über die letzte Interaktion der Interaktionsliste gelöst, oder dem Startzeitpunkt der Zeitlinie von der auf die neue bereits erstellte Zeitlinie \say{\emph{gemergt}} wurde. Beide Fälle sind fehleranfällig. Zum einen kann es sein, dass die letzte Interaktion der Liste nicht an dem Zeitpunkt stattfand, an dem entweder ein \say{\emph{Split}} oder ein \say{\emph{Merge}} ausgeführt wurde, da der Spieler sich bis dahin sich nicht bewegt hatte. Bewegungen werden als Interaktionen erfasst, bewegt sich der Spieler nicht, so findet auch keine Interaktion statt. Zum anderen ist der fehlende Endzeitpunkt der Zeitlinie bei einem \say{\emph{Merge}} hinderlich, da das System den richtigen neuen Zeitpunkt nicht bestimmten kann. \say{\emph{Mergt}} der Spieler auf eine Zeitlinie zurück, so wurde der Startzeitpunkt der Zeitlinie, von der aus \say{\emph{gemergt}} wurde, als neuer Zeitpunkt angesetzt. Dabei kann es sein, dass der Timer nicht auf den richtigen Zeitpunkt gesetzt wird, da sich der Startpunkt um Millisekunden unterscheiden könnte. Ein weiteres Problem stellen parallele Zeitlinien dar, die auf derselben Ebene angegliedert, aber zu einem unterschiedlichen Zeitpunkt erstellt wurde. Dabei muss zusätzlich überprüft werden, welcher Index diese angegliederte Zeitlinie aus der Liste der Children hat, um so den neuen Zeitpunkt des Timers zu setzen.
+
+\subsubsection{Grundlegende Struktur der Fähigkeiten des Spielers}
+Wie im Codeausschnit \ref{sec:reconstructing_old} zusehen, wird das Reproduzieren der Interaktionen in einer Methode in der $Shadow$ Klasse vollzogen. Das birgt ein Hindernis mit sich, da nicht immer überprüft werden kann, ob ein Objekt, mit dem interagiert werden soll, an der richtigen Stelle steht. Dafür benötigt die Rekonstruktionsmethode das Wissen über mögliche entstandene Kollisionen, wie es beim Aufnehmen der Interaktionen der Fall war. Die Skripte, die nun für das Reproduzieren einer Fähigkeit des Spielers genutzt werden sollen, sollten im best-möglichsten Fall ein Abbild der Fähigkeitsskripte sein. Jedes Fähigkeitsskripte sollte ein Rekonstruktionsskript haben, welches zur Laufzeit Änderungen und Kollisionen durch das Spielobjekt mitbekommen, um dadurch die aufgenommenen Interaktionen fehlerfrei rekonstruieren zu können.
+
+\section{Aufbau des Prototyps}
+In diesem Kapitel wird der Aufbau des Prototyps vorgestellt. 
+
+\subsection{Vorstellung der Haupt Game-Loop}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Game-Loop_Prototype.jpg}
+\caption{Haupt Game-Loop des Prototyps, (Quelle: eigene Darstellung)}
+\label{fig:main_game_loop}
+\end{figure}
+
+Der Prototyp startet in der $OnLoad$ Szene des Prototyps, in welcher zunächst der $GameController$ und weitere Singletons wie der $InformationController$, $SoundController$, $DialogueController$ und der $Player$ instanziiert und initialisiert werden. Die $Player$ Klasse bildet dabei den Spieler ab und enthält den erreichten Fortschritt des Spiels.
+
+Sobald die Singletons instanziiert wurden, wird der Prototyp initialisiert, das bedeutet, die Konfigurationsdatei des Spiels wird geladen. In ihr befinden sich wie in Codeausschnitt \ref{sec:gameConfig} zu sehen die einzelnen verfügbaren Szenen sowie die Laborszene, die Tutorial Szene, die verfügbaren Ichs des Chronologen, 
+
+\begin{lstlisting}[caption={GameConfig des Prototyps}, label={sec:gameConfig}]
+public class GameConfig : ScriptableObject
+{
+    public List<SceneData> levelScenes;
+    public SceneData startScene;
+    public SceneData hub;
+    public SceneData tutorial;
+    public List<CharacterData> playableCharacters;
+    public bool isDev = true;
+    public UIData dialogueUiData;
+    public List<TutorialData> tutorialUiData;
+}
+\end{lstlisting}
+
+% erklärung wie die gamelopp des prototyps ist
+
+
+% erklärung demzufolge wie die einzelöne szene aufgebautr ist, also in dem fall nur das level; % erklärung wie die szenen strukturiert wurden, also der szenen ordner mit den szenen erklären und den aufbau in der szene der hgierachiue
+
+
+% beim szenenaufbau wird dann auf die umsetzung der kernmechanik eingangen
+
+% zunächst erklären der einzuelnen komponneten die das system ausmachen
+
+% dann den flow der mechanik erklären; sowie die einzelnen kern hooks und rückgriff auf recordable und executable; verbesserung aus dem alten protoiryp erklären
+
+% rückgriff auf die kompoenten des system mit der szeififkatuionserklärung; erklärung auch wie das mit den interaktionen ist 
+
+% erklärung der verschiedenen arten von spiel versionen die erstellt werden können, darunter zählt die gameconfig in der level, dialoge und informationen inkludiert und ausgeschlossen werden können; und die chgaracterdata und die abilitys die zwar noch in abhängigkeit des characters sind aber im ausblick auf den player umgesetzt werden
+
+
+% \subsection{Hierarchie der Levelszenen}
+% \subsection{Ressourcen}
+% \section{Replay System}\label{sec:rework}
+% \subsection{Timer}
+% \subsection{Graph}
+% \subsubsection{GraphController}
+% \subsubsection{CharacterController}
+% \subsubsection{Recordable}
+% \paragraph{PowerSupply}
+% \paragraph{EnergyOpener}
+% \paragraph{Chronologe (Character.cs Script)}
+% \paragraph{Moveable}
+% \paragraph{Interactable}
+% \paragraph{Pressable}
+% \paragraph{Portable}
+% \subsubsection{Executable}
+% \subsection{Zeitlinien}
+% \subsubsection{Ermittlung der Bezüge zueinander}
+% \section{Zeitkontinuum}
+% \subsection{Chronologe}
+% \subsubsection{Interaktionen}
+
+
+
+\section{Leveldesign}
+% hier kommt rein dass dialoge und informationen sowie blocker rem over und adder über ein system einfach erzeugt werden können und so etc.
+\subsection{Assets}
+
+\section{Sounddesign}
+
+\chapter{Evaluation}\label{sec:test}
+\section{Zielsetzung}
+\section{Planung und Durchführung}
+\section{Auswertung der Tests}
+
+
+
+% Moodboard:
+% \say{https://preview.redd.it/spnago7bop2z.png?width=960&crop=smart&auto=webp&v=enabled&s=05e94888f59ad882cb49fefd1040cf316167553b},
+% \say{https://store.steampowered.com/app/331870/AER_Memories_of_Old/},
+% \say{https://itc.ua/wp-content/uploads/2016/09/Necropolis_02-770x481.jpg},
+% \say{https://i.pinimg.com/originals/ec/a8/5e/eca85ea70bcba16144080ef8fbaa56b4.jpg},
+% \say{https://images.everyeye.it/img-screenshot/operation-tango-v1-694625.jpg},
+% \say{https://store-jp.nintendo.com/dw/image/v2/BFGJ_PRD/on/demandware.static/-/Sites-all-master-catalog/ja_JP/dw86ddbe67/products/D70010000011246/screenShot/599d33f75cf0308cc12fc5d9870bffefd88debd1d42077e7ffe46975ee54a3af.jpg?sw=1368&strip=false},
+% \say{https://i.pinimg.com/564x/6e/c1/06/6ec106afe7f5688c1c954e735d66f5ef.jpg},
+% \say{https://dribbble.com/shots/12441464-UFO-Laboratory/attachments/4054403?mode=media}
+% https://www.cgtrader.com/3d-models/science/laboratory/sci-fi-lab-4bd5bc7b-1ffb-4b83-a0d0-5c3699edfa2e
+% https://www.youtube.com/watch?v=FThdKCte9kM&t=21s
