@@ -1162,7 +1162,7 @@ public class GraphController : Controller
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/Schaubild Timeline.jpg}
 \caption{Schaubild zu Codeausschnitt „Ausschnitt aus Timeline aus dem alten Prototyp“, (Quelle: eigene Darstellung)}
-\label{fig:collage_labor_chron}
+\label{fig:codesnippet_timeline}
 \end{figure}
 
 Sowohl diese Hauptzeitlinie als auch die angegliederten Zeitlinien besitzen eine Liste an angegliederten Zeitlinien und eine Referenz an die Zeitlinie, an welche sie angegliedert wurden. Zudem erhalten diese Zeitlinien ein Level, auf welcher Ebene der Verschachtelung sie sich befinden (vgl.: folgender Codeausschnitt \ref{sec:old_timeline}).
@@ -1647,21 +1647,20 @@ Die Zeitlinien im alten Prototyp aus dem Gamedesign Workshop besitzen keine Refe
 \subsubsection{Grundlegende Struktur der Fähigkeiten des Spielers}
 Wie im Codeausschnit \ref{sec:reconstructing_old} zusehen, wird das Reproduzieren der Interaktionen in einer Methode in der $Shadow$ Klasse vollzogen. Das birgt ein Hindernis mit sich, da nicht immer überprüft werden kann, ob ein Objekt, mit dem interagiert werden soll, an der richtigen Stelle steht. Dafür benötigt die Rekonstruktionsmethode das Wissen über mögliche entstandene Kollisionen, wie es beim Aufnehmen der Interaktionen der Fall war. Die Skripte, die nun für das Reproduzieren einer Fähigkeit des Spielers genutzt werden sollen, sollten im best-möglichsten Fall ein Abbild der Fähigkeitsskripte sein. Jedes Fähigkeitsskripte sollte ein Rekonstruktionsskript haben, welches zur Laufzeit Änderungen und Kollisionen durch das Spielobjekt mitbekommen, um dadurch die aufgenommenen Interaktionen fehlerfrei rekonstruieren zu können.
 
-\section{Aufbau des Prototyps}
+\section{Aufbau des Prototyps}\label{sec:rework}
 In diesem Kapitel wird der Aufbau des Prototyps vorgestellt. 
 
-\subsection{Vorstellung der Haupt Game-Loop}
+\subsection{Vorstellung der Haupt-Game-Loop}
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/Game-Loop_Prototype.jpg}
-\caption{Haupt Game-Loop des Prototyps, (Quelle: eigene Darstellung)}
+\caption{Haupt-Game-Loop des Prototyps, (Quelle: eigene Darstellung)}
 \label{fig:main_game_loop}
 \end{figure}
 
 Der Prototyp startet in der $OnLoad$ Szene des Prototyps, in welcher zunächst der $GameController$ und weitere Singletons wie der $InformationController$, $SoundController$, $DialogueController$ und der $Player$ instanziiert und initialisiert werden. Die $Player$ Klasse bildet dabei den Spieler ab und enthält den erreichten Fortschritt des Spiels.
 
-Sobald die Singletons instanziiert wurden, wird der Prototyp initialisiert, das bedeutet, die Konfigurationsdatei des Spiels wird geladen. In ihr befinden sich wie in Codeausschnitt \ref{sec:gameConfig} zu sehen die einzelnen verfügbaren Szenen sowie die Laborszene, die Tutorial Szene, die verfügbaren Ichs des Chronologen, 
-
+Sobald die Singletons instanziiert wurden, wird der Prototyp initialisiert, das bedeutet, die Konfigurationsdatei des Spiels wird geladen. In ihr befinden sich wie in Codeausschnitt \ref{sec:gameConfig} zu sehen die einzelnen verfügbaren Szenen sowie die Laborszene, die Tutorial Szene, die verfügbaren Ichs des Chronologen, sowie die UIData des Dialogs und alle Informationen, die diese Version des Spiels enthalten soll.
 \begin{lstlisting}[caption={GameConfig des Prototyps}, label={sec:gameConfig}]
 public class GameConfig : ScriptableObject
 {
@@ -1675,6 +1674,12 @@ public class GameConfig : ScriptableObject
     public List<TutorialData> tutorialUiData;
 }
 \end{lstlisting}
+
+Darauffolgend werden alle Daten, die der Spieler im Spiel bereits gesammelt hat, geladen. Das ist sein Spielstand, welche Level er bereits erfolgreich beenden konnte, seine verfügbaren Ichs des Chronologen, seine Spieleinstellungen und seine gesammelten Informationen. 
+
+Über das Startmenü, das nun erschienen ist, kann der Spieler das Spiel starten oder an seinem Spielfortschritt fortsetzen. Die Haupt-Game-Loop behandelt in ihrer Darstellung den Fall, dass der Spieler an seinem erzielten Fortschritt fortsetzt. Würde der Spieler ein neues Spiel beginnen, so wird das Event $ResetGame$ ausgelöst, wodurch seine Spielstände resettet werden und er wieder im Tutorial beginnen wird.
+
+% Nachdem der Spieler das Spiel fortgesetzt oder neu gestartet hat, wechselt die aktive Szene im $GameController$ auf die $SceneData$ der neuen Szene. Nun wird zunächst die $PreLevelScene$ oder $OnScene$ geladen. In ihr sieht der Spieler im jetzigen Stand des Prototyps einen einleitenden Text über das, was kommt. In einer finalen Version wird hier eine Zwischensequenz eingebunden. Nachdem diese Szene beendet wurde, wird die eigentliche Szene geladen. Zunächst wird der $Start$ Hook des $SceneController$ geladen, welcher EventListener an die wichtigen Events des $GameController$ hängt.
 
 % erklärung wie die gamelopp des prototyps ist
 
