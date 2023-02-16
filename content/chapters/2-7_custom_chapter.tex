@@ -1650,7 +1650,7 @@ Wie im Codeausschnit \ref{sec:reconstructing_old} zusehen, wird das Reproduziere
 \section{Aufbau des Prototyps}\label{sec:rework}
 In diesem Kapitel wird der Aufbau des Prototyps vorgestellt. 
 
-\subsection{Vorstellung der Haupt-Game-Loop}
+\subsection{Vorstellung der Haupt-Game-Loop}\label{sec:main-game-loop}
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/Game-Loop_Prototype.jpg}
@@ -1658,7 +1658,11 @@ In diesem Kapitel wird der Aufbau des Prototyps vorgestellt.
 \label{fig:main_game_loop}
 \end{figure}
 
-Der Prototyp startet in der $OnLoad$ Szene des Prototyps, in welcher zunächst der $GameController$ und weitere Singletons wie der $InformationController$, $SoundController$, $DialogueController$ und der $Player$ instanziiert und initialisiert werden. Die $Player$ Klasse bildet dabei den Spieler ab und enthält den erreichten Fortschritt des Spiels.
+\paragraph{Bemerkung vornweg:}
+Die in den Klammern referenzierten Markierungen beziehen sich auf die Markierungen aus der Abbildung \ref{fig:main_game_loop_class_connectors} \nameref{fig:main_game_loop_class_connectors}. Die zusammenfassende Schilderung der Ereignisse bezieht sich auf Abbildung \ref{fig:main_game_loop} \nameref{fig:main_game_loop}.
+
+
+Der Prototyp startet in der $OnLoad$ Szene des Prototyps, in welcher zunächst der $GameController$ und weitere Singletons wie der $InformationController$, $SoundController$, $DialogueController$ und der $Player$ instanziiert und initialisiert werden. Die $Player$ Klasse bildet dabei den Spieler ab und enthält den erreichten Fortschritt des Spiels (vgl. Markierung 1).
 
 Sobald die Singletons instanziiert wurden, wird der Prototyp initialisiert, das bedeutet, die Konfigurationsdatei des Spiels wird geladen. In ihr befinden sich wie in Codeausschnitt \ref{sec:gameConfig} zu sehen die einzelnen verfügbaren Szenen sowie die Laborszene, die Tutorial Szene, die verfügbaren Ichs des Chronologen, sowie die UIData des Dialogs und alle Informationen, die diese Version des Spiels enthalten soll.
 \begin{lstlisting}[caption={GameConfig des Prototyps}, label={sec:gameConfig}]
@@ -1675,14 +1679,131 @@ public class GameConfig : ScriptableObject
 }
 \end{lstlisting}
 
-Darauffolgend werden alle Daten, die der Spieler im Spiel bereits gesammelt hat, geladen. Das ist sein Spielstand, welche Level er bereits erfolgreich beenden konnte, seine verfügbaren Ichs des Chronologen, seine Spieleinstellungen und seine gesammelten Informationen. 
+Darauffolgend werden alle Daten, die der Spieler im Spiel bereits gesammelt hat, geladen. Das ist sein Spielstand, welche Level er bereits erfolgreich beenden konnte, seine verfügbaren Ichs des Chronologen, seine Spieleinstellungen und seine gesammelten Informationen (vgl. Markierung 2). 
 
-Über das Startmenü, das nun erschienen ist, kann der Spieler das Spiel starten oder an seinem Spielfortschritt fortsetzen. Die Haupt-Game-Loop behandelt in ihrer Darstellung den Fall, dass der Spieler an seinem erzielten Fortschritt fortsetzt. Würde der Spieler ein neues Spiel beginnen, so wird das Event $ResetGame$ ausgelöst, wodurch seine Spielstände resettet werden und er wieder im Tutorial beginnen wird.
+Über das Startmenü, das nun erschienen ist, kann der Spieler das Spiel starten oder an seinem Spielfortschritt fortsetzen. Die Haupt-Game-Loop behandelt in ihrer Darstellung den Fall, dass der Spieler an seinem erzielten Fortschritt fortsetzt. Würde der Spieler ein neues Spiel beginnen, so wird das Event $ResetGame$ ausgelöst, wodurch seine Spielstände resettet werden und er wieder im Tutorial beginnen wird (vgl. Markierungen 3 und 4).
 
-% Nachdem der Spieler das Spiel fortgesetzt oder neu gestartet hat, wechselt die aktive Szene im $GameController$ auf die $SceneData$ der neuen Szene. Nun wird zunächst die $PreLevelScene$ oder $OnScene$ geladen. In ihr sieht der Spieler im jetzigen Stand des Prototyps einen einleitenden Text über das, was kommt. In einer finalen Version wird hier eine Zwischensequenz eingebunden. Nachdem diese Szene beendet wurde, wird die eigentliche Szene geladen. Zunächst wird der $Start$ Hook des $SceneController$ geladen, welcher EventListener an die wichtigen Events des $GameController$ hängt.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Game-Loop-Class-Diagramm-Connectors.jpg}
+\caption{Game-Loop im Klassendiagramm eingezeichnet, (Quelle: eigene Darstellung)}
+\label{fig:main_game_loop_class_connectors}
+\end{figure}
 
-% erklärung wie die gamelopp des prototyps ist
+Nachdem der Spieler das Spiel fortgesetzt oder neu gestartet hat, wird die aktuelle $SceneData$ auf die $SceneData$ des Labors oder des nächsten Levels gesetzt (vgl. Markierungen 6 und 7). Das System lädt nun die Beitrittsszene der neuen Szene. Diese wird $OnLoad$ genannt und beinhaltet in einer finalen Version eine Zwischensequenz. Im derzeitigen Prototyp ist es ein Screenshot der kommenden Spielwelt und ein einführender Text. Nachdem der Inhalt der Szene betrachtet wurde, wechselt das Sytsem nach einer Eingabe des Spielers die Szene auf die Szene der aktuellen $SceneData$ (vgl. Markierungen 8, 9 und 10). Sobald die Szene geladen hat, wird die $Start$-Hook Methode des $SceneControllers$ aufgerufen, der lokale Methoden an die $Actions$ des $GameControllers$ anhängt. Dadurch erhält die Szene ein Wissen darüber, welcher Zustand im Spiel nun herrschen wird. Der $SceneController$ übergibt eine Referenz auf sich an $GameController$. Dadurch existiert ein globaler Kenntnisstand auf die aktuelle Szene. Über die $EnterScene$ Action werden die Einstellungen des Spielers an alle in der Szene relevanten Empfänger übermittelt. Der $GameController$ übergibt an den $SceneController$ die $SceneData$ dieser Szene in der Einstellungen zu den jeweiligen Szenen definiert werden können.
 
+\begin{lstlisting}[caption={SceneData.ts}, label={sec:sceneData}]
+public class SceneData : ScriptableObject
+{
+    public string sceneName;
+    public string visibleUI;
+    public SceneType sceneType;
+    public Reward reward;
+    public SceneData destination;
+}
+\end{lstlisting}
+
+Über die $SceneData$ wird das sichtbare \ac{UI} zum Start der Szene definiert, jede Szene weiß durch ihre $SceneData$ zu welcher Szene anschließend gewechselt wird. Außerdem ist in ihr der Gewinn des Spielers definiert und um welche Szene es sich handelt, es kann entweder das Labor sein, ein neues Level oder das erreichbare Startmenü (vgl. Codeausschnitt \ref{sec:sceneData}).
+
+Nachdem die $SceneData$ im $SceneController$ gespeichert wurde, startet der $SceneController$ den $BeforeStartingScene$ Action, durch welchen alle $Controller$ Klassen der Szene sich initialisieren können. Abschließend startet der $GameController$ durch das \say{Invoken} der $StartingScene$ Action die Szene (vgl. Markierungen 11 bis 19). 
+
+Wie die Levelszenen aufgebaut sind, wird in Kapitel \ref{sec:scene-loop} \nameref{sec:scene-loop} vorgestellt.
+
+Nach Beendigung des Levels ruft der $SceneController$ über die $HandleCloseScene()$ Methode die $EnterPostLoad$ Methode auf, welche 
+ sowohl die Austritts-Szene, die $OffLoad$ genannt wird, lädt als auch die $SceneController$ Action $ClosingScene$ ausführt. Dadurch wird die aktuelle Szene beendet. Im Anschluss werden über die $ExitScene$ Action die EventListener für die Einstellungen entfernt und das Spiel gespeichert. In der $OffLoad$ Szene wird in einem fertigen Spiel eine Zwischensequenz zu sehen sein, wie der Chronologe das Level verlässt. In diesem Prototyp wird ein Screenshot des absolvierten Levels angezeigt, auf welchem eine Zusammenfassung des Chronologen geschrieben steht. Nachdem die $OffLoad$ Szene fertig ist, wechselt das System zur neuen $SceneData$ die in der vorherigen $SceneData$ der abgeschlossenen Szene als $destination$ hinterlegt war. Der Kreislauf beginnt über die Action $SwitchScene$ erneut. Der Spieler sieht nun die $OnLoad$ Szene des neuen Levels oder des Labors (vgl. Markierungen 20 bis 28).
+
+
+\subsection{Vorstellung der Spielszenen}\label{sec:scenes}
+Grundlegend werden einzelne Szenen im $Scenes$ Ordner in den Assets angelegt.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Overview.jpg}
+\caption{Szenen Ordner in Unity, (Quelle: eigene Darstellung)}
+\label{fig:scenes_overview}
+\end{figure}
+
+Um eine Übersichtlichkeit gewährleisten zu können, werden verschiedene Ordner angelegt, die nach dem Namen der darin enthaltenen Szene benannt werden. auf der obersten Szene des $Scenes$ Ordner befindet sich lediglich die $OnLoad$ Szene, die für das Initialisieren des Spiels zuständig ist. Sie ist der Anfangspunkt des Spiels. Neben der $OnLoad$ Szene wird sich auch das Hauptmenü darin befinden, zu welchem der Spieler zur Laufzeit der Levels wieder zurückkehren kann. 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Detail.jpg}
+\caption{Szenen Ordner im Detail, (Quelle: eigene Darstellung)}
+\label{fig:scenes_detail}
+\end{figure}
+
+In den jeweiligen Szenen Ordnern befinden sich zu jeder Hauptszene eine $On$-Load und $Of$-Load Szene, die im Suffix den Namen der eigentlichen Szene  haben. In ihnen wird der Spieler, wie bereits im Kapitel \ref{sec:main-game-loop} erwähnt, das Intro und Outro zu jedem Level oder dem Labor sehen.
+
+Der Aufbau einer einzelnen Spielszene ist in der Abbildung \ref{fig:scenes_hierachy} \nameref{fig:scenes_hierachy} dargestellt und wir im Folgenden beschrieben.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.3\linewidth]{content/pictures/Hierachie.jpg}
+\caption{Szenen Hierarchie, (Quelle: eigene Darstellung)}
+\label{fig:scenes_hierachy}
+\end{figure}
+
+Als erster Kernknoten der Szenen wird der $SceneController$ definiert, der als leeres GameObject mit dem Namen \say{----SceneController----} erstellt wird. Unter ihm sind die wichtigen Elemente einer jeden Szene mit derselben Berechnungsart benannt und erstellt worden. Dazu zählen die GameObjects \say{----Camera----} auf welchem der $CameraController$ zu finden ist, \say{----Light----} auf welchem ein $LightController$ zu finden sein wird, \say{Ground} unter welchem die Spielwelt als Prefab reingeladen wird und auf dem der $GroundController$ zu finden ist, \say{----Player----} auf welchem der $CharacterController$ und $InputController$ zu finden ist und welcher als Hierarchie für die Ichs des Chronologen wichtig ist und zuletzt, \say{UI} welcher die Heimat für den $UIController$ bildet, welcher für das Handling und Öffnen des richtigen \ac{UI}s wichtig ist. 
+
+Die $On$-Load und $Of$-Load Szenen sind im Vergleich zu Levelszenen nicht so hierarchisch aufgebaut.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\linewidth]{content/pictures/Detail_on_off.jpg}
+\caption{OnLoad- / OffLoad-Szenen Hierarchie, (Quelle: eigene Darstellung)}
+\label{fig:on_of_load_hierachy}
+\end{figure}
+
+Sie besitzen als wichtigen GameObject-Knoten ebenfalls einen \say{----SceneController----}, allerdings beinhaltet er je nach Typ der Szene entweder ein $OnLoad$ oder $OffLoad$ Skript. Dieses Skript ist zum einen für die Darstellung des Inhaltes wichtig und zum anderen für das Weiterspringen zur richtigen Szene, nachdem der Spieler durch seinen Tasteninput das Signal dafür gegeben hat.
+
+\subsection{Aufbau der Scene-Loop}\label{sec:scene-loop}
+Nachdem der Aufbau der Szenen grundlegend erklärt wurde, wird jetzt der Ablauf der Szene anhand eines Ablaufs- und Klassendiagramms erklärt.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Level_loop_upto_character_creation.jpg}
+\caption{Level-Loop ohne Kernmechanik, (Quelle: eigene Darstellung)}
+\label{fig:level_game_loop_class_connectors}
+\end{figure}
+
+\paragraph{Anmerkung zur Abbildung:}
+In Abbildung \ref{fig:level_game_loop_class_connectors} handelt es sich um ein nicht vollständiges Klassendiagramm. Im Anhang dieser Arbeit befindet sich das gesamte Klassendiagramm.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/level-loop_prototype.jpg}
+\caption{Level-Loop des Prototyps, (Quelle: eigene Darstellung)}
+\label{fig:level_loop_prototype}
+\end{figure}
+
+Es gilt hierbei wieder dieselbe Bemerkung wie in Kapitel \ref{sec:rework}. Es wird das Diagramm aus Abbildung \ref{fig:level_loop_prototype} \nameref{fig:level_loop_prototype} beschrieben. Die Kennzeichnungen in den Klammern beziehen sich auf die Methodenaufrufe in Abbildung \ref{fig:level_game_loop_class_connectors} \nameref{fig:level_game_loop_class_connectors}
+
+Die Level-Loop beginnt damit, dass der EventListener auf die Action $StartingScene$ des $SceneController$s getriggert wird, in welcher zunächst alle Skripte ihren initialen State laden dürfen, da dieser durch die Action $LoadingScene$ getriggert wird (vgl. Markierungen 1 und 2). Da beispielhaft in der $SceneData$ dieser Szene, der $SceneType$ auf $LEVEL$ steht, wird die Loop eines Spiellevels und nicht des Labors ausgeführt. Eine Loop-Definition des Labors existiert in dieser Arbeit des Prototyps nicht, da der Fokus auf die Gestaltung Entwicklung der Hauptspielmechanik lag. Aufgrund der in Abbildung \ref{fig:scenes_hierachy} gezeigten und in Kapitel \ref{sec:scenes} beschriebenen Gegebenheit ist es nun möglich über die unityinterne Methode $GetComponentsInChildren<T>()$ alle $Recordable$ Objekte aus den Hierarchieunterknoten zu referenzieren und den am $SceneController$ angehängten $GraphController$ an die $Recordable$ zu übergeben. Anschließend wird das Level über die Action $StartingLevel$ aus dem $SceneController$ gestartet. Dabei erhalten alle $Controller$ Klassen eine Referenz auf den $GraphController$ und können ihre EventListener anhängen. Im Anschluss wird der $GraphController$ gestartet, über welchen nun die Loop gesteuert wird (vgl. Markierungen 3 bis 7).
+
+Die Elemente $Recordable$, $GraphController$ und $Controller$ werden in den folgenden Kapiteln \ref{sec:components} und \ref{sec:core_algo_split_merge} näher erklärt.
+
+Der $GraphController$ initialisiert zuerst seine eigenen Actions mit seinen EventListener, ehe er den $TimeController$ und die $TimeStability$ initialisiert. 
+
+Die Funktion des $TimeControllers$ und die $TimeStability$ werden ebenfalls im Kapitel \ref{sec:components} erklärt.
+
+Anschließend führt der $GraphController$ seine Action $StartGraph$ aus, welche das Startsignal für das Level ist. Es wird nun die $rootTimeline$ erzeugt. Durch das Ausführen der Action $TakeCurrentTimeline$, welche ebenfalls als Element in den späteren Kapiteln \ref{sec:components} bis \ref{sec:merge_prototype} vorgestellt wird, wird der Chronologe in die Spielwelt gesetzt und als Referenz in der $rootTimeline$ abgelegt (vgl. Markierungen 8 bis 17).
+
+Die eingezeichnete Loop, die ab dem Aktivitätsknoten \say{Control of Character} beginnt, wird aufgedröselt in den Kapiteln \ref{sec:components}, \ref{sec:core_algo_split_merge}, \ref{sec:merge_prototype}, \ref{sec:split_prototype} und \ref{sec:interactions_reproduction} erklärt.
+
+Sobald der 
+
+\subsubsection{Vorstellung der einzelnen Komponenten}\label{sec:components}
+
+\subsubsection{Vorstellung des Algorithmus, der entscheidet, wann gesplittet und wann gemergt wird}\label{sec:core_algo_split_merge}
+
+\subsubsection{Vorstellung des Splits}\label{sec:split_prototype}
+
+\subsubsection{Vorstellung des Merges}\label{sec:merge_prototype}
+
+\subsubsection{Vorstellung der Erzeugung und Reproduktion von Interaktionen}\label{sec:interactions_reproduction}
+
+\subsubsection{Abgleich mit dem alten Prototyp}
+
+\subsubsection{Vorstellung von Spezifikationen}
 
 % erklärung demzufolge wie die einzelöne szene aufgebautr ist, also in dem fall nur das level; % erklärung wie die szenen strukturiert wurden, also der szenen ordner mit den szenen erklären und den aufbau in der szene der hgierachiue
 
