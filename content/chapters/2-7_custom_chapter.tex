@@ -1108,6 +1108,9 @@ Der Prototyp wurde in der Version 2021.3.16f1 \ac{LTS} umgesetzt. Diese Version 
 \subsection{Blender 3.3.1}
 Blender dient in der Umsetzung als Bearbeitungstool von \ac{3D} Objekten. Aufgrund der Tatsache, dass Blender (.blend) Dateien direkt in Unity integriert werden können, und nicht als \ac{FBX} exportiert und importiert werden müssen (vgl. \cite{technologies_unity_nodate}). Als die Umsetzung des Prototyps begann, war die Version 3.3.1 von Blender die aktuellste, die heruntergeladen wurde.
 
+\subsection{Mixamo}
+Die im Prototypen verwendeten Animationen des Spielercharakters stammen alle aus der Bibliothek von Mixamo. Mixamo ist ebenfalls dazu fähig, importierte \ac{FBX} Modelle zu riggen. Dabei erhält das Objekt ein Skelett, welches animiert werden kann. Das dabei entstandene Skelett und die integrierten Animationen werden in diesem Prototyp verwendet.
+
 \subsection{Cinemachine}
 Die Cinemachine wird für die Kamerafahrt des Spiels verwendet. Durch sie ist es möglich, eine Third-Person-Sicht in das Spiel zu haben. Zusätzlich ist es möglich verschiedene virtuelle Kameras zu besitzen, durch welche ein Wechsel zwischen Third- und First-Person Sicht des Spielers gewechselt werden kann. Die Cinemachine übernimmt dabei das Wechseln zwischen den verschiedenen Kameras und die Kamerafahrt zwischen diesen. Durch sie ist es möglich, dass der Spieler den Chronologen in einer Third-Person Ansicht zu steuern und in einer First-Person-Ansicht seine Gebrauchsgegenstände zu sehen. Dadurch hat das Spiel eine immersive Wirkung.
 
@@ -1797,21 +1800,200 @@ Anschließend führt der $GraphController$ seine Action $StartGraph$ aus, welche
 
 Die eingezeichnete Loop, die ab dem Aktivitätsknoten \say{Control of Character} beginnt, wird aufgedröselt in den Kapiteln \ref{sec:components}, \ref{sec:core_algo_split_merge}, \ref{sec:merge_prototype}, \ref{sec:split_prototype} und \ref{sec:interactions_reproduction} erklärt.
 
-Sobald der 
+Sobald der Spieler an das Ziel des Levels angekommen ist und mit dem $LevelFinishedController$ GameObject kollidiert wird zum einen das Ziel-\ac{UI} des Levels angezeigt und zum anderen wird das Level auf die Beendigung durch die Action $BeforeClosingLevel$ vorbereitet (vgl. Markierungen 18 und 19). Auf der Action liegen EventListener, die sowohl im $GraphController$, $TimeController$ und $CharacterController$ ihre Komponenten der Spielmechanik und der Szenen-Loop beenden. Dazu gehören unter anderem das Stoppen des Timers, das Entkoppeln aller $Recordable$ Objekte und das Entfernen aller Chronologen und ihre Kopien aus der Spielszene (vgl. Markierungen 20 bis 27). Sobald der im Beendigungs-\ac{UI} den Button zum Weiterspielen (dieser befindet sich in der Klasse $LevelEndScreen$, welche nicht auf dem Klassendiagramm abgebildet wird) und damit dem Beendigen des Levels geklickt hat, wird die $HandleCloseScene$ Methode des $SceneControllers$ aufgerufen, welcher alle Szenen EventListener von den Spiel-Events entfernt und das Level über die Action $SavingScene$ speichern lässt (vgl. Markierung 28).
 
-\subsubsection{Vorstellung der einzelnen Komponenten}\label{sec:components}
+\subsection{Vorstellung der einzelnen Komponenten}\label{sec:components}
+\subsubsection{Zeitlinie (Timeline)}
+Wie bereits der alte Prototyp aus dem Gamedesign Workshop wird auch dieser auf einem System von ineinander verschachtelten Zeitlinien aufgebaut. Jeder Zeitlinie enthält dabei jeweils nur eine $CharacterData$ die für das Ich des Chronologen steht.
+\begin{lstlisting}[caption={Timeline.ts dieses Prototyps}, label={sec:timeline_class}]
+public class Timeline
+{
+    [SerializeField]
+    private GameObject _character = null;
+    [SerializeField]
+    private int _level = 0;
+    [SerializeField]
+    private List<Timeline> _children = new List<Timeline>();
+    [SerializeField]
+    private float _startTimestamp;
+    [SerializeField]
+    private float _endTimestamp;
+    [SerializeField]
+    private CharacterData _characterData;
+    [SerializeField]
+    private Timeline _parent = null;
+    [SerializeField]
+    private string _id;
+    [SerializeField]
+    private RectTransform _ui = null;
+    [SerializeField]
+    private RectTransform _link = null;
+    [SerializeField]
+    private Dictionary<string, List<Interaction>> _interactions = new Dictionary<string, List<Interaction>>();
+    [SerializeField]
+    private Dictionary<string, float[]> _startPositions = new Dictionary<string, float[]>();
+    [SerializeField]
+    private Dictionary<string, float[]> _startRotations = new Dictionary<string, float[]>();
+    [SerializeField]
+    private Dictionary<string, float[]> _endPositions = new Dictionary<string, float[]>();
+    [SerializeField]
+    private Dictionary<string, float[]> _endRotations = new Dictionary<string, float[]>();
+    [SerializeField]
+    private Dictionary<string, bool> _customBools = new Dictionary<string, bool>();
+    [SerializeField]
+    private Dictionary<string, string> _customStrings = new Dictionary<string, string>();
+    [SerializeField]
+    private Dictionary<string, float> _customFloats = new Dictionary<string, float>();
+    ...
+    public void TakeCharacter(Character player)
+    {
+        if (_id != null)
+        {
+            return;
+        }
+        _characterData = player.GetCharacterData();
+        string parentID = "";
+        if (_parent != null)
+        {
+            parentID = _parent.GetId();
+        }
+        _id = _startTimestamp.ToString() + "_" + _level.ToString() + "_" + parentID + "_" + _characterData.name;
+    }
+    ...
+}
+\end{lstlisting}
 
-\subsubsection{Vorstellung des Algorithmus, der entscheidet, wann gesplittet und wann gemergt wird}\label{sec:core_algo_split_merge}
+In der Zeitlinie wird jeweils das Abbild der Spielwelt abgespeichert. Das heißt, jedes Objekt, das im Spielsystem eine Referenz auf die derzeitig aktuelle Zeitlinie erhält, kann seine Startposition, Startrotation, Endposition und Endrotation sowie seinen aktuellen Zustand auf der Zeitlinie speichern. Diese Zustände werden, nachdem bestimmte Zeitlinien geladen werden müssen, auf diesen Objekten wieder angewandt. Jeder Zeitlinie hat dabei verschiedene weitere Zeitlinien untergegliedert und enthalten ebenso eine Referenz auf die Zeitlinie, an welche sie selbst angegliedert wurden. Dadurch entsteht eine baumähnliche Verzweigung, wie man sie bereits in Abbildung \ref{fig:codesnippet_timeline} sehen konnte. Diese Baumform ermöglicht später, dass das System rekursiv durch diesen Baum durchgehen kann und die gewünschten Zeitlinien identifiziert werden können. Jede Zeitlinie erhält eine eindeutige und unwiederholbare \ac{ID}, welche aus der $parentTImeline$, der in der $CharacterData$ enthaltene \ac{ID} des Chronologen-Ichs, dem $level$ auf welchem sich diese Zeitlinie befindet und den Startzeitpunkt, wann diese Zeitlinie erstellt wurde.
+\subsubsection{GraphController}
+Der $GraphController$ ist für das System des Levels das zentrale Element. In ihm wird der Zeitlinienbaum aufgebaut und gespeichert. Dadurch hat der $GraphController$ den gesamten Überblick über die Ichs des Chronologen. Der $GraphController$ hält ebenso eine \ac{UI} Referenz auf die Steuereinheit, wodurch der Spieler jederzeit den Graphen der Zeitlinien einsehen kann.
 
-\subsubsection{Vorstellung des Splits}\label{sec:split_prototype}
+In Abbildung \ref{fig:graphController-cs} ist das Klassendiagramm abgebildet.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.4\linewidth]{content/pictures/GraphController.jpg}
+\caption{Klassendiagramm der GeaphController.cs, (Quelle: eigene Darstellung)}
+\label{fig:graphController-cs}
+\end{figure}
 
-\subsubsection{Vorstellung des Merges}\label{sec:merge_prototype}
+Der $GraphController$ besitzt ebenfalls die für das System wichtigen Actions. Diese Actions werden im Folgenden vorgestellt.
 
-\subsubsection{Vorstellung der Erzeugung und Reproduktion von Interaktionen}\label{sec:interactions_reproduction}
+\paragraph{TakeCurrentTimeline:}
+Durch diese Action wird die aktuell neu erstellte Zeitlinien an den $CharacterController$ und alle $Recordable$ Objekte in der Szene übermittelt. Der $CharacterController$ erstellt im EventListener dieser Action den ausgewählten Spielercharakter für den Spieler. Sobald das Objekt des Chronologen erstellt wurde und sein $Character$ Skript am Objekt initialisiert wurde, wird die $CharacterData$ dieses Chronologen in die übergebene Zeitlinie eingetragen. 
+Die $Recordbale$ Skripte speichern nun lokal in ihrer Klasse die Startposition und Startrotation. Diese abgespeicherten Werte werden bei, EventListener der Action $SaveTimeline$ in der übergebenen Zeitlinie abgespeichert.
 
-\subsubsection{Abgleich mit dem alten Prototyp}
+\paragraph{SaveTimeline:}
+Diese Action wird im $GraphController$ aufgerufen, sobald die aktuelle Zeitlinie durch eine andere ausgetauscht wird. Das ist bei einem \say{\emph{Split}} und einem \say{\emph{Merge}} der Fall. Bevor die $currentTimeline$ ausgetauscht wird, speichert die $Recorcable$ Klasse die Startposition, Startrotation, Endposition, Endrotation und alle gesammelten Interaktionen in die übergebene Zeitlinie. Zusätzlich können alle Kinderklassen der $Recordable$ Klasse ihre eigenen Spezifikationen abspeichern. Das wird in Kapitel \ref{sec:recordable-specifications} genauer erklärt.
 
-\subsubsection{Vorstellung von Spezifikationen}
+\paragraph{LoadTimeline:}
+Diese Action wird im $GraphController$ zum Ende des \say{\emph{Merges}} aufgerufen. Hierbei wird die bereits existierende Zeitlinie, auf die der Spieler zurückwechseln wird, an die $Recordable$ Objekte übergeben, damit diese ihren Zustand aus dieser Zeitlinie wiederherstellen können. Dabei werden die einzelnen Objekte auf die abgespeicherten Endpositionen und Endrotationen gesetzt, da dies der Zustand war, der zuletzt in dieser Zeitlinie galt. 
+Zusätzlich wird der letzte Zeitpunkt dieser Zeitlinie im $TimeController$ gesetzt, da ein \say{\emph{Merge}} wie ein \say{prung zurück in der Zeit} ist.
+
+\paragraph{MoveFromHere / MoveBackTo:}
+$MoveFromHere$ und $MoveBackTo$ sind in der Anwendung ähnliche Actions wie $TakeCurrentTimeline$ und $LoadTimeline$ allerdings werden diese im \say{\emph{Split}} oder \say{\emph{Merge}} in der Mitte des Prozesses ausgeführt. Sie sind für den $GroundController$ von Nutzen, da dieser aus den abgespeicherten Startpositionen und Startrotationen des in der Zeitlinie enthaltenen Ichs die Position des Spawn-Punktes gesetzt werden kann.
+
+\subsubsection{TimeController}
+Der $TimeController$ ist für das Zählen der Spielzeit zuständig. Bei Beginn des Levels wird das Zählen der Spielzeit gestartet. Durch den Timer, der im $TimeController$ vorhanden ist, kann nun festgestellt werden, wann Zeitlinien erstellt und beendet werden. Außerdem ist es nun möglich Interaktionen mit einem eindeutigen Zeitstempel zu versehen, damit diese nach einem \say{\emph{Merge}} zum richtigen Zeitpunkt und in der richtigen Reihenfolge rekonstruiert werden können. 
+
+% Der $TimeController$ 
+Für das System ist es wichtig, dass die Zeitpunkte immer gleich reproduziert werden müssen. Sonst kann es sein, dass Interaktionen übersprungen werden oder falsche Interaktionen zum gesehen ausgeführt werden. Um in Unity in dem Fall der Zeitzählung ein deterministisches System zu haben, wird die Hook $FixedUpdate$ verwendet. Sie ist unabhängig der Frame-Rate des Unity Spiels und kann somit reproduziert werden (vgl. \cite{technologies_unity_fu}). Die Frame-Rate des Spiels kann sich ändern, dadurch ist es möglich, dass eben genannte Fehler auftreten und das System nicht mehr funktionieren kann.
+\begin{lstlisting}[caption={TimeController.ts dieses Prototyps}, label={sec:time-controller}]
+public class TimeController : MonoBehaviour
+{
+    ...
+    void FixedUpdate()
+    {
+        if (_isCounting)
+        {
+            TakeTimestamp?.Invoke(_timestamp);
+
+            _timestamp += Time.deltaTime;
+
+        }
+    }
+    ...
+}
+\end{lstlisting}
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.4\linewidth]{content/pictures/TimeController.jpg}
+\caption{Klassendiagramm der TimeController.cs, (Quelle: eigene Darstellung)}
+\label{fig:timeController-cs}
+\end{figure}
+
+In Abbildung \ref{fig:timeController-cs} ist das Klassendiagramm des $TimeControllers$ abgebildet.
+
+\subsubsection{TimeStability}
+Die $TimeStability$ Klasse bildet das Kontinuum ab. Sobald der Spieler nach einem \say{\emph{Split}} auf seinen seine ursprüngliche Zeitlinie \say{\emph{zurückgemergt}} ist, wird das Kontinuum im Kontext der parallelen Zeitlinien instabiler. In diesem Prototyp wird das als eine Scala dargestellt, die nach bestimmten Zuständen an Werten verliert. Sobald mindestens zwei Zeitlinien parallel zur selben Zeit aktiv sind und die Chronologen einen Einfluss auf die Spielwelt haben, sinkt der Stabilitätswert des Kontinuums. Sobald der Wert der Stabilität zu einem kritischen Punkt gesunken ist, aktiviert es eine Action, die dem $GraphController$ und dem $SceneController$ anweist, dass alle aktuellen aktiven Zeitlinien, außer die des Hauptchronologen, gelöscht werden soll und der Spieler wieder auf die Zeitlinie des Chronologen wechselt.
+\subsubsection{Recordable}
+$Recordable$ Objekte sind ein Kernobjekt der folgenden Aufnahme und Replay Systems. $Rcoardbable$ können ihre Zustände und Positionen in der aktuellen Zeitlinie abspeichern, und bei einem Laden der Zeitlinien ihre Zustände wiederherstellen.
+
+Damit diese Klasse auf die Actions des $GraphControllers$ hören kann, besitzt sie wie in der folgenden Abbildung \ref{fig:recordable-cs} entsprechende EventListener.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\linewidth]{content/pictures/Recordable.jpg}
+\caption{Klassendiagramm der Recordable.cs, (Quelle: eigene Darstellung)}
+\label{fig:recordable-cs}
+\end{figure}
+
+Sie ist eine abstrakte Klasse, die als eine Blaupause für die vererbten Klassen dient. Wie in der Abbildung zu sehen, besitzt sie die Methoden $OnTakeTimeline$, $OnLoadTimeline$ und $OnSaveTimeline$. Diese werden mit dem Kennzeichner $virtual$ gekennzeichnet, damit diese von den Kind-Klassen überschreiben werden können. Dadurch ist es möglich, dass zum Beispiel eine $Crane$ seine eigenen Spezifikationen abspeichern kann, also nur die Positionen und Rotationen oder Interaktionen.
+
+Das Chronologen-Modell besitzt ein $Character$ Skript, welches von der Basisklasse $Recordable$ erbt. Deswegen besitzt die Klasse $Recordable$ eine Liste an Interaktionen, die über die Methode $InsertInteraction$ gefüllt wird. Das $Character$ Skript muss seine erzeugten Interaktionen abspeichern und wieder laden können, damit diese reproduziert werden können.
+
+\subsubsection{Executable}
+Objekte, die dazu fähig sind, Interaktionen zu reproduzieren, besitzen das Interface $Executable$ aus Abbildung \ref{fig:executable-cs}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.4\linewidth]{content/pictures/Executable.jpg}
+\caption{Klassendiagramm der Executable.cs, (Quelle: eigene Darstellung)}
+\label{fig:executable-cs}
+\end{figure}
+
+Über den $GraphController$ können alle Objekte, die ein $Executable$ Interface implementiert haben, aufgerufen werden. Der $GraphController$ übergibt an alle gefunden $Executable$ Objekte den aktuellen Zeitpunkt des Spiels. Das implementierende Objekt nimmt diesen Zeitpunkt entgegen und untersucht seine Liste an Interaktionen nach der Interaktion dieses Zeitpunktes. Alle Objekte, die ein $Executable$ Interface implementiert haben, müssen vom Objekt $Recordable$ geerbt haben. Anderenfalls ist dieses Interface nicht funktionsfähig.
+
+In folgendem Codeausschnitt \ref{sec:character_executable} wird die Implementierung in das $Character$ Skript gezeigt.
+
+\begin{lstlisting}[caption={Character.ts dieses Prototyps}, label={sec:character_executable}]
+public class Character: Recordable, Executable
+{
+    ...
+    public void ExecuteInteraction(float timestamp)
+    {
+        List<Interaction> interaction = interactions.FindAll(i => (float.Equals(i.timestamp, timestamp)));
+        if (interaction != null && interaction.Count > 0)
+        {
+            foreach (Interaction i in interaction)
+            {
+                Reconstruct?.Invoke(i);
+            }
+        }
+    }
+    ...
+}
+\end{lstlisting}
+
+Nachdem der Zeitpunkt ($timestamp$) entgegengenommen wurde, wird in der Liste der geladenen Interaktionen nach der Interaktion dieses Zeitpunktes gesucht. Da zum Beispiel bei einem Sprung und einer Bewegung nach vorn zwei Interaktionen zum selben Zeitpunkt stattfinden können, wird die Helfermethode $FindAll$ genutzt. Sobald Interaktionen zum derzeitigen Zeitpunkt gefunden werden konnten, werden diese über die Action $Reconstruct$ weitergeschickt.
+
+Das Kapitel \ref{sec:interactions_reproduction} setzt an diesem Punkt an und erklärt die Aufnahme und Reproduktion der Interaktionen.
+
+\subsubsection{CharacterController}
+
+
+
+\subsection{Vorstellung des Algorithmus, der entscheidet, wann gesplittet und wann gemergt wird}\label{sec:core_algo_split_merge}
+
+\subsection{Vorstellung des Splits}\label{sec:split_prototype}
+
+\subsection{Vorstellung des Merges}\label{sec:merge_prototype}
+
+\subsection{Vorstellung der Erzeugung und Reproduktion von Interaktionen}\label{sec:interactions_reproduction}
+
+\subsection{Abgleich mit dem alten Prototyp}
+
+\subsection{Vorstellung der Spezifikationen}\label{sec:recordable-specifications}
 
 % erklärung demzufolge wie die einzelöne szene aufgebautr ist, also in dem fall nur das level; % erklärung wie die szenen strukturiert wurden, also der szenen ordner mit den szenen erklären und den aufbau in der szene der hgierachiue
 
