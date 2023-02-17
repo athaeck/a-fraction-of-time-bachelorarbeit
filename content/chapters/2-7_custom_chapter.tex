@@ -1534,7 +1534,7 @@ public class PlayerController : Controller
 Der grundlegende Fokus der Hauptmechanik ist falsch fokussiert. Im Gamedesign Workshop wurde damals das Handling des Spielercharakters als Hauptpunkt der Mechanik ausgemacht, das hatte aber zur Folge, dass das Erstellen des Graphen daran angegliedert werden musste. Das macht in dem Prinzip der Mechanik keinen Sinn, da der Spieler und dessen Charakter nicht der Kernpunkt ist, sondern lediglich ein Teil der Mechanik. Es ist nicht die Steuereinheit, sondern eine ausführende Einheit. Im $PlayerController$ wurde durch die Mithilfe des $GraphController$ entschieden, wann eine Auswahl ein \say{\emph{Split}}- und wann ein \say{\emph{Mergeprozess}} stattzufinden hat. Daher stellt sich die Frage, wieso nicht der GraphController dies bestimmen soll und das $PlayerController$ lediglich eine ausführende Instanz wird?
 
 \subsubsection{Undurchdachte Split und Merge Methoden}
-Eine weitere Ursache aus dem falschen Fokus der Hauptmechanik wurden die $HandleSplit$ und $HandleMerge$ mit nebensächlichen Aktionen überladen und nur auf den Spielercharakter bezogen.
+Eine weitere Ursache aus dem falschen Fokus der Hauptmechanik wurden die\\ $HandleSplit$ und $HandleMerge$ mit nebensächlichen Aktionen überladen und nur auf den Spielercharakter bezogen.
 
 \begin{lstlisting}[caption={Alte HandleSplit und HandleMerge Methoden}, label={sec:split_merge_old}]
 public class PlayerController : Controller
@@ -1673,7 +1673,7 @@ In diesem Kapitel wird der Aufbau des Prototyps vorgestellt.
 Die in den Klammern referenzierten Markierungen beziehen sich auf die Markierungen aus der Abbildung \ref{fig:main_game_loop_class_connectors} \nameref{fig:main_game_loop_class_connectors}. Die zusammenfassende Schilderung der Ereignisse bezieht sich auf Abbildung \ref{fig:main_game_loop} \nameref{fig:main_game_loop}.
 
 
-Der Prototyp startet in der $OnLoad$ Szene des Prototyps, in welcher zunächst der $GameController$ und weitere Singletons wie der $InformationController$, $SoundController$, $DialogueController$ und der $Player$ instanziiert und initialisiert werden. Die $Player$ Klasse bildet dabei den Spieler ab und enthält den erreichten Fortschritt des Spiels (vgl. Markierung 1).
+Der Prototyp startet in der $OnLoad$ Szene des Prototyps, in welcher zunächst der $GameController$ und weitere Singletons wie der $InformationController$,\\ $SoundController$, $DialogueController$ und der $Player$ instanziiert und initialisiert werden. Die $Player$ Klasse bildet dabei den Spieler ab und enthält den erreichten Fortschritt des Spiels (vgl. Markierung 1).
 
 Sobald die Singletons instanziiert wurden, wird der Prototyp initialisiert, das bedeutet, die Konfigurationsdatei des Spiels wird geladen. In ihr befinden sich wie in Codeausschnitt \ref{sec:gameConfig} zu sehen die einzelnen verfügbaren Szenen sowie die Laborszene, die Tutorial Szene, die verfügbaren Ichs des Chronologen, sowie die UIData des Dialogs und alle Informationen, die diese Version des Spiels enthalten soll.
 \begin{lstlisting}[caption={GameConfig des Prototyps}, label={sec:gameConfig}]
@@ -1716,7 +1716,7 @@ public class SceneData : ScriptableObject
 
 Über die $SceneData$ wird das sichtbare \ac{UI} zum Start der Szene definiert, jede Szene weiß durch ihre $SceneData$ zu welcher Szene anschließend gewechselt wird. Außerdem ist in ihr der Gewinn des Spielers definiert und um welche Szene es sich handelt, es kann entweder das Labor sein, ein neues Level oder das erreichbare Startmenü (vgl. Codeausschnitt \ref{sec:sceneData}).
 
-Nachdem die $SceneData$ im $SceneController$ gespeichert wurde, startet der $SceneController$ den $BeforeStartingScene$ Action, durch welchen alle $Controller$ Klassen der Szene sich initialisieren können. Abschließend startet der $GameController$ durch das \say{Invoken} der $StartingScene$ Action die Szene (vgl. Markierungen 11 bis 19). 
+Nachdem die $SceneData$ im $SceneController$ gespeichert wurde, startet der\\ $SceneController$ den $BeforeStartingScene$ Action, durch welchen alle $Controller$ Klassen der Szene sich initialisieren können. Abschließend startet der $GameController$ durch das \say{Invoken} der $StartingScene$ Action die Szene (vgl. Markierungen 11 bis 19). 
 
 Wie die Levelszenen aufgebaut sind, wird in Kapitel \ref{sec:scene-loop} \nameref{sec:scene-loop} vorgestellt.
 
@@ -1800,7 +1800,7 @@ Anschließend führt der $GraphController$ seine Action $StartGraph$ aus, welche
 
 Die eingezeichnete Loop, die ab dem Aktivitätsknoten \say{Control of Character} beginnt, wird aufgedröselt in den Kapiteln \ref{sec:components}, \ref{sec:core_algo_split_merge}, \ref{sec:merge_prototype}, \ref{sec:split_prototype} und \ref{sec:interactions_reproduction} erklärt.
 
-Sobald der Spieler an das Ziel des Levels angekommen ist und mit dem $LevelFinishedController$ GameObject kollidiert wird zum einen das Ziel-\ac{UI} des Levels angezeigt und zum anderen wird das Level auf die Beendigung durch die Action $BeforeClosingLevel$ vorbereitet (vgl. Markierungen 18 und 19). Auf der Action liegen EventListener, die sowohl im $GraphController$, $TimeController$ und $CharacterController$ ihre Komponenten der Spielmechanik und der Szenen-Loop beenden. Dazu gehören unter anderem das Stoppen des Timers, das Entkoppeln aller $Recordable$ Objekte und das Entfernen aller Chronologen und ihre Kopien aus der Spielszene (vgl. Markierungen 20 bis 27). Sobald der im Beendigungs-\ac{UI} den Button zum Weiterspielen (dieser befindet sich in der Klasse $LevelEndScreen$, welche nicht auf dem Klassendiagramm abgebildet wird) und damit dem Beendigen des Levels geklickt hat, wird die $HandleCloseScene$ Methode des $SceneControllers$ aufgerufen, welcher alle Szenen EventListener von den Spiel-Events entfernt und das Level über die Action $SavingScene$ speichern lässt (vgl. Markierung 28).
+Sobald der Spieler an das Ziel des Levels angekommen ist und mit dem \\ $LevelFinishedController$ GameObject kollidiert wird zum einen das Ziel-\ac{UI} des Levels angezeigt und zum anderen wird das Level auf die Beendigung durch die Action $BeforeClosingLevel$ vorbereitet (vgl. Markierungen 18 und 19). Auf der Action liegen EventListener, die sowohl im $GraphController$, $TimeController$ und $CharacterController$ ihre Komponenten der Spielmechanik und der Szenen-Loop beenden. Dazu gehören unter anderem das Stoppen des Timers, das Entkoppeln aller $Recordable$ Objekte und das Entfernen aller Chronologen und ihre Kopien aus der Spielszene (vgl. Markierungen 20 bis 27). Sobald der im Beendigungs-\ac{UI} den Button zum Weiterspielen (dieser befindet sich in der Klasse $LevelEndScreen$, welche nicht auf dem Klassendiagramm abgebildet wird) und damit dem Beendigen des Levels geklickt hat, wird die $HandleCloseScene$ Methode des $SceneControllers$ aufgerufen, welcher alle Szenen EventListener von den Spiel-Events entfernt und das Level über die Action $SavingScene$ speichern lässt (vgl. Markierung 28).
 
 \subsection{Vorstellung der einzelnen Komponenten}\label{sec:components}
 \subsubsection{Zeitlinie (Timeline)}
@@ -1870,8 +1870,8 @@ Der $GraphController$ ist für das System des Levels das zentrale Element. In ih
 In Abbildung \ref{fig:graphController-cs} ist das Klassendiagramm abgebildet.
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.4\linewidth]{content/pictures/GraphController.jpg}
-\caption{Klassendiagramm der GeaphController.cs, (Quelle: eigene Darstellung)}
+\includegraphics[width=0.5\linewidth]{content/pictures/GraphController.jpg}
+\caption{Klassendiagramm der GraphController.cs, (Quelle: eigene Darstellung)}
 \label{fig:graphController-cs}
 \end{figure}
 
@@ -1938,7 +1938,7 @@ Damit diese Klasse auf die Actions des $GraphControllers$ hören kann, besitzt s
 \label{fig:recordable-cs}
 \end{figure}
 
-Sie ist eine abstrakte Klasse, die als eine Blaupause für die vererbten Klassen dient. Wie in der Abbildung zu sehen, besitzt sie die Methoden $OnTakeTimeline$, $OnLoadTimeline$ und $OnSaveTimeline$. Diese werden mit dem Kennzeichner $virtual$ gekennzeichnet, damit diese von den Kind-Klassen überschreiben werden können. Dadurch ist es möglich, dass zum Beispiel eine $Crane$ seine eigenen Spezifikationen abspeichern kann, also nur die Positionen und Rotationen oder Interaktionen.
+Sie ist eine abstrakte Klasse, die als eine Blaupause für die vererbten Klassen dient. Wie in der Abbildung zu sehen, besitzt sie die Methoden $OnTakeTimeline$, \\ $OnLoadTimeline$ und $OnSaveTimeline$. Diese werden mit dem Kennzeichner $virtual$ gekennzeichnet, damit diese von den Kind-Klassen überschreiben werden können. Dadurch ist es möglich, dass zum Beispiel eine $Crane$ seine eigenen Spezifikationen abspeichern kann, also nur die Positionen und Rotationen oder Interaktionen.
 
 Das Chronologen-Modell besitzt ein $Character$ Skript, welches von der Basisklasse $Recordable$ erbt. Deswegen besitzt die Klasse $Recordable$ eine Liste an Interaktionen, die über die Methode $InsertInteraction$ gefüllt wird. Das $Character$ Skript muss seine erzeugten Interaktionen abspeichern und wieder laden können, damit diese reproduziert werden können.
 
@@ -1980,10 +1980,144 @@ Nachdem der Zeitpunkt ($timestamp$) entgegengenommen wurde, wird in der Liste de
 Das Kapitel \ref{sec:interactions_reproduction} setzt an diesem Punkt an und erklärt die Aufnahme und Reproduktion der Interaktionen.
 
 \subsubsection{CharacterController}
+Im alten Prototyp aus dem Gamedesign Workshops war der $CharacterController$ (damals $PlayerController$) das zentrale Element des Spiels. Im überarbeiteten System ist der $CharacterController$ nur noch für das Verhalten der unterschiedlichen Objekte des Chronologen zuständig. Sowohl der aktuelle Chronologe als auch seine Placeholder und Kopien werden in die in Abbildung \ref{fig:scenes_hierachy} beschriebene Position des \say{----Player----} Knoten als Gameobjekte als Childs instanziiert. Dadurch hat der $CharacterController$, der auf diesem \say{----Player----} Objekt liegt, Kontrolle über seine Transform Children. Über den $GroundController$ erhält der $CharacterController$ das Wissen über die Position des Spawns, auf welchem er nach einem \say{\emph{Split}} die Platzhalter des vergangenen Ichs des Chronologen instanziieren muss, oder die Kopien des Chronologen, die sich nun im örtlichen und zeitlichen Sinn auf der aufgenommene Zeitlinien bewegen werden. 
 
+Das Klassendiagramm ist in Abbildung \ref{fig:characterController-cs} zu sehen.
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\linewidth]{content/pictures/CharacterController.jpg}
+\caption{Klassendiagramm der CharacterController.cs, (Quelle: eigene Darstellung)}
+\label{fig:characterController-cs}
+\end{figure}
+
+Sobald Kopien des Chronologen in die Spielwelt gesetzt wurden, werden diese ebenfalls in ihrer jeweiligen Zeitlinie referenziert, damit diese, sobald eine Zeitlinie nicht mehr gültig ist, wieder gelöscht werden können, falls diese noch in der Spielwelt existieren.
+
+\subsubsection{GroundController}
+Der $GroundController$, dessen Klassendiagramm in Abbildung \ref{fig:groundCOntroller-cs} zu sehen ist, ist im Kontext der Spielmechanik für das Setzen und Mitteilen der Positionen des Startpunktes wichtig. Er enthält EventListener auf die Actions $MoveFromHere$ und $MoveBackTo$ des $GraphControllers$ um dadurch aus den übergebenen Zeitlinien die Endposition des in ihr enthaltenen Chronologen Ichs zu laden, damit der Spawnpunkt auf diese Position gesetzt werden kann.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\linewidth]{content/pictures/GroundController.jpg}
+\caption{Klassendiagramm der GroundController.cs, (Quelle: eigene Darstellung)}
+\label{fig:groundCOntroller-cs}
+\end{figure}
+
+Der $GroundController$ übergibt mit seiner eigenen Action $TakeSpawn$ \\ dem $CharacterController$ die Position des Spawns, damit an diesem die Ichs des spielbaren Chronologen instanziiert werden können.
+
+Bei der Rekonstruktion der Interaktionen spielt der $GroundCountroller$ ebenfalls eine wichtige Rolle, da über ihn überprüft wird, ob Objekte, mit denen interagiert wurden, auch an den richtigen Stelen positioniert sind und ob die Objekte, mit denen der Spielercharakter kollidiert ist, auch der \ac{ID} des abgespeicherten Objektes entsprechen.
 
 \subsection{Vorstellung des Algorithmus, der entscheidet, wann gesplittet und wann gemergt wird}\label{sec:core_algo_split_merge}
+Sobald der Spieler auf ein Rätsel trifft, muss er in ein anderes Ich des Chronologen \say{\emph{Splitten}}. Der Spieler weiß, wann er bereits mit einem Chronologen gespielt hat und wann nicht. Das System hat darüber allerdings kein Wissen. Daher wurde sich folgender Algorithmus überlegt, der die $rootTimeline$ rekursiv durchforstet, um zu überprüfen, ob das ausgewählte Ich bereits in einer anderen Zeitlinie existent ist.
+
+Das Aktivitätsdiagramm aus Abbildung \ref{fig:check-if-split-merge} beschreibt den grundlegenden Ablauf der Überprüfung.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/CheckIfSplit.jpg}
+\caption{Aktivitätsdiagramm wie überprüft wird, ob ein Split oder Merge Prozess startet, (Quelle: eigene Darstellung)}
+\label{fig:check-if-split-merge}
+\end{figure}
+
+\begin{lstlisting}[caption={Split/Merge Überprüfung aus GraphController.ts}, label={fig:code-check-if-split-or-merge}]
+public class GraphController: MonoBehaviour
+{
+    ...
+    public bool IsSelectorInUse(CharacterData data)
+    {
+        _mergeIn = null;
+        _isInUse = false;
+        InUseValidation(_rootTimeline, data.ID);
+        return _isInUse;
+    }
+    private void InUseValidation(Timeline timeline, string selection)
+    {
+        if (selection.Equals(timeline.GetCharacterData().ID))
+        {
+            _mergeIn = timeline;
+            _isInUse = true;
+            if (timeline.GetLevel() > _currentTimeline.GetLevel() && timeline.GetEndTimestamp() != 0 && timeline.GetEndTimestamp() < _timestamp)
+            {
+                _isInUse = false;
+                _mergeIn = null;
+            }
+        }
+        else
+        {
+            List<Timeline> children = timeline.GetChildren();
+            if (children.Count > 0)
+            {
+                foreach (Timeline child in children)
+                {
+                    InUseValidation(child, selection);
+                }
+            }
+        }
+    }
+    public SelectionType ResolveSelection(CharacterData data)
+    {
+        _selectionType = SelectionType.FREE;
+        SelectionTypeValidation(_rootTimeline, data);
+        return _selectionType;
+    }
+    private void SelectionTypeValidation(Timeline timeline, CharacterData characterData)
+    {
+        if (timeline.GetCharacterData().ID == characterData.ID)
+        {
+            if (timeline.GetLevel() > _currentTimeline.GetLevel())
+            {
+                _selectionType = SelectionType.BLOCKED;
+                if (timeline.GetEndTimestamp() < _timestamp)
+                {
+                    _selectionType = SelectionType.FREE;
+                }
+            }
+            if (timeline.GetLevel() < _currentTimeline.GetLevel())
+            {
+                _selectionType = SelectionType.MERGE;
+            }
+            if (timeline.GetLevel() == _currentTimeline.GetLevel())
+            {
+                _selectionType = SelectionType.CURRENT;
+            }
+        }
+        else
+        {
+            List<Timeline> children = timeline.GetChildren();
+            if (children.Count > 0)
+            {
+                foreach (Timeline child in children)
+                {
+                    SelectionTypeValidation(child, characterData);
+                }
+            }
+        }
+    }
+    private void OnSelection(CharacterData selection)
+    {
+        _isInUse = false;
+        _mergeIn = null;
+        if (IsSelectorInUse(selection))
+        {
+            GameController.Instance.currentSceneController.Merge?.Invoke();
+            _enviromentSoundController.PlayEnviromentSound(EnviromentSoundType.MERGE);
+        }
+        else
+        {
+            GameController.Instance.currentSceneController.Split?.Invoke();
+            _enviromentSoundController.PlayEnviromentSound(EnviromentSoundType.SPLIT);
+        }
+    }
+    ...
+}
+\end{lstlisting}
+
+Die Auswahl des neuen Ichs und das Auslösen des darauffolgenden Events geschieht aufgrund zweier Überprüfungen. Zuerst wird die Überprüfung vor der Auswahl des Chronologen-Ichs behandelt, also das visuelle Feedback, das der Spieler auf der Steuereinheit des Chronologen sieht. Im Anschluss wird die Überprüfung behandelt, die das \say{\emph{Split}} oder \say{\emph{Merge}} Event auslöst.
+
+Sobald der Spieler die Steuereinheit geöffnet hat, kann er das Zahnrad drehen, auf dem die unterschiedlichen Ichs des Chronologen gespeichert sind. Sobald ein Ich ausgewählt wurde, wird die  Methode $ResolveSelection$ aufgerufen. Sie übergibt die Auswahl und die $rootTimeline$ an die $SelectionTypeValidation$ Methode, welche eine rekursive Methode ist. Diese geht nun alle im Graphenbaum enthaltene Zeitlinien durch und übergibt die gefundene Zeitlinie an sich zurück. 
+Die übergebene Zeitlinie wird nun so lange durchforstet, bis die Zeitlinie gefunden wurde, welche die ausgewählte $CharacterData$ enthält ($timeline.GetCharacterData().ID == characterData.ID$). Im nächsten Schritt wird überprüft, auf welcher Ebene sich diese Zeitlinie zur derzeitig aktuellen Zeitlinie im Verhältnis des $timeline.GetLevel()$s verhält. Liegt die $currentTimeline$ auf demselben Level wie die Zeitlinie der Auswahl, so ist es dieselbe Zeitlinie und kann nicht ausgewählt werden. Die Methode $ResolveSelection$ würde $SelectionType.CURRENT$ als Rückgabewert an die Steuereinheit übermitteln. Ist die gefundene Zeitlinie im Level unterhalb also größer als die derzeitige Zeitlinie (vgl. $timeline.GetLevel() > currentTimeline.GetLevel()$), so hat der Spieler in sie bereits einen \say{\emph{Split}} ausgeführt und kann diese nun nicht mehr verändern und auch nicht erneut erzeugen. Der Chronologe aus dieser Zeitlinie kann nicht zur selben Zeit öfter als ein mal existieren. Sofern sich der Spieler nicht auf der $rootTimeline$ befindet, existiert das Ich dieser Zeitlinie noch im Graphenbaum der $rootTimeline$. Befindet sich der Spieler auf der $rootTimeline$, so wird eine bereits abgeschlossene Zeitlinie aus dem Baum gelöscht und kann erneut erzeugt werden. Da er beispielhaft sich nun nicht auf der $rootTimeline$ befindet, kann der Spieler in dieses Ich erneut, \say{\emph{Splitten}} sobald die Zeitlinie abgelaufen ist und der derzeitige Zeitpunkt sich nach dem Endzeitpunkt der Zeitlinie befindet ($(timeline.GetEndTimestamp() < timestamp$).
+Sobald der Spieler das Zahnrad dreht und das Level der gefundenen Zeitlinie kleiner ist als das derzeitige ($timeline.GetLevel() < currentTimeline.GetLevel()$) kann er in diese Zeitlinie \say{\emph{zurückmergen}}.
+
+Da im vorherigen Überprüfungsapparat nun die derzeitige und die bereits gesplittet Zeitlinie ausgeschlossen hat, muss die zweite Überprüfung nun nur identifizieren, ob die Zeitlinie ein niedrigeres Level hat. Ist das der Fall, würde die Methode $IsSelectorInUse$ den Wert \say{true} zurückgeben und der EventListener auf die Charakterauswahl $OnSelection$ würde die Action $Merge$ \say{invoken}. Würde die rekursive Methode $InUseValidation$ keine bereits existierende Zeitlinie finden, so würde die Methode $IsSelectorInUse$ den Wert \say{false} zurückgeben und der Spieler würde in ein weiteres Ich des Chronologen \say{\emph{splitten}}. Es gibt allerdings einen Sonderfall bei der Überprüfung in der Methode $InUseValidation$. Dieser Fall kann nur dann auftreten, sobald sich der Spieler nicht auf der $rootTimeline$ befindet. Es kann nun ebenfalls wie in der ersten Überprüfung der Fall sein, dass eine Zeitlinie bereits als Angliederung existiert, aber schon abgelaufen ist. Tritt dieser Fall in der Überprüfung von Codezeile 17 (vgl. Codeausschnitt \ref{fig:code-check-if-split-or-merge}) auf, so kann eine weitere Zeitlinie mit derselben $CharacterData$ erzeugt werden. Dadurch gibt $IsSelectorInUse$ ebenfalls den Wert \say{false} zurück und der Spieler \say{\emph{splittet}} in dieses Ich.
 
 \subsection{Vorstellung des Splits}\label{sec:split_prototype}
 
