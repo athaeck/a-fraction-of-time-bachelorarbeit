@@ -2462,24 +2462,160 @@ public class InteractionAbility : Ability, IInteract
 }
 \end{lstlisting}
 
-Über die $HandleCollisionEnter$ Methode des Codeausschnittes \ref{lst:interaction-ability} wird ermittelt, ob eine Kollision mit einem Interaktionsobjekt vorliegt. Ist dem der Fall, wird diese wie in der $HandleCollisionEnter$ zu sehen in die Klassenvariable $\\_interactable$ gespeichert, damit diese in der vererbten $TakeInput$ Methode referenziert werden kann. 
+Über die $HandleCollisionEnter$ Methode des Codeausschnittes \ref{lst:interaction-ability} wird ermittelt, ob eine Kollision mit einem Interaktionsobjekt vorliegt. Ist dem der Fall, wird diese wie in der $HandleCollisionEnter$ zu sehen in die Klassenvariable $\_interactable$ gespeichert, damit diese in der vererbten $TakeInput$ Methode referenziert werden kann. In der $TakeInput$ Methode wird, sobald der Spieler eine Eingabe für die Interaktion tätigt und die Fälle erfüllt werden, dass eine Kollision mit einem Interaktionsobjekt vorliegt ($!\_isColidedWithInteractable == false$), dass der Spieler keine andere Tätigkeit währenddessen ausführt, die eine Interaktion mit einem Objekt verhindern würde, etwa ein Objekt tragen, ($\_player.IsEnabled(BlockState.INTERACT)$) oder mit dem Objekt nicht bereits interagiert wurde ($!\_interactable.IsActive()$), die Interaktion der Interaktion erstellt und über die $HandleInteraction$ Methode an den Parent weitergegeben. Dabei wird für das Darstellen in der Szene die Animation gestartet, die das Interagieren bspw. mit einem Hebel darstellen soll. Sobald der Punkt in der Animation erreicht wurde, bei dem die Animation den Hebel in die Hand nehmen würde, wird eine Action an das Skript zurückgeschickt, auf welche die  Methode $OnPullInteractableObject$ hört. Hier geschieht nun die Interaktion mit dem Objekt.
 
-\subsection{Abgleich mit dem alten Prototyp}
+\paragraph{Rekonstruktion der ReconstructionInteractionAbility}
+~
+
+\begin{lstlisting}[caption={Ausschnitt aus ReconstructionInteractionAbility.cs}, label={lst:reconstruction-interaction-ability}]
+public class ReconstructionInteractionAbility : ReconstructAbilitty
+{
+    private Interactable _interactable;
+    ...
+    protected override void HandleCollisionEnter(Information information)
+    {
+        if (information.origin.TryGetComponent(out Interactable i))
+        {
+            _interactable = i;
+        }
+    }
+    ...
+    protected override void HandleCollisionExit(Information information)
+    {
+        if (information.origin.TryGetComponent(out Interactable i))
+        {
+            _interactable = null;
+        }
+    }
+    private void OnCompleteInteract()
+    {
+        abilitySoundController.PlayAbilitySound(AbilitySoundType.INTERACTION, false);
+    }
+    protected override void OnReconstructInteraction(Interaction interaction)
+    {
+        if (interaction.type != InteractionType.INTERACT)
+        {
+            return;
+        }
+        if (_interactable == null)
+        {
+            throw new Exception("Das Interaktionsobjekt existiert nicht oder nicht mehr!");
+        }
+        if (_interactable.gameObject.GetInstanceID() != interaction.interactedObject.Name)
+        {
+            throw new Exception("Das Intraktionsobjekt in der Nähe stimmt nicht mit dem interagiertem Objekt überein");
+        }
+        if (_interactable.IsActive())
+        {
+            throw new Exception("Das Intraktionsobjekt wurde bereits aktiviert.");
+        }
+        abilitySoundController.PlayAbilitySound(AbilitySoundType.INTERACTION);
+        animator.GetAnimator().SetTrigger("Interact");
+        _interactable.Interact?.Invoke();
+    }
+}
+\end{lstlisting}
+
+Die $ReconstructAbility$ Skripte erarbeiten nicht nur die Rekonstruktion der Interaktionen, sondern existieren ebenso zur Laufzeit des Gameobjekts. Wie in der Einleitung dieses Kapitels beschrieben wurde, haben die $ReconstructAbility$ Klassen Informationen darüber, mit welchen Objekten kollidiert wurden. Dadurch kann im Vorlauf einer Interaktion, die in die Methode $OnReconstructInteraction$ übergeben wird, überprüft werden, ob etwa eine Kollision mit einem Interaktionsobjekt vorlag. Dieser Vorlauf ist bei der Validierung der Interaktion wichtig, da auf diese Weise überprüft werden kann, ob das Objekt, mit dem interagiert wurde, überhaupt an dieser Stelle existent ist. 
+
+Im ersten Schritt ($\_interactable == null$) der $OnReconstructInteraction$ Methode wird überprüft, ob aus der Sicht des Gameobjekts eine Kollision mit einem Interaktionsobjekt stattfand. Wenn nein, dann wird hier eine Exception erzeugt, welche einen Fehler in der Rekonstruktion erkannt hat und damit die Zeitlinie löschen wird. Die Zeitlinie wird deshalb gelöscht, weil nicht sichergestellt werden kann, wieso keine Kollision vorlag und in erster Linie der Spieler durch sein Handeln in der Spielwelt, diese so verändert hat, dass es einen Einfluss auf die Zeitlinie, die hier rekonstruiert wird, hatte.
+
+Im zweiten Schritt ($\_interactable.gameObject.GetInstanceID() \\!= interaction.interactedObject.Name$) wird überprüft, ob das Objekt, mit dem eine Kollision stattfand, das Objekt der Aufnahme ist. Falls dieser Fall eintreten würde, müsste der Spieler bestimmte Objekte vertauscht haben und hat damit ebenfalls in die Rekonstruktion eingegriffen. Daher wird hierbei die Zeitlinie ebenfalls zerstört.
+
+Im dritten Schritt ($\_interactable.IsActive()$) wird überprüft, ob der Spieler das Interaktionsobjekt bereits aktiviert hat und damit der Zustand ebenfalls verändert wurde. Dieser Zustand existierte bei der Aufnahme nicht, weshalb die Zeitlinie ebenso gelöscht werden muss.
+
+Sollten keine Ausnahmen bei der Überprüfung aufgefallen sein, so kann die Interaktion auf dieselbe Weise wie die Aufnahme rekonstruiert werden. Die Kopie des Chronologen macht bei einer Rekonstruktion dieselben Aktivitäten, wie es bei der Aufnahme der Fall war.
 
 \subsection{Vorstellung der Spezifikationen}\label{sec:recordable-specifications}
+Grundlegend werden bei den $Executable$ Klassen die Startposition, Startrotation, Endposition, Endrotation oder auch Interaktionen in den Zeitlinien abgespeichert. Diese fünf Basiswerte sind allerdings nicht bei allen Klassen notwendig. Im Folgenden werden Fälle vorgestellt, bei denen diese fünf Basiswerte nicht notwendig oder nicht einsetzbar sind, sowie Fälle aufgetreten sind, in denen diese fünf Werte einen anderen Kontext benötigen.
+\subsubsection{Das Erstellen der Chronologen-Kopien}
+Im Kontext der Reproduktion der Zeitlinien sind diese Zeitlinien in sich geschlossen. Jede Zeitlinie, die nach einem \say{\emph{Merge}} in der $\_timelineToHandle$ Liste liegen, besitzen einen Startzeitpunkt, eine Startposition, sowie einen Zeitpunkt bis wann diese existiert haben und an welcher Position in der Spielwelt sie aufhören. In der Theorie reichen diese Werte aus, um eine Zeitlinie vollständig und ohne Fehler zu rekonstruieren. Allerdings unterscheidet sich diese Theorie von der praktischen Anwendung dieser Spielmechanik. 
 
-% erklärung demzufolge wie die einzelöne szene aufgebautr ist, also in dem fall nur das level; % erklärung wie die szenen strukturiert wurden, also der szenen ordner mit den szenen erklären und den aufbau in der szene der hgierachiue
+Anfangs wurde der Charakter der Zeitlinie an seinen Anfangspunkt der Zeitlinie instanziiert und wartetet anschließend darauf, dass eine Interaktion zu einem übergebenen Zeitpunkt geschieht und der Charakter bewegt wird.
 
+\begin{lstlisting}[caption={Ausschnitt CharacterController.cs}, label={lst:character-controller}]
+public class CharacterController : Controller
+{
+...
+    public void CreateShadow(Timeline timeline)
+    {
+        CharacterData data = timeline.GetCharacterData();
+        float[] startPosition = timeline.GetStartPositions()[RecordableObjectType.PLAYER.ToString() + "_" + data.ID];
+        startPosition[1] = startPosition[1] + 0.5f;
+        GameObject shadowObject = InstantiateCharacter(data.Ghost, "Shadow", startPosition);
+        Character character = shadowObject.AddComponent<Character>();
+        character.InitShadow(data,timeline);
+        GameController.Instance.currentSceneController.UpdateExecutable?.Invoke();
+    }
+    ...
+}
 
-% beim szenenaufbau wird dann auf die umsetzung der kernmechanik eingangen
+\end{lstlisting}
 
-% zunächst erklären der einzuelnen komponneten die das system ausmachen
+In der $HandleTimelineManager$ aus dem Codeausschnitt \ref{fig:handle-timeline-manager} wird, sobald eine der Zeitlinien aus der $\_timelineToHandle$ Liste aktiv werden muss, aus dem $CharacterController$ die Methode $CreateShadow$ aufgerufen. Diese Methode instanziiert das Objekt des Chronologen, welches der Spieler bei der Aufnahme der Zeitlinie gesteuert hatte, in die Szene, damit die aufgenommenen Interaktionen der Szene rekonstruiert werden können.
 
-% dann den flow der mechanik erklären; sowie die einzelnen kern hooks und rückgriff auf recordable und executable; verbesserung aus dem alten protoiryp erklären
+In der Theorie würde das Objekt nun seinen aufgenommenen Interaktionen nachgehen und sich in der Welt bewegen. 
+In der Praxis wird der Spieler nun aber einen weiteren \say{\emph{Split}} und anschließend einen weiteren \say{\emph{Merge}} ausführen. Tritt nun der Fall ein, dass der aufgenommene Chronologe zum Zeitpunkt des \say{\emph{Splittes}} einen Hebel aktiviert hat und bei diesem Hebel steht, damit dieser aktiviert bleibt, wird das Model zunächst gelöscht werden. Das ist in erster Linie nicht das Problem. Das Problem tritt erst beim Instanziieren der Kopie auf. Das Objekt würde nun nämlich an den Anfangspunkt seiner Zeitlinie gesetzt und wartet darauf, dass Interaktionen stattfinden. Bei der Aufnahme stand der Spieler eine Zeit am Hebel und hat sich nicht bewegt. Die Kopie, die nun in der Welt instanziiert wurde, steht nun ebenfalls herum. Allerdings nicht am Hebel, sondern am Anfangspunkt seiner Zeitlinie. In der aufgenommenen Zeitlinie ist der nachfolgende \say{\emph{Split}} nicht vorgekommen, weshalb die Zeitlinie den veränderten Startpunkt der Zeitlinie nicht berücksichtigen konnte. 
 
-% rückgriff auf die kompoenten des system mit der szeififkatuionserklärung; erklärung auch wie das mit den interaktionen ist 
+Die Lösung für dieses Problem ist naheliegend, wenn man sich den Aufbau der Mechanik ansieht. Bei einem \say{\emph{Split}} wird der aktuelle Zustand der Welt in der Zeitlinie, die gerade durch den Spieler gesteuert wird, abgespeichert. Der Zustand dieser Welt wird im \say{\emph{Mergprozess}} wie erwähnt wieder geladen und auf die Welt angewendet. Das bedeutet, die Position des Charakters aus der Zeitlinie, die vor dem zweiten \say{\emph{Split}} am Rekonstruieren ist, wird nun beim zweiten Split auf der Zeitlinie abgespeichert. Während des \say{\emph{Mergvorganges}} wird dieses Objekt gelöscht und in der $HandleTimelineManager$ Loop erneut instanziiert. Die $CreateShadow$ Methode muss nun so angepasst werden, dass zunächst geschaut wird, ob eine Startposition bei der geladenen Zeitlinie existent ist, wenn ja, dann wird das Objekt an dieser Position instanziiert. Wenn auf der aktuellen Zeitlinie keine Startposition zu finden ist, dann gab es während der Rekonstruktion keinen weiteren \say{\emph{Split}} und das Charakter-Objekt wird auf der Startposition seiner Zeitlinie positioniert. 
 
-% erklärung der verschiedenen arten von spiel versionen die erstellt werden können, darunter zählt die gameconfig in der level, dialoge und informationen inkludiert und ausgeschlossen werden können; und die chgaracterdata und die abilitys die zwar noch in abhängigkeit des characters sind aber im ausblick auf den player umgesetzt werden
+Der folgende Codeausschnit \ref{lst:character-controller_fixed} beinhaltet diese Lösung.
+
+\begin{lstlisting}[caption={Ausschnitt CharacterController.cs}, label={lst:character-controller_fixed}]
+public class CharacterController : Controller
+{
+    ...
+    public void CreateShadow(Timeline timeline, Timeline current)
+    {
+        CharacterData data = timeline.GetCharacterData();
+        float[] startPosition = GetStartposition(timeline, current, out float[] startRotation);
+
+        if (timeline.GetCharacter() == null)
+        {
+            GameObject shadowObject = InstantiateCharacter(data.Copy, "Shadow", startPosition, startRotation);
+            Character character = shadowObject.AddComponent<Character>();
+            timeline.SetCharacter(character.gameObject);
+            character.InitShadow(data, timeline);
+            GameController.Instance.currentSceneController.UpdateExecutable?.Invoke();
+        }
+        else
+        {
+            GameObject character = timeline.GetCharacter();
+            character.transform.position = new Vector3(startPosition[0], startPosition[1], startPosition[2]);
+            character.transform.rotation = new Quaternion(startRotation[0], startRotation[1], startRotation[2], startRotation[3]);
+        }
+
+    }
+    private float[] GetStartposition(Timeline own, Timeline current, out float[] startRotation)
+    {
+        CharacterData data = own.GetCharacterData();
+        string key = RecordableObjectType.PLAYER.ToString() + "_" + data.ID;
+        float[] startPosition = new float[3];
+        startRotation = new float[4];
+        if (current.GetEndPositions().ContainsKey(key + "_" + own.GetStartTimestamp().ToString()))
+        {
+            float[] csP = current.GetEndPositions()[key + "_" + own.GetStartTimestamp().ToString()];
+            float[] csR = current.GetEndRotations()[key + "_" + own.GetStartTimestamp().ToString()];
+            startPosition = new float[3] { csP[0], csP[1], csP[2] };
+            startRotation = new float[4] { csR[0], csR[1], csR[2], csR[3] };
+        }
+        else
+        {
+            float[] tsP = own.GetStartPositions()[key + "_" + own.GetStartTimestamp().ToString()];
+            float[] tsR = own.GetStartRotations()[key + "_" + own.GetStartTimestamp().ToString()];
+            startPosition = new float[3] { tsP[0], tsP[1], tsP[2] };
+            startRotation = new float[4] { tsR[0], tsR[1], tsR[2], tsR[3] };
+
+        }
+        return startPosition;
+    }
+    ...
+}
+\end{lstlisting}
+
+Würde der Fall aus dem Beispiel nun auftreten, dann stünde das Objekt nach dem \say{\emph{Merge}} wieder am Hebel und hält ihn in der Rekonstruktion aktiv.
+
+\subsubsection{Abspeichern des Keyframes einer Keyframe Animation}
 
 
 % \subsection{Hierarchie der Levelszenen}
