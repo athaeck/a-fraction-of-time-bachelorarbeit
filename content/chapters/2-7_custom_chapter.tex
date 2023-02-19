@@ -2616,7 +2616,73 @@ public class CharacterController : Controller
 Würde der Fall aus dem Beispiel nun auftreten, dann stünde das Objekt nach dem \say{\emph{Merge}} wieder am Hebel und hält ihn in der Rekonstruktion aktiv.
 
 \subsubsection{Abspeichern des Keyframes einer Keyframe Animation}
+Im zweiten Level des Prototyps muss der Spieler Kräne aktivieren, um über Plattformen, die an den Kränen montiert sind, an das Ziel des Levels zu gelangen. Die Kräne werden nach der Aktivierung, bspw. durch eine Druckplatte, durch eine Keyframe Animation bewegt. Durch die Bewegung des Krans gelangt der Spieler an eine Stelle, an der er wie in Kapitel \ref{p:lse2} beschrieben auf die Plattform eines weiteren Krans springen muss. Der Kran besitzt dabei ein Skript in seiner Hierarchie, das von dem Basisskript $Recordables$ erbt. Nachdem der Kran aktiviert wurde, fährt der Kran an die Stelle, an der der Spieler auf die Plattform springen kann. Nun ist es aber so, dass der Spieler während der Kranfahrt einen \say{\emph{Split}} ausführt, um mit einem anderen Ich des Chronologen etwas anderes zu machen. Nach diesem \say{\emph{Split}} würde zunächst nichts passieren, da das Ich auf der Druckplatte immer noch darauf steht und der Kran dadurch weiterfährt. Bei diesem \say{\emph{Split}} werden die Rotationen und Positionen des Krans auf der Zeitlinie gespeichert. Diese Rotationen und Positionen sind bei einem \say{\emph{Mergvorgang}} wichtig, da der Spieler hinterher wieder auf der Kranplattform stehen möchte. Der Kran rotiert sich primäre auf seiner Rotationsachse, dem Gerüst, an dem er verankert wurde. 
 
+Führt der Spieler nun einen \say{\emph{Mergevorgang}} aus, so würde Folgendes passieren. Das Ich, das auf der Druckplatte steht, würde für einen Frame entfernt und wieder auf der Druckplatte instanziiert werden. Der Spieler würde wieder im vorherigen Ich des Chronologen stecken, an der Position, wo er sich beim \say{\emph{Split}} befand. Der Kran hingegen würde nicht an seiner gespeicherten Stelle stehen. Warum macht der Kran das nicht?
+
+Der Prozess des Ladens der Rotation und der Position würde den Kran an die gespeicherte Rotation setzen. Allerdings überschreibt die Keyframe Animation den gespeicherten Wert. Weil das auf der Druckplatte stehende Ich des Chronologen neu instanziiert wurde, beginnt die Keyframe Animation wieder am Start der Animation. Die Ausgangslage des Kranes ist allerdings eine andere als zum Moment der Speicherung.  
+
+\begin{lstlisting}[caption={Ausschnitt aus Moveable.cs}, label={lst:moveable}]
+public abstract class Moveable : Recordable
+{
+    ...
+    protected MoveableAnimationController animationController;
+    ...
+    protected override void OnLoadTimeline(Timeline timeline)
+    {
+        base.OnLoadTimeline(timeline);
+        string animationName = timeline.GetCustomStrings()[saveId + "frame-name"];
+        float keyFrame = timeline.GetCustomFloats()[saveId + "key-frame"];
+        animationController.SetCurrentFrame(keyFrame, animationName);
+    }
+    protected override void OnSaveTimeline(Timeline timeline)
+    {
+        base.OnSaveTimeline(timeline);
+        string animationName = animationController.SaveCurrrentFrame(out float keyFrame);
+        timeline.SetCustomString(saveId + "frame-name", animationName);
+        timeline.SetCustomFloat(saveId + "key-frame", keyFrame);
+    }
+    ...
+}
+\end{lstlisting}
+
+Die Kranklasse $Crane.cs$, die im Anhang im Klassendiagramm zu finden ist, erbt von der Klasse $Moveable$ welche im Codeausschnitt \ref{lst:moveable} dargestellt ist. Es müssen nun die Methoden $OnLoadTimeline$ und $OnSaveTimeline$ aus der $Recordable$ Klasse überschrieben werden, da diese lediglich Positionen und Rotationen abspeichern, welche für Objekte mit einer Keyframe Animation irrelevant sind. Deshalb wird nun mithilfe des $MoveableAnimationControllers$ aus Codeausschnitt \ref{lst:moveable_animation} der Keyframe und die aktive Animation in der Zeitlinie abgespeichert. Jede $Moveable$ Klasse hat einen $MoveableAnimationController$.
+
+\begin{lstlisting}[caption={Ausschnitt aus MoveableAnimationController.cs}, label={lst:moveable_animation}]
+public class MoveableAnimationController : AnimationController
+{
+    private Animator _animator;
+    ...
+    public string SaveCurrrentFrame(out float keyframe)
+    {
+        AnimatorStateInfo currentAnim = _animator.GetCurrentAnimatorStateInfo(0);
+        float normalizedTime = currentAnim.normalizedTime;
+        keyframe = normalizedTime * _animator.GetCurrentAnimatorClipInfo(0)[0].clip.frameRate;
+        string name = _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
+        return name;
+    }
+    public void SetCurrentFrame(float keyFrame,string frameName)
+    {
+        AnimatorClipInfo[] clips = _animator.GetCurrentAnimatorClipInfo(0);
+        foreach (AnimatorClipInfo clip in clips)
+        {
+            if(clip.clip.name == frameName)
+            {
+                _animator.Play(clip.clip.name, 0, keyFrame / clip.clip.frameRate);
+            }
+        }
+    }
+}
+\end{lstlisting}
+
+Der $MoveableAnimationController$ ist für das Handling des Animators und die damit einhergehenden Animationen zuständig.
+
+Im $OnSaveTimeline$ Listener wird nun die Methode $SaveCurrrentFrame$ aus dem $MoveableAnimationController$ aufgerufen, durch welche über den $Animator$ die aktuelle Animation und den aktuellen Keyframe herausgefunden und gespeichert werden können.
+
+Diese gespeicherten Informationen werden nach einem \say{\emph{Merge}} im $OnLoadTimeline$ Listener aus der Zeitlinie geladen und an den $MoveableAnimationController$ in der Methode $SetCurrentFrame$ übergeben. Diese Methode sucht nun den richtigen Clip, also die richtige Animation, heraus und startet die Animation zum abgespeicherten Keyframe.
+Dadurch wird der Kran nun an der richtigen Stelle gestartet und der Spieler steht nach einem \say{\emph{Merge}} immer noch auf der Kranplattform.
+
+Dieser Fall gilt analog für Türen und ausfahrbare Plattformen, da diese ebenfalls von der Klasse $Moveable$ erben.
 
 % \subsection{Hierarchie der Levelszenen}
 % \subsection{Ressourcen}
@@ -2642,11 +2708,32 @@ Würde der Fall aus dem Beispiel nun auftreten, dann stünde das Objekt nach dem
 
 
 
-\section{Leveldesign}
-% hier kommt rein dass dialoge und informationen sowie blocker rem over und adder über ein system einfach erzeugt werden können und so etc.
-\subsection{Assets}
+% \section{Leveldesign}
+% % hier kommt rein dass dialoge und informationen sowie blocker rem over und adder über ein system einfach erzeugt werden können und so etc.
+% Die Darstellung und die Konzeption der verschiedenen Levels wurde bereits in der Konzeption und im visuellen Design vorgestellt. In diesem Kapitel geht es um das Handling der verschiedenen \ac{3D} Modelle aus den importieren Paketen, sowie um das Einbinden von Triggern, die Bereiche in der Spielwelt freischalten und bestimmte Dialoge auslösen und Informationen preisgeben.
+% \subsection{Assets}
+% Nachdem Assets aus anderen Packages importiert wurden, müssen diese im ersten Schritt in Blender Dateien gespeichert werden. Manche Asset-Packages besitzen eine Blenderdatei, in denen alle Modelle vorhanden sind. Diese Modelle werden nun in verschiedene Blender Dateien aufgeteilt, damit pro Blenderdatei jeweils ein Modell vorhanden ist. 
+% Die jeweiligen Blender Dateien werden nun im Assets/Models Ordner abgespeichert.
 
+% Aus den in Unity importierten Blendermodels werden nun Prefab Variants erstellt, welche für das Edititng in Unity verwendet werden. Diese Prefab Variants werden im Ordner Assets/Prefabs abgespeichert. Die Prefabs der Blendermodels werden nun mit Kollidern und anderen wichtigen Komponenten für die Szene ausgestattet. Die Prefabs werden ebenfalls für das Bauen der Unity Szenen verwendet. Werden die Blendermodelle nun in Blender verändert, werden die Änderungen auf die Prefabs und die eingebauten Prefabs wirksam.
+
+% \subsection{Informations und Dialog Trigger}
+% Ein Spiel besteht nicht nur aus der Spielwelt und Gegenständen, mit denen interagiert werden kann. Es beinhaltet ebenso Informationen und Erklärungen über Sachverhalte der Inhalte und Dialoge, die das Spiel mit Leben füllt.
+
+% In diesem Prototyp würde daher ein System eingefügt, das an bestimmten Stellen Informationen und Dialoge triggert. Diese Trigger werden nun forgestellt. Für Dialoge und Informationen existieren dieselben Trigger, weshalb die Trigger der D
+
+% \subsection{Freischaltung von Blockern und Regionen}
 \section{Sounddesign}
+Das Sounddesign des Prototyps ist durch verschiedene Komponenten aufgebaut. Zum einen gibt es Soundtrigger, die auf Aktionen von bestimmten Objekten ausgeführt werden. Es gibt unter anderem die Klasse $MoveableSoundTrigger$, die EventListener auf die $StartMovement$ und $ResetMovement$ Action besitzen und im Zusammenhang daraus einer weiteren Komponente mitteilen, welcher Sound gespielt werden muss (vgl. Abbildung \ref{fig:sound-trigger}).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/SoundTrigger.jpg}
+\caption{Klassendiagramm einer SoundTrigger Komponente, (Quelle: eigene Darstellung)}
+\label{fig:sound-trigger}
+\end{figure}
+
+Die $SoundTrigger$ Komponenten interagieren mit dem $AudioSourceController$. Ein $AudioSourceController$ enthält alle Audioquellen, die die entsprechenden Audioclips abspielen. Die $AudioSourceController$ sind in verschiedene Sound Arten unterteilt, da es unterschiedliche Kategorien von Sounds gibt. Zum einen gibt es ein Hintergrundambiente, welches der Spieler im Level und im Menü hört. Zum anderen gibt
 
 \chapter{Evaluation}\label{sec:test}
 \section{Zielsetzung}
