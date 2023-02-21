@@ -652,15 +652,125 @@ Das aufgenommene Ich des Chronologen, das in den Abbildungen \ref{fig:chronologe
 
 \section{User Interface}\label{sec:user-interface}
 Im Folgenden werden die einzelnen Elemente der User-Interfaces vorgestellt und durch Mockups prototypisch visualisiert. Es handelt sich hierbei zum einen um das gesamte \ac{UI}, das der Spieler während des Spiels zu sehen bekommt und zum anderen um das \ac{UI} des Datenlesers, welches der Chronologe immer zur Hand hat.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/UI.jpg}
+\caption{Mockup Bildschirm des Spielers, (Quelle: eigene Darstellung)}
+\label{fig:ui-player}
+\end{figure}
+
+Das gesamte Mockup des \ac{UI} ist in \say{Abbildung \ref{fig:ui-player}} zu sehen und wird im Folgenden erklärt.
+
 \subsection{Graph}\label{sec:graph_ui}
+Wie in \say{Abbildung \ref{fig:ui-player}} zu sehen befindet sich der Graph (Markierung 1) oben rechts des Bildschirms. Er bildet die Zeitlinien, die der Spieler während des Spiels erstellt hat, ab. 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Graph.jpg}
+\caption{Mockup Zeitlinienübersicht im UI, (Quelle: eigene Darstellung)}
+\label{fig:ui_graph-player}
+\end{figure}
+
+Wie in \say{Abbildung \ref{fig:ui_graph-player}} zu sehen, ist jede Zeitlinie mit der Farbe des Chronologen Ichs eingefärbt. Jede Zeitlinie, die nicht die aktive ist, hat dabei ein graues Overlay. Die aktuelle Zeitlinie (vgl. Markierung 1) ist in ihrer normalen Farbe dargestellt. Zusätzlich erhält jeder Zeitlinie eine kleine Anzeige, auf dem die Spielzeit der Zeitlinie steht. Für parallel laufende Zeitlinien gibt es das auch, hier wird angezeigt, wie lange diese Zeitlinie noch aktiv ist (vgl. Markierung 2). Sobald keine Zeitlinie parallel läuft, wird die Anzeige nur auf der aktuellen Zeitlinie angezeigt (vgl. Markierungen 3 bis 5).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Graph-UI.jpg}
+\caption{Mockup geöffnete Zeitlinienübersicht, (Quelle: eigene Darstellung)}
+\label{fig:ui_graph_full}
+\end{figure}
+
+Sobald der Spieler sich eine Übersicht über alle erstellten Zeitlinien machen möchte, kann der den in \say{Abbildung \ref{fig:ui_graph_full}} abgebildeten Graph sehen. Diese Ansicht enthält zum einen eine Zeit-Skala (vgl. Markierung 1) über welche er die Zeitpunkte der Zeitlinie sehen kann. Die gezeigten Zeitlinien enthalten ebenso die Zeitanzeigen wie sie bereits beschrieben worden (vgl. Markierung 2). Zusätzlich enthalten sie Abbildungen der Interaktion in Form von Icons, über die der Spieler hovern kann. Sie zeigen dem Spieler, was er zu diesem Zeitpunkt gemacht hat (vgl. Markierung 3).
+
 \subsection{Timer}\label{sec:user_timer}
+In \say{Abbildung \ref{fig:ui-player}} wird bei der Markierung 2 der Timer des Spiels angezeigt. Er enthält zum einen die Spielzeit in der Szene des Spielers (große Schrift), als auch die gesamte Spielzeit, die der Spieler im Level verbracht hat (kleine Schrift). Der Inhalt der großen Schrift ist der Referenzwert für das System. Die kleine Schrift ist dagegen eine Referenz dafür, wie lange der Spieler insgesamt gebraucht hat, das Level abzuschließen.
 \subsection{Zeitkontinuum}\label{sec:kontinuum_ui}
+Die Stabilität des Kontinuums wird in \say{Abbildung \ref{fig:ui-player}} an der Markierung links oben angezeigt. Die Stabilität des Kontinuums wird über die Anzeige des Kreisdiagramms angezeigt. Ist das Kontinuum stabil, so ist das Diagramm grün gefärbt. Wird das Kontinuum schwächer und der Kreis ist nur noch zur Hälfte gefüllt, so färbt es sich gelb. Ist das Kontinuum an einem kritischen Punkt, verfärbt es sich rot. Das ist für den Spieler der Hinweis darauf, auf den Chronologen zurück zu \say{\emph{mergen}} und alle erstellten Zeitlinien zu löschen.
+
+Der Wert in der Mitte des Zahnrades definiert die Anzahl an parallel laufenden Zeitlinie, welche durch das Auslösen von Paradoxen zerstört werden können.
+
+Das Zahnrad, das den Hintergrund der Anzeige darstellt, dreht sich in die Richtung des wachsenden oder sinkenden Diagramm mit. Ist der Wert bei 2, so dreht sich das Zahnrad im Uhrzeigersinn und der Wert des Diagramms sinkt. Ist der Wert bei 1 und das Diagramm ist nicht ganz gefüllt, so dreht es sich gegen den Uhrzeigersinn, bis das Diagramm gefüllt ist. Ist das Diagramm gefüllt, so bleibt das Zahnrad stehen.
+
+Sobald eine Zeitlinienkonvergenz droht, bekommt der Spieler die Meldung aus Markierung 8 eingeblendet. Im Anschluss wird er auf die Zeitlinie des Chronologen zurückgesetzt und alle seine angegliederten Zeitlinien werden gelöscht.
 \subsection{Charakter Übersicht}\label{sec:character-overview}
+In \say{Abbildung \ref{fig:ui-player}} wird an der Markierung 7 die Übersicht über die verfügbaren Ichs aus den verfügbaren Zeitlinien angezeigt. Die Zacken des Zahnrades sind wie auf der Steuereinheit nach den unterschiedlichen Ichs gefärbt. Jede Zacke erhält an ihrem Ende einen kleinen Bildschirm, auf dem die Relation der verschiedenen Ichs aus den Zeitlinien abgebildet sind. Sie beziehen sich dabei immer auf das aktuell ausgewählte und gespielte Ich des Chronologen.
 \subsection{Steuerhinweis}
+Bei der Markierung 4 in \say{Abbildung \ref{fig:ui-player}} werden die grundlegenden Steuerhinweise, ausgeschlossen die Bewegungen, des Spiels für den Spieler angezeigt.
 \subsection{Dialoge}
-\subsection{Systemfehler}
+Der Untertitel des Sprachdialogs wird in \say{Abbildung \ref{fig:ui-player}} bei der Markierung 5 angezeigt. Er enthält den gesprochenen Text und den Namen des Sprechers.
+\subsection{Systemfehler und Benachrichtigungen}
+Der Spieler erhält bei der Markierung 6 in \say{Abbildung \ref{fig:ui-player}} die Information, dass es einen neuen Eintrag im Datenleser gab (gelber Text), sowie die Information darüber, dass er im Moment bestimmte Aktionen nicht ausführen kann oder ein Paradoxon an einer anderen Zeitlinie geschaffen hat (rote Schrift).
 \subsection{Tragen von Objekten}\label{sec:carry-objects}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/ObjectInArm.jpg}
+\caption{Beispiel wie Chronologe Objekt trägt, (Quelle: \cite{gametube_talos_2014})}
+\label{fig:carry_object_objectarm}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/CarryObjects.jpg}
+\caption{UI beim Tragen eines Spielobjektes, (Quelle: eigene Darstellung)}
+\label{fig:carry_object_ui}
+\end{figure}
+
+Sobald der Spieler ein Objekt trägt, erhält er wie in \say{Abbildung \ref{fig:carry_object_ui}} zu sehen eine Anweisung, wie er das Objekt wieder hinlegen kann. Das Objekt trägt er dabei, wie es in \say{Abbildung \ref{fig:carry_object_objectarm}} beim Spiel \say{The Talos Priciple} zu sehen ist.
 \subsection{Datenleser}\label{sec:datenleser_ui}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Datenleser_c.jpg}
+\caption{Datenleser Collage, (Quelle: eigene Darstellung)}
+\label{fig:datenleser_collage}
+\end{figure}
+
+\say{Abbildung \ref{fig:datenleser_collage}} zeigt eine Collage, wie das \ac{UI} des Datenlesers auszusehen hat. Der Spieler kann darüber das Story-Journal einsehen, in das der Chronologe seine Notizen eingefügt hat. Zudem kann der Spieler erhaltene Informationen und Notizen nachlesen. 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.2\linewidth]{content/pictures/NeuIndiz.jpg}
+\caption{Indiz für einen neuen Eintrag, (Quelle: eigene Darstellung)}
+\label{fig:indiz_neu}
+\end{figure}
+
+Einträge, die das Symbol aus \say{Abbildung \ref{fig:indiz_neu}} enthalten, sind neu dazu gekommen und wurde noch nicht gelesen. Außerdem kann der Spieler die List der Informationen nach einer vorgefertigten Auswahl sortieren, etwa nach neuen Informationen oder einem bestimmten Typ Information.
+
+\subsection{Einstellungsmenü im Datenleser}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/PasemneÃ¼ UI.jpg}
+\caption{Einstellungsmenü im Datenleser, (Quelle: eigene Darstellung)}
+\label{fig:pausemenue_settings}
+\end{figure}
+
+\say{Abbildung \ref{fig:pausemenue_settings}} zeigt das Pausemenü, das über den Datenleser dargestellt wird. Über ihn kann der Spieler, wie über das Startmenü, Spieleinstellungen tätigen. Die Einstellungen, die in der Collage abgebildet sind, sind die, die später einmal in diesem Spiel angedacht sind.
+
+\subsection{Bildschirmanzeige zum Abschluss des Levels}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/Level Endscreen.jpg}
+\caption{Endbildschirm eines erfolgreich gemeisterten Levels, (Quelle: eigene Darstellung)}
+\label{fig:endscreen}
+\end{figure}
+
+Sobald der Spieler das Ende des Levels erreicht, öffnet sich das in \say{Abbildung \ref{fig:endscreen}} gezeigte \ac{UI}. Dabei sieht der Spieler eine Übersicht darüber, wie lange er für das Level gebraucht hat. Außerdem werden ihm seine erstellten Zeitlinien gezeigt, welche alle ein Fenster besitzen, auf dem die Spieldauer dieser Zeitlinie gezeigt wird.
+
+\subsection{Bildschirmanzeige bei Auftreten einer Zeitlinienkonvergenz}
+
+Falls der Spieler eine Zeitlinienkonvergenz auslöst, erfolgt folgender in \say{Abbildung \ref{fig:deathscreen}} gezeigtes \ac{UI}. Der Spieler kann das Level neu starten oder das Spiel beenden.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{content/pictures/DeathScreen.jpg}
+\caption{Endbildschirm bei einer Zeitlinienkonvergenz, (Quelle: eigene Darstellung)}
+\label{fig:deathscreen}
+\end{figure}
+
 \section{Führung durch das Level}\label{sec:level-integrated-huds}
 Der Spieler erhält durch unterschiedliche Mechanismen eine Führung durch das Level. Dazu gehören unter anderem Partikelsysteme, Kletterkanten und Tooltips.
 \subsection{Partikelsysteme}\label{sec:particle-system}
