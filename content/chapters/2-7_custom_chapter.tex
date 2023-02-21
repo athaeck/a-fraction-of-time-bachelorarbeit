@@ -549,7 +549,7 @@ Ein weiterer wichtiger Bestandteil als Informationsquelle für den Spieler ist d
 Zum einen gibt der Chronologe Bemerkungen von sich, die zum Teil Hinweise auf Rätsel für den Spieler sind oder Erkenntnisse darstellen und den Spieler auf bestimmte Informationen hinweist wie eine sichtbare Kletterkante.
 Zum anderen gibt es Dialoge, die in einer fertigen Umsetzung Zwischensequenzen darstellen, die entweder vom Spieler gesteuert werden müssen, oder der Spieler sie nur überspringen kann. Dabei ist aber die Interaktion des Spielers mit der Welt blockiert und muss sich diese anschauen.
 
-\subsection{Eingeworfene Dialoge}
+\subsection{Eingeworfene Dialoge}\label{sec:throw-in-dialogues}
 Diese nicht zu überspringenden Dialoge sind eingeworfene Dialoge des Chronologen. Generell ist es so, dass Dialoge dazu führen, dass der Spieler zunächst keine weitere Interaktionsmöglichkeit hat, als den Dialog weiterzuführen. Eingeworfene Dialoge laufen parallel zum Spielgeschehen ab und können dem Spieler Hinweise vermitteln, z.B. zu den Zuständen von bestimmten Objekten. Nach längerem Ausprobieren, wie der Spieler die Rätselelemente anordnen muss, kann der Chronologe Hinweise einbringen.
 
 \subsubsection{Hinweise über Zustände}
@@ -652,16 +652,16 @@ Das aufgenommene Ich des Chronologen, das in den Abbildungen \ref{fig:chronologe
 
 \section{User Interface}\label{sec:user-interface}
 Im Folgenden werden die einzelnen Elemente der User-Interfaces vorgestellt und durch Mockups prototypisch visualisiert. Es handelt sich hierbei zum einen um das gesamte \ac{UI}, das der Spieler während des Spiels zu sehen bekommt und zum anderen um das \ac{UI} des Datenlesers, welches der Chronologe immer zur Hand hat.
-\subsection{Graph}
+\subsection{Graph}\label{sec:graph_ui}
 \subsection{Timer}\label{sec:user_timer}
 \subsection{Zeitkontinuum}\label{sec:kontinuum_ui}
 \subsection{Charakter Übersicht}\label{sec:character-overview}
 \subsection{Steuerhinweis}
 \subsection{Dialoge}
 \subsection{Systemfehler}
-\subsection{Tragen von Objekten}
+\subsection{Tragen von Objekten}\label{sec:carry-objects}
 \subsection{Datenleser}\label{sec:datenleser_ui}
-\section{Führung durch das Level}
+\section{Führung durch das Level}\label{sec:level-integrated-huds}
 Der Spieler erhält durch unterschiedliche Mechanismen eine Führung durch das Level. Dazu gehören unter anderem Partikelsysteme, Kletterkanten und Tooltips.
 \subsection{Partikelsysteme}\label{sec:particle-system}
 Dem Spieler soll an bestimmten Stellen wie an einer Druckplatte vermittelt werden, dass er auf diese stehen soll, um einen Mechanismus auszulösen.
@@ -747,7 +747,7 @@ Im folgenden Kapitel werden verschiedene Objekte dargestellt, mit denen der Chro
 
 Abbildung \ref{fig:pressureplate_interactable}: \nameref{fig:pressureplate_interactable} zeigt eine Druckplatte, wie sie in der Spielwelt eingebaut wurde. Der hölzerne Kern, stellt den Sensor dar, der eingedrückt wird, sobald das Gewicht des Chronologen auf ihm lastet. Jede Druckplatte enthält ein Partikelsystem, wie es in Abschnitt \ref{sec:particle-system} \nameref{sec:particle-system} bereits erklärt wurde.
 
-\subsection{Hebel}
+\subsection{Hebel}\label{sec:concept_interface_lever}
 
 \begin{figure}[ht]
 \centering
@@ -2743,9 +2743,174 @@ In diesem Zusammenhang gibt es zusätzlich $AudioSourceController$ für den Dial
 \end{figure}
 
 \chapter{Evaluation}\label{sec:test}
+In diesem Kapitel wird der Prototyp und das Spielsystem anhand von ausgeführten Nutzertesten evaluiert. Dabei wird sowohl die definierte Zielsetzung, die Planung und Durchführung und die Auswertung der Ergebnisse vorgestellt.
+
 \section{Zielsetzung}
+Durch die abschließenden Nutzertests sollen die Leitfragen dieser Arbeit beantwortet werden. Dabei soll erfasst werden, inwiefern das entstandene Tutorial durch seine Dialoge und Informationen im Spiel die Spielmechanik und die \ac{UI} des Spiels erklärt. Außerdem wird ein zweites Szenario geprüft, welches im Vergleich zum Tutorial komplexer aufgebaut werden soll. 
+
 \section{Planung und Durchführung}
-\section{Auswertung der Tests}
+Für die Nutzertests wurde ein Fragebogen entworfen, welcher im beiliegenden digitalen Anhang zu finden ist. 
+
+Dabei geht es zunächst um ein grundlegendes Verständnis zu Zeitreisen und alternativen Realitäten sowie erste Erfahrungen mit Rätselspielen. 
+Der darauffolgende Bereich handelt vom Erlernen der Spielmechanik durch Erklärungen des Dialogs und der im Spiel eingebunden Informationen sowie dem Verhalten der Spielwelt.
+
+Der zweite große Bereich handelt vom Leveldesign der Spielwelten. Dabei gehen die Fragen auf das in \say{Kapitel \ref{sec:level-integrated-huds}: \nameref{sec:level-integrated-huds}} behandelte Thema der Gestaltung der Spielwelt ein. \ac{HUD}s und Partikelsysteme sollen dem Spieler Interaktionsmöglichkeiten anzeigen. In diesem Bereich erfolgt auch das Überprüfen des zweiten Levels, inwiefern es in seiner Gestaltung komplexer ausgearbeitet wurde und ob es nicht zu überfordernd ist.
+
+Im dritten Bereich kann der Nutzer sein zusätzliches Feedback mitteilen und zusätzliche Verbesserungsvorschläge einbringen. Des Weiteren wird hier das Gefallen und nicht Gefallen sowie die Spielweiterempfehlung des Nutzers festgehalten.
+
+Die Durchführung der Nutzertests erfolgte nach der Methodik des \say{\ac{CTA}}. Dabei sollten die Testpersonen ihre Gedanken zum Prototyp aussprechen und ggf. ihr Feedback einbringen (vgl. \cite{usabilityde_gmbh__co_kg_concurrent_2023}, 2023). Die Kenntnisse des \say{\ac{CTA}} werden ebenfalls wie der Fragebogen gleichermaßen ausgewertet und im Folgenden \say{Kapitel \ref{sec:test-result}: \nameref{sec:test-result}} vorgestellt.
+
+Insgesamt wurden sechs Nutzertests durchgeführt, bei denen die Testpersonen einen unterschiedlichen Bezug zu Rätselspielen oder Computerspielen im Allgemeinen haben, sowie unterschiedliche Kenntnisstände zu Zeitreisen aufwiesen. Die Zeitlänge der Tests variierte bei jeder Testperson, da die Level in einer unterschiedlichen Geschwindigkeit gelöst wurden.
+Der Zeitraum, in dem die Tests ausgeführt wurden, überstreckte sich auf drei verschiedene Phasen, in denen jeweils die Technik des Prototyps auf einem unterschiedlichen Stand war. Nach jeder Testphase wurde versucht das passende Feedback einzubauen und den Prototyp weiterzuentwickeln.
+
+\section{Auswertung der Tests}\label{sec:test-result}
+Durch die Nutzertests konnte gezeigt werden, dass die Spielmechanik und das Anwenden der Spielmechanik durch die eingebundene Dialoge und Zusatzinformationen verstanden werden konnte. Zusätzlich zeigten sie ebenfalls Schwächen des Prototyps auf, welche in einer Fortentwicklung des Prototyps angepasst werden sollten. 
+Da die Testphasen des Prototyps jeweils zu verschiedenen Entwicklungszeitpunkten des Prototyps durchgeführt wurden, werden die folgenden Erkenntnisse in vier Kategorien unterteilt.
+
+\subsection{Umgesetztes Feedback}
+
+\begin{itemize}  
+    \item \textbf{Menü des Datenlesers hat im Prototyp kein schönes \ac{UI}, außerdem fehlt in der Liste der Information eine Markierung für die Neuheit der Information.}
+    \item \textbf{Für den Dialog sollte es ein Logbuch geben, damit wichtige Inhalte nachgelesen werden können.}
+\end{itemize}
+
+Das \ac{UI} des Datenlesers wurde in \say{Kapitel \ref{sec:datenleser_ui}: \nameref{sec:datenleser_ui}} in Form von Mockups überarbeitet. Diese Mockups werden in einer ähnlichen Art umgesetzt. Es enthält sowohl eine überarbeitete Liste der Informationen und ihre Darstellung, als auch ein Logbuch der Story.
+
+\begin{itemize}  
+    \item \textbf{Die eingebundenen  \ac{HUD}s sind in der Form gut, wie sie dargestellt werden.}
+    \item \textbf{Der Hebel benötigt ein zusätzliches Interface, auf welchem der Spieler sehen kann ob er aktiv ist oder nicht.}
+\end{itemize}
+
+In \say{Kapitel \ref{sec:tooltip}: \nameref{sec:tooltip}} werden die eingebildeten Tooltips überarbeitet aufgezählt, damit diese einen besseren Nutzen haben werden. In \say{Kapitel \ref{sec:concept_interface_lever}: \nameref{sec:concept_interface_lever}} wird das neue Interface eines Hebels dargestellt und beschrieben.
+
+\begin{itemize}  
+    \item \textbf{Das Warten an einem Hebel oder einer Druckplatte ist mühsam und auf Dauer nervig.}
+\end{itemize}
+
+Wie in \say{Kapirel \ref{sec:concept_imitator}: \nameref{sec:concept_imitator}} beschrieben erhält der Spieler einen Imitator, wodurch er eine Kopie von sich an eine beliebige Stelle platzieren kann. Dadurch wird zumindest in einem eingeschränkten Rahmen Wartezeiten verkürzt.
+
+\begin{itemize}  
+    \item \textbf{Plattformen waren trotz Inaktivität erklimmbar.}
+\end{itemize}
+
+Plattformen, die durch Hebel oder Druckplattformen aktiviert werden können, waren bis zur letzten Testphase noch erklimmbar, obwohl sie in der Wand eingefahren waren. Im Zuge dessen wurden die Kletterkanten bei Inaktivität deaktiviert.
+
+\begin{itemize}  
+    \item \textbf{Das \ac{UI} für das Ablegen von Objekten benötigt eine andere Darstellung.}
+\end{itemize}
+
+Wie im Mockup in \say{Kapitel \ref{sec:carry-objects}: \nameref{sec:carry-objects}} zu sehen, erhalt der Spieler, sobald er ein Objekt trägt, ein neues \ac{UI} welches in Form des Mockups eingebunden werden soll.
+
+\begin{itemize}  
+    \item \textbf{Der Zeitliniengraph sollte noch Informationen darüber darlegen, wie lange eine Zeitlinie existent war und wie lange sie noch existent sein wird.}
+\end{itemize}
+
+Wie in \say{Kapitel \ref{sec:graph_ui}: \nameref{sec:graph_ui}} beschrieben, erhält der Graph Informationen darüber, wie lange die entsprechenden Zeitlinien aktiv waren und wie lang sie nach einem \say{\emph{Merge}} noch aktiv sind.
+
+\begin{itemize}
+\item \textbf{Durch den Dialog sollte wie in \say{Kapitel \ref{sec:throw-in-dialogues}: \nameref{sec:throw-in-dialogues} Hinweise zu Interaktionen beinhalten als Unterstützung zum sichtbaren Effekt der Interaktion.}}
+\end{itemize}
+
+% Anderer ablege hinweis neim tragen von objekten
+% plattformen konnten beklettert werden obwohl sie deakrtiviert waren -> angepasst
+% inidkator bei hebel ob aktiv, nur duie animation und stellugn reich nicht auis 
+%  zeit warten in mühsam, refdernz auf imitator, es ist eben der sinn zu warten
+% huds sind gut aber die konzipierten verbesserungen sind dennoch notwenig
+% Menü des Datenlesers im prototyp kein schönes ui, fehlende informationen über neue informationen
+% Dialog logbuch, ui steuereinheit wie im mockup einbinden
+% bei zeitlinien im graph anzeigen wie lange noch aktiv und wie lange drauf gespielt wurde
+\subsection{Anstehenden Verbesserungen und Optimierungen}
+Im Folgenden werden die zu optimierenden Aspekte vorgestellt.
+\begin{itemize}  
+    \item \textbf{Die Cinemachine Kameraführung ist bei schnellen Bewegungen ruckelig und Kollisionen mit Wänden führt zu unnatürlichen Kameraschwenks, die behoben werden müssen.}
+    \item \textbf{Die Bewegungsanimation des Chronologen reagiert manchmal zu langsam oder führt zu ruckeln in der Kameraführung.}
+     \item \textbf{Das in Abbildung \ref{fig:pressureplate_tooltip} dargestellte Partikelsystem kann ein anderes Aussehen wie  rote Linienmarkierungen erhalten.}
+     \item \textbf{Kanten von denen der Spieler aus springen kann, sollten farblich markiert werden, damit ein farblicher Unterschied zum Boden entsteht.}
+    \item \textbf{Die Schleichfunktion des Chronologen benötigt mehr Integrationen, damit seine Daseinsberechtigung erfüllt wird.}
+    \item \textbf{Objekte, mit denen der Spieler interagieren kann, benötigen ein markanteres Aussehen, damit der Spieler weiß, mit welchen Objekten interagiert werden kann. Bspw. ein Schimmern, das das Objekt umfasst.}
+\end{itemize}
+% kamera bewegung manchmal ruckelig bzw die animation des charakters zu spät, vorallem beim rennen, vl animation schuld
+% bewegungsanimation anpassen, manchmal fühlt sichs komisch unnatürlich an
+% Partikel System bei druckplatte vl noch austauschen in was anderes
+% dialog sollte mind einmal erwähnen dass man länger bestimmte dinge aktiv halten soll
+
+% beim erstmaligen imtergaieren mit objekt beim erstmaligen deaktivieren dann sagen dass sich das objekt deaktiviert sobald man weg geht
+% kantenübergang markieren bei kanten über die man springen kann, also die markant machent dass man von stellen aus springen kann
+% es benötigt noch eine zusätzlicvhe einbindung des schlöeichens
+% Interaktionsobjekte durch ne aufhellende art bisschen hervorheben, dass man sieht mit was man interagieren kann
+% kollisonen der kamera manchmal echt nervig und schierig zu handlen
+
+
+
+
+\subsection{Feedback, das im Ausblick mit einem neuen System angepasst werden sollte}
+Manche Aspekte, die bei den Nutzertests herausgestellt werden konnten, ließen sich nicht auf die kurze Zeit umsetzen oder in das Designdokument integrieren. Diese werden nun in Verbindung auf einen Ausblick hier aufgezählt und im \say{Kapitel \ref{sec:ausblick}: \nameref{sec:ausblick}} erneut aufgegriffen.
+% Dialoge sind in ihrer art holprig, und führen die rätsel zu sehr aus sodass die rätsel keinen spaß mehr machen, zu viel und sollte reduziert werden
+% weniger dialog
+% Dialoge sind von der art an den richtigen stellen
+% auf dialog folgt information -> gut
+% dialog des tutporials ausweiten auf den dritten raum noch -> da dialog der ui eimbriungen
+
+% steuerprinzip der steuerinheit vl npch überdneken dass man auf ne ander weise steuern kann
+% layout des ersten raums ändern dass man die druckplatte siegt und die tür und dass man entweder übers gerüst klettern muss oder unten durch kriechen
+% Tutorial sollte lamngsamer beginnen, mit 3 ist der einsteig relativ schwierig schon -> sollte mit einer weiteren person beginnen
+
+\begin{itemize}  
+    \item \textbf{Viele Anmerkungen haben sich auf den Dialog bezogen, welcher eine Überarbeitung benötigt.}
+\end{itemize}
+
+Für die zukünftige Integration des Dialoges wird nach ein vorgefertigtes und fertig System eingebunden, worüber die Dialoge dynamischer und situationsabhängiger eingebunden werden sollen. Das im Prototyp implementierte System ist für den Zweck nur für einen  kleinen Prototypen geeignet und sollte daher abgelöst werden. Allgemein ist der Dialog ziemlich sperrig und zu informativ gehalten, welcher für den Prototyp noch angepasst werden sollte. 
+Selbiges gilt für das Sammeln von Informationen, welches durch eine Anbindung an das Dialogsystem eine ähnliche Funktionalität besitzen sollte, wie es im Prototyp der Fall ist.
+
+\begin{itemize}  
+    \item \textbf{Das Steuerungsprinzip der Steuereinheit benötigt eine Überarbeitung.}
+\end{itemize}
+
+Im Prototyp kann der Spieler über die Tasten \say{A} und \say{D} das Auswahlrad drehen, um ein Chronologen-Ich auszuwählen. Für die Zukunft wäre es besser, wenn der Spieler auf die Zahnradspitze des gewünschten Ichs klicken kann, welcher dadurch ausgewählt wird. Der \say{RayCast-Input} hat allerdings ein Problem, welches zunächst angepasst werden muss.
+
+\begin{itemize}  
+    \item \textbf{Für den Start in das Spiel besitzt der Spieler eine zu hohe Anzahl an Chronologen zur Auswahl. Außerdem kann der Aufbau des Tutorials verbessert werden.}
+\end{itemize}
+
+Der erste Raum des Tutorials sollte umstrukturiert werden. Die Druckplatte, die die Tür im ersten Raum öffnet, sollte für den Spieler sichtbar auf dem Boden platziert werden. Auf dem Weg von der Druckplatte zur Tür sollte das Gerüst platziert werden, damit der Spieler entweder die Wahl hat, durch das Gerüst durchzuschleichen oder um über das Gerüst zu klettern. Dadurch erhält der Spieler einen direkteren Einblick in das Verständnis der Rätsel.
+
+\subsection{Allgemeines Feedback}
+Zusätzlich zu den bereits thematisierten Aspekte gibt es noch ein allgemeines Feedback zum Prototyp.
+
+Dabei war das zielgerichtete \say{Trial and Error }Prinzip beim Lösen der Rätsel einen Höhepunkt und erforderte logisches Denken und Geduld. 
+
+Ein nicht zuordenbarer Aspekt ist der, dass nicht klar definiert ist, wann der Spieler erhaltene Informationen nachlesen soll. Das Spiel sollte das grundlegende Verständnis der Steuerung aller Objekte mitteilen, ohne dass der Spieler etwas nachlesen muss. Die Informationen sollten daher einen Hintergrund-Rahmen schaffen. Das hat Auswirkungen auf die Gestaltung des \ac{UI} da darüber die Steueranweisung von Objekten angezeigt werden soll. Diese sind im \say{Kapitel \ref{sec:design}: \nameref{sec:design}} vermerkt.
+% nicht sicher ob man information lesen soll oder nicht und was sie enthätl
+% trial and error prinzip im zweiten level ist gut
+% geduld muss eingebracht werden und logisches denken
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
