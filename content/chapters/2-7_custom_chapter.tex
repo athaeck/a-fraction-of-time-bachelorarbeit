@@ -1834,7 +1834,7 @@ In diesem Kapitel wird der Aufbau des Prototyps vorgestellt.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/Game-Loop-Class-Diagramm-Connectors.jpg}
-\caption{Spiellogik im Klassendiagramm eingezeichnet, (Quelle: eigene Darstellung)}
+\caption{Spiellogik im Klassendiagramm eingezeichnet, (Quelle: eigene Darstellung), (In groß im Anhang A 1.3.2)}
 \label{fig:main_game_loop_class_connectors}
 \end{figure}
 
@@ -1933,7 +1933,7 @@ Nachdem der Aufbau der Szenen grundlegend erklärt wurde, wird jetzt der Ablauf 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/Level_loop_upto_character_creation.jpg}
-\caption{Szenelogik ohne Kernmechanik, (Quelle: eigene Darstellung)}
+\caption{Szenelogik ohne Kernmechanik, (Quelle: eigene Darstellung), (Vollständig im Anhang A 1.3.2)}
 \label{fig:level_game_loop_class_connectors}
 \end{figure}
 % \newpage
@@ -1944,7 +1944,7 @@ Nachdem der Aufbau der Szenen grundlegend erklärt wurde, wird jetzt der Ablauf 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/level-loop_prototype.jpg}
-\caption{Szenelogik des Prototyps, (Quelle: eigene Darstellung)}
+\caption{Szenelogik des Prototyps, (Quelle: eigene Darstellung), (In groß im Anhang A 1.3.2)}
 \label{fig:level_loop_prototype}
 \end{figure}
 % \newpage
@@ -2347,7 +2347,7 @@ Da im vorherigen Überprüfungsapparat nun die derzeitige und die bereits gespli
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/Split_Class.jpg}
-\caption{Klassendiagramm eines Splits mit der OnTakeTimeline Methode in der CharacterController.cs, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm eines Splits mit der OnTakeTimeline Methode in der CharacterController.cs, (Quelle: eigene Darstellung), (In groß im Anhang A 1.3.2)}
 \label{fig:split-class}
 \end{figure}
 
@@ -2376,14 +2376,14 @@ Zu Beginn der Methode führt der $CharacterController$ die Action \\ $BeforeChar
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/Merge_uml.jpg}
-\caption{Aktivitätsdiagramm eines Merges, (Quelle: eigene Darstellung)}
+\caption{Aktivitätsdiagramm eines Merges, (Quelle: eigene Darstellung), (In groß im Anhang A 1.3.2)}
 \label{fig:merge-uml}
 \end{figure}
 
 \begin{figure}[p]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/merge_classes.jpg}
-\caption{Klassendiagramm eines Merges ohne OnTakeTimeline Methode in CharacterController.cs, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm eines Merges ohne OnTakeTimeline Methode in CharacterController.cs, (Quelle: eigene Darstellung), (In groß im Anhang A 1.3.2)}
 \label{fig:merge-class}
 \end{figure}
 
@@ -2557,17 +2557,17 @@ Der dritte Bereich ist die Methode $OnRemoveOldTimelines()$, die zu Anfang der M
 \subsection{Vorstellung der Erzeugung und Reproduktion von Interaktionen}\label{sec:interactions_reproduction}
 In den letzten Kapiteln wurde darüber berichtet, wie das System funktioniert. Es fehlt nun nur noch die letzte Komponente, und zwar das Aufnehmen und Abspielen der Interaktionen. Wie das Aufnehmen und Reproduzieren funktioniert, wird anhand der Interaktion mit einem Hebel erklärt.
 
-\begin{figure}[ht]
+\begin{figure}[p]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/Interaction_Reconstruct_class.jpg}
-\caption{Klassendiagramm der grundlegenden Struktur bei Aufnahme und Reproduktion, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm der grundlegenden Struktur bei Aufnahme und Reproduktion, (Quelle: eigene Darstellung), (In groß im Anhang A 1.3.2)}
 \label{fig:record_reconstruct_class}
 \end{figure}
 
 Bevor auf das beispielhafte Erklären der Aufnahmen und Reproduktion einer Interaktion mit einem Objekt eingegangen wird, wird zunächst auf den Aufbau der $Abilitys$ und $ReconstructAbilitys$ eingegangen und wie die $Character$ Klasse zentral mit ihnen kommuniziert. In \say{Abbildung \ref{fig:record_reconstruct_class}} ist das Klassendiagramm des Systems abgebildet.
 
-Zunächst wird auf den Aufnahmezyklus (rote Pfeile) eingegangen. Grundlegend erhalten alle $Ability$ Klassen, welche die Fähigkeiten des Spielers darstellen eine Referenz auf die Kollisionen, die der $UnityEngine CharacterController$ oder der Sphärkollider des Charakter-Objektes auslösen (vgl. Markierungen 1 und 2). Dabei wird eine Action ausgeführt, welche die Information in Form der $Information$ Klasse enthalten.
-\newpage
+Zunächst wird auf den Aufnahmezyklus (rote Pfeile) eingegangen. Grundlegend erhalten alle $Ability$ Klassen, welche die Fähigkeiten des Spielers darstellen, eine Referenz auf die Kollisionen, die der $UnityEngine CharacterController$ oder der Sphärkollider des Charakter-Objektes auslösen (vgl. Markierungen 1 und 2). Dabei wird eine Action ausgeführt, welche die Information in Form der $Information$ Klasse enthalten.
+% \newpage
 \begin{lstlisting}[caption={Information.cs des Prototyps}, label={fig:information-cs}]
 public enum CollisionType
 {
@@ -2943,7 +2943,7 @@ In diesem Zusammenhang gibt es zusätzlich $AudioSourceController$ für den Spra
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/AudioSourceController.jpg}
-\caption{Klassendiagramm der AudioSourceController.cs Komponenten, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm der AudioSourceController.cs Komponenten, (Quelle: eigene Darstellung), (In groß im Anhang A 1.3.2)}
 \label{fig:audio-source-controller}
 \end{figure}
 
