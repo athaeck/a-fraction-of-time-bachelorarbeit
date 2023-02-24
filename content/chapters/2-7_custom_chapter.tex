@@ -2083,7 +2083,7 @@ Die $Recordbale$ Klassen speichern nun lokal in ihrer Klasse die Startposition u
 \label{fig:save_timeline-cs}
 \end{figure}
 
-Diese Action wird im $GraphController$ aufgerufen, sobald die aktuelle Zeitlinie durch eine andere ausgetauscht wird. Das ist bei einem \say{\emph{Split}} und einem \say{\emph{Merge}} der Fall. Bevor die $\_currentTimeline$ ausgetauscht wird, speichert die $Recorcable$ Klasse die Startposition, Startrotation, Endposition, Endrotation und alle gesammelten Interaktionen in die übergebene Zeitlinie. Zusätzlich können alle Kinderklassen der $Recordable$ Klasse ihre eigenen Spezifikationen abspeichern. Das wird in \say{Kapitel \ref{sec:recordable-specifications}: \nameref{sec:recordable-specifications}} genauer erklärt.
+Diese Action wird im $GraphController$ aufgerufen, sobald die aktuelle Zeitlinie durch eine andere ausgetauscht wird. Das ist bei einem \say{\emph{Split}} und einem \say{\emph{Merge}} der Fall. Bevor die $\_currentTimeline$ ausgetauscht wird, speichert die $Recorcable$ Klasse die Startposition, Startrotation, Endposition, Endrotation und alle gesammelten Interaktionen in die übergebene Zeitlinie. Zusätzlich können alle Kinderklassen der $Recordable$ Klasse ihre eigenen Kindklassen abspeichern. Das wird in \say{Kapitel \ref{sec:recordable-specifications}: \nameref{sec:recordable-specifications}} genauer erklärt.
 
 \paragraph{LoadTimeline:}
 ~
