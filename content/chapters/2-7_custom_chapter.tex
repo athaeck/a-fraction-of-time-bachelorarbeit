@@ -38,7 +38,7 @@ Die Spielabläufe des Spiels können in drei verschiedene Abschnitte unterteilt 
 \begin{figure}[p]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/main_loop.jpg}
-\caption{Ablauf des gesamten Spiels, (Quelle: eigene Darstellung)}
+\caption{Aktivitätsdiagramm des gesamten Spiels, (Quelle: eigene Darstellung)}
 \label{fig:main_loop}
 \end{figure}
 
@@ -50,7 +50,7 @@ Nach Abschließen des Tutorials erhält der Spieler ein Überblick über den Gra
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/level_loop.jpg}
-\caption{Ablauf eines Levels, (Quelle: eigene Darstellung)}
+\caption{Aktivitätsdiagramm eines Levels, (Quelle: eigene Darstellung)}
 \label{fig:level_loop}
 \end{figure}
 
@@ -62,7 +62,7 @@ Die Begrifflichkeiten \say{\emph{Splitting}} und \say{\emph{Merging}} werden in 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.4\linewidth]{content/pictures/labor_loop.jpg}
-\caption{Ablauf des Labors, (Quelle: eigene Darstellung)}
+\caption{Aktivitätsdiagramm des Labors, (Quelle: eigene Darstellung)}
 \label{fig:labor_loop}
 \end{figure}
 
@@ -649,7 +649,7 @@ Im Kontext dieses Prototyps besitzen die Ich-Versionen des Chronologen unterschi
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.8\linewidth]{content/pictures/Chronologe_b.jpg}
-\caption{3D Modell des Chronologen, blaue Weste (Quelle: eigene Darstellung)}
+\caption{3D Modell des Chronologen, blaue Weste, (Quelle: eigene Darstellung)}
 \label{fig:chronologe_b}
 \end{figure}
 
@@ -664,14 +664,14 @@ Das aufgenommene Ich des Chronologen, das in den Abbildungen \ref{fig:chronologe
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.8\linewidth]{content/pictures/Ghost_b.jpg}
-\caption{3D Modell Platzhalter, blaue Weste (Quelle: eigene Darstellung)}
+\caption{3D Modell Platzhalter, blaue Weste, (Quelle: eigene Darstellung)}
 \label{fig:ghost_b}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.8\linewidth]{content/pictures/Ghost.jpg}
-\caption{3D Modell Platzhalter (Quelle: eigene Darstellung)}
+\caption{Platzhalter des Chronologen, (Quelle: eigene Darstellung)}
 \label{fig:ghost}
 \end{figure}
 \newpage
@@ -740,7 +740,7 @@ Der Spieler erhält bei der Markierung 6 in \say{Abbildung \ref{fig:ui-player}} 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/CarryObjects.jpg}
-\caption{UI beim Tragen eines Spielobjektes, (Quelle: eigene Darstellung)}
+\caption{User-Interface beim Tragen eines Spielobjektes, (Quelle: eigene Darstellung)}
 \label{fig:carry_object_ui}
 \end{figure}
 
@@ -998,7 +998,7 @@ Der Computer dient nicht nur der Aufnahme und Speicherung von Notizen, sondern a
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.6\linewidth]{content/pictures/portal_01.jpg}
-\caption{Erster Entwurf Portal der Maschine, (Quelle: Stable Diffusion)}
+\caption{Portal der Maschine, erstes Konzept, (Quelle: Stable Diffusion)}
 \label{fig:portal_01}
 \end{figure}
 % \newpage
@@ -1239,7 +1239,7 @@ Der Spieler hat für das Meistern des zweiten Levels zwei weitere Ichs zur Verf�
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/Collage Labor Chronologist.jpg}
-\caption{Collage Labor des Chronologen, (Quelle: \cite{cg_plane_dribbble_nodate}, Stable Diffusion}
+\caption{Collage Labor des Chronologen, (Quelle: \cite{cg_plane_dribbble_nodate} (rechts oben), Stable Diffusion (rest)}
 \label{fig:collage_labor_chron}
 \end{figure}
 
@@ -1259,6 +1259,9 @@ Der Prototyp wurde in der Version 2021.3.16f1 \ac{LTS} umgesetzt. Diese Version 
 
 \subsection{Blender 3.3.1}
 Blender dient in der Umsetzung als Bearbeitungstool von \ac{3D} Objekten. Aufgrund der Tatsache, dass Blender (.blend) Dateien direkt in Unity integriert werden können, und nicht als \ac{FBX} exportiert und importiert werden müssen (vgl. \cite{technologies_unity_nodate}). Als die Umsetzung des Prototyps begann, war die Version 3.3.1 von Blender die aktuellste, die heruntergeladen wurde.
+
+\subsection{Stable Diffusion}
+Stable Diffusion ist ein Text-zu-Bild Generator, welcher durch Deep-Learning Algorithmen und die Eingabe von Textanweisungen Bilder erzeugen kann. Diese Technologie kann lokal auf jedem Rechner installiert werden. Sie wurde benutzt, um Bilder für die Konzeption zu generieren (vgl. \cite{katzlberger_stable_2022}). Die KI wird durch den Quellenverweis \say{Stable Diffusion} gekennzeichnet. Sie ist erreichbar unter der im folgenden zitierten Verweis erreichbar (\cite{sygil_dev_sygil-devsygil-webui_nodate}).
 
 \subsection{Mixamo}
 Die im Prototyp verwendeten Animationen des Spielercharakters stammen alle aus der Bibliothek von Mixamo. Mixamo ist in der Lage, importierte \ac{FBX} Modelle zu riggen. Dabei erhält das Objekt ein Skelett, welches animiert werden kann. Das dabei entstandene Skelett und die integrierten Animationen werden in diesem Prototyp verwendet.
@@ -1377,7 +1380,7 @@ In \say{Abbildung \ref{fig:L02_E02_04_L01}} wird ein solcher Baum gezeigt. Die s
 \subsubsection{Welche Zeitlinien müssen nach einem Mergevorgang betrachtet werden?}\label{sec:good_02}
 Nach einem \say{\emph{Mergevorgang}} wird die aktuelle Zeitlinie durch eine bereits existierende Zeitlinie ersetzt. Befindet sich der Spieler in \say{Abbildung \ref{fig:merge-definition}} auf der blauen Zeitlinie, so wechselt er zum Beispiel auf die schwarze Zeitlinie zurück. Ist dieser Wechsel abgeschlossen, müssen die nach einem Split entstandenen rote und blaue Zeitlinie betrachtet werden.
 
-\begin{lstlisting}[caption={HandleMerge() Methode aus dem alten Prototyp}, label={sec:old_merge}]
+\begin{lstlisting}[caption={HandleMerge Methode aus dem alten Prototyp}, label={sec:old_merge}]
 public class GraphController
 {
 ...
@@ -1456,7 +1459,7 @@ Trifft der Fall zu, dass $timeline.GetLevel() >= \_currentTimeline.GetLevel()$ d
 Der $TimeController$ des Prototyps übergibt an den $GameController$ über die Methode $HandleGameTime()$ den aktuellen Zeitpunkt des Timers. Sofern ein \say{\emph{Mergvorgang}} absolviert wurde, existiert auch eine Liste an zu betrachteten Zeitlinien. Diese $\_timelinesToHandle$ werden nun sequenziell durchiteriert. Dabei wird zunächst geprüft, ob diese Zeitlinie eine Kopie des Chronologen besitzt, der die Aufnahme der Zeitlinie reproduziert. Falls bislang noch keine Kopie existiert, wird geprüft, ob die übergebene $\_gametime$ bereits größer ist als die letzte in der Zeitlinie aufgenommene Interaktion. Trifft das zu, wird die Zeitlinie aus der Liste, der $\_timelineToHandle$ entfernt. Trifft es nicht zu und ist der übergebene Zeitpunkt größer oder gleich des Startpunktes der Zeitlinie, so wird eine Kopie erstellt und der Zeitpunkt wird an diese Kopie übergeben.
 
 Im letzten Schritt wird in der Methode $HandlePurge()$ überprüft, welche erstellten Zeitlinien gelöscht werden können, da ihre letzte aufgenommene Interaktion im Vergleich zur $\_gametime$ in der Vergangenheit erfolgte und sie deshalb nicht mehr beachtet werden muss. Diese Methode wird allerdings nur dann aufgerufen, sofern der Spieler den Hauptchronologen steuert und sich auf der $\_rootTimeline$ befindet.
-\begin{lstlisting}[caption={Haupt Gameloop der Mechanik aus dem Gamedesign Workshop}, label={sec:handleGameTime_old}]
+\begin{lstlisting}[caption={Zentrale Logik der Mechanik aus dem Gamedesign Workshop}, label={sec:handleGameTime_old}]
 public class GraphController
 {
 ...
@@ -1528,7 +1531,7 @@ public class GraphController
 \subsubsection{Wie rekonstruiert die Kopie des Chronologen die aufgenommene Interaktion?}\label{sec:good_04}
 Der GraphController übergibt in der $HandleGameTime()$ Methode den derzeitigen Zeitpunkt des Timers über die Methode $ shadow.ReconstructRecord()$ an die $Shadow$ Klasse weiter. In der dieser Methode wird aus der Liste der aufgenommenen Interaktionen die Interaktion gesucht, die zu diesem übergebenen Zeitpunkt passiert ist. Die durch diesen Aufruf gefundene Interaktion: $\_interactions.Find(i => \\(float.Equals(i.TimeStamp,timestamp)))$ wird nun in im \say{Switch-Case} ausgewertet. Bei diesem Prototyp konnte der Spieler nur laufen und springen.
 Der Mechanismus der Rekonstruktion erfolgt nur in der $Shadow$ Klasse.
-\begin{lstlisting}[caption={Rekonstruktionsmethode aus der Shadow.cs}, label={sec:reconstructing_old}]
+\begin{lstlisting}[caption={Rekonstruktionsmethode aus Shadow.cs}, label={sec:reconstructing_old}]
 public class Shadow : Player
 { 
 ...
@@ -1653,8 +1656,9 @@ public class Interaction
 
 \subsection{Aspekte zum Überarbeiten}
 Die in den Kapiteln \say{\ref{sec:good_01} bis \ref{sec:good_05}} beschriebenen Aspekte sind in der Theorie richtig umgesetzt, allerdings besteht auch dabei noch Verbesserungspotenzial. Diese Aspekte werden im kommenden \say{Kapitel \ref{sec:rework}: \nameref{sec:rework}} aufgegriffen und verbessert.
+\newpage
 \subsubsection{Falscher Bezug bei der Spielmechanik}
-\begin{lstlisting}[caption={HandleCharacterSelection in der PlayerController.cs Klasse}, label={sec:playercontroller_old}]
+\begin{lstlisting}[caption={HandleCharacterSelection in der PlayerController.cs}, label={sec:playercontroller_old}]
 public class PlayerController : Controller
 {
     ...
@@ -1690,11 +1694,11 @@ public class PlayerController : Controller
 }
 \end{lstlisting}
 Der grundlegende Fokus der Hauptmechanik ist falsch ausgelegt. Im Gamedesign Workshop wurde damals das Überwachen und Kontrollieren des Spielercharakters als Hauptpunkt der Mechanik ausgemacht, das hatte aber zur Folge, dass das Erstellen des Graphen daran angegliedert werden musste. Das macht in dem Prinzip der Mechanik keinen Sinn, da der Spieler und dessen Avatar nicht der Kernpunkt ist, sondern lediglich ein Teil der Mechanik. In der Klasse $PlayerController$ wurde durch die Mithilfe der Klasse $GraphController$ entschieden, wann eine Auswahl ein \say{\emph{Split}}- und wann ein \say{\emph{Mergeprozess}} stattzufinden hat. Deswegen ist es sinnvoller, diesen Prozess über die Klasse $GraphController$ zu bestimmen.
-
+\newpage
 \subsubsection{Undurchdachte Split und Merge Methoden}\label{sec:bad_merge_split}
 Eine weitere Ursache aus dem falschen Fokus der Hauptmechanik wurden die\\ $HandleSplit$ und $HandleMerge$ mit nebensächlichen Aktionen überladen und nur auf den Spielercharakter bezogen.
 
-\begin{lstlisting}[caption={Alte HandleSplit und HandleMerge Methoden}, label={sec:split_merge_old}]
+\begin{lstlisting}[caption={Alte HandleSplit und HandleMerge Methode aus PlayerController.cs}, label={sec:split_merge_old}]
 public class PlayerController : Controller
 {
     ...
@@ -1748,7 +1752,7 @@ Sowohl die $HandleSplit$ als auch die $HandleMerge$ löschen den alten Platzhalt
 \subsubsection{Das Erstellen des Graphen ist ein Nebenprodukt}
 Durch die Thematik aus dem vorherigen Kapitel wird erkennbar, dass das Bauen des Graphen schwierig und unstrukturiert ist.
 
-\begin{lstlisting}[caption={Split und Merge listener}, label={sec:split_merge_old_graph}]
+\begin{lstlisting}[caption={HandleSplit und HandleMerge Methode aus GraphController.cs}, label={sec:split_merge_old_graph}]
 public class GraphController : Controller
 {
     ...
@@ -1861,7 +1865,7 @@ Darauffolgend werden alle Daten, die der Spieler im Spiel gesammelt hat, geladen
 
 Nachdem der Spieler das Spiel fortgesetzt oder neu gestartet hat, wird die aktuelle $SceneData$ auf die $SceneData$ des Labors oder des nächsten Levels gesetzt (vgl. Markierungen 6 und 7). Das System lädt nun die Beitrittsszene der neuen Szene. Diese wird $On[Name~ des~ Levels]$ (Eintrittsszene) genannt und beinhaltet in einer finalen Version eine Zwischensequenz. Im derzeitigen Prototyp ist es ein Screenshot der kommenden Spielwelt und ein einführender Text. Nachdem der Inhalt der Szene betrachtet wurde, wechselt das Sytsem nach einer Eingabe des Spielers die Szene auf die Szene der aktuellen $SceneData$ (vgl. Markierungen 8, 9 und 10). Sobald die Szene geladen hat, wird die $Start()$ Methode des $SceneControllers$ aufgerufen, der die lokalen Methoden an die $Actions$ des $GameControllers$ anhängt. Dadurch erhält die Szene ein Wissen darüber, welcher Zustand im Spiel nun herrschen wird. Der $SceneController$ übergibt eine Instanz von sich als Parameter an den $GameController$. Dadurch existiert ein globaler Kenntnisstand auf die aktuelle Szene. Über die $EnterScene$ Action werden die Einstellungen des Spielers an alle in der Szene relevanten Empfänger übermittelt. Der $GameController$ übergibt an den $SceneController$ die $SceneData$ dieser Szene, in der die Einstellungen zu den jeweiligen Szenen definiert werden können.
 
-\begin{lstlisting}[caption={SceneData.ts}, label={sec:sceneData}]
+\begin{lstlisting}[caption={SceneData.ts aus Prototyp}, label={sec:sceneData}]
 public class SceneData : ScriptableObject
 {
     public string sceneName;
@@ -2059,7 +2063,7 @@ In \say{Abbildung \ref{fig:graphController-cs}} ist das Klassendiagramm abgebild
 \begin{figure}[p]
 \centering
 \includegraphics[width=0.5\linewidth]{content/pictures/GraphController.jpg}
-\caption{Klassendiagramm der GraphController.cs Klasse, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm aus GraphController.cs, (Quelle: eigene Darstellung)}
 \label{fig:graphController-cs}
 \end{figure}
 % \newpage
@@ -2123,7 +2127,7 @@ public class TimeController : MonoBehaviour
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.4\linewidth]{content/pictures/TimeController.jpg}
-\caption{Klassendiagramm der TimeController.cs Klasse, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm der TimeController.cs, (Quelle: eigene Darstellung)}
 \label{fig:timeController-cs}
 \end{figure}
 
@@ -2139,7 +2143,7 @@ Damit diese Klasse auf die Actions des $GraphControllers$ reagieren, besitzen si
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.6\linewidth]{content/pictures/Recordable.jpg}
-\caption{Klassendiagramm der Recordable.cs Klasse, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm der Recordable.cs, (Quelle: eigene Darstellung)}
 \label{fig:recordable-cs}
 \end{figure}
 
@@ -2153,7 +2157,7 @@ Klassen, die dazu fähig sind Interaktionen zu reproduzieren, besitzen das Inter
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.4\linewidth]{content/pictures/Executable.jpg}
-\caption{Klassendiagramm des Executable.cs Interface, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm des Executable.cs, (Quelle: eigene Darstellung)}
 \label{fig:executable-cs}
 \end{figure}
 
@@ -2192,7 +2196,7 @@ Das Klassendiagramm ist in \say{Abbildung \ref{fig:characterController-cs}} zu s
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\linewidth]{content/pictures/CharacterController.jpg}
-\caption{Klassendiagramm der CharacterController.cs Klasse, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm der CharacterController.cs, (Quelle: eigene Darstellung)}
 \label{fig:characterController-cs}
 \end{figure}
 \newpage
@@ -2204,7 +2208,7 @@ Der $GroundController$, dessen Klassendiagramm in \say{Abbildung \ref{fig:ground
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.6\linewidth]{content/pictures/GroundController.jpg}
-\caption{Klassendiagramm der GroundController.cs Klasse, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm der GroundController.cs, (Quelle: eigene Darstellung)}
 \label{fig:groundCOntroller-cs}
 \end{figure}
 
@@ -2223,7 +2227,7 @@ Das Aktivitätsdiagramm aus \say{Abbildung \ref{fig:check-if-split-merge}} besch
 \label{fig:check-if-split-merge}
 \end{figure}
 
-\begin{lstlisting}[caption={Split/Merge Überprüfung aus GraphController.ts Klasse}, label={fig:code-check-if-split-or-merge}]
+\begin{lstlisting}[caption={Split/Merge Überprüfung aus GraphController.ts}, label={fig:code-check-if-split-or-merge}]
 public class GraphController: MonoBehaviour
 {
     ...
@@ -2343,7 +2347,7 @@ Da im vorherigen Überprüfungsapparat nun die derzeitige und die bereits gespli
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/Split_Class.jpg}
-\caption{Klassendiagramm eines Splits mit der OnTakeTimeline Methode in der CharacterController.cs Klasse, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm eines Splits mit der OnTakeTimeline Methode in der CharacterController.cs, (Quelle: eigene Darstellung)}
 \label{fig:split-class}
 \end{figure}
 
@@ -2379,7 +2383,7 @@ Zu Beginn der Methode führt der $CharacterController$ die Action \\ $BeforeChar
 \begin{figure}[p]
 \centering
 \includegraphics[width=1\linewidth]{content/pictures/merge_classes.jpg}
-\caption{Klassendiagramm eines Merges ohne OnTakeTimeline Methode in CharacterController.cs Klasse, (Quelle: eigene Darstellung)}
+\caption{Klassendiagramm eines Merges ohne OnTakeTimeline Methode in CharacterController.cs, (Quelle: eigene Darstellung)}
 \label{fig:merge-class}
 \end{figure}
 
@@ -2387,7 +2391,7 @@ Die folgende Erklärung bezieht sich auf das in \say{Abbildung \ref{fig:merge-um
 
 Nachdem der Algorithmus erkannt hat, dass ein \say{\emph{Merge}} Prozess gestartet werden muss, wird über die Action $Merge$ im $SceneController$ die Methode $OnMerge()$ aufgerufen. Dieser startet mit der Action $BeforeMerge$ damit Aktivitäten vor dem Merge Prozess gestartet werden können (vgl. Markierungen 1 und 2). Im Anschluss wird die Action $SaveTimeline$ ausgeführt, damit der aktuelle Zustand der Spielwelt auf die übergebene aktuelle Zeitlinie gespeichert werden kann (vgl. Markierungen 3 und 4). Da der Zustand der Spielwelt zu dieser Zeitlinie nun abgespeichert wurde, wird der aktuelle Zeitpunkt als Endzeitpunkt dieser Zeitlinie festgelegt und ebenfalls abgespeichert (vgl. Markierungen 5 und 6). In der Methode $OnSelection()$ aus Codeausschnit \ref{fig:code-check-if-split-or-merge} speichert bei der Überprüfung, ob ein \say{\emph{Merge}} Prozess starten soll, die gefundene Zeitlinie lokal im $GraphController$ ab, damit sie im Verlauf des \say{\emph{Mergeprozesses}} verwendet werden kann. Diese gefundene Zeitlinie $\_mergeIn$ ist die Zeitlinie, die nun wieder geladen und zu welcher zurückgekehrt werden muss. Diese Zeitlinie wird nun bei der Action $MoveBackTo$ übergeben, damit der $GroundController$ die Position des Starts setzen und ihn an den $CharacterController$ weiterreichen kann. Zusätzlich setzt der $TimeController$ nun den Timer auf den letzten Zeitpunkt der Zeitlinie, damit der Timer ab dieser Zeit weiterlaufen kann. Der $GraphController$ holt sich ebenfalls den letzten Zeitpunkt aus der Zeitlinie und setzt ihn auf die in der Klasse gespeicherte Referenz, die vom $TimeController$ übergeben wurde. Das ist für den späteren Verlauf des \say{\emph{Merges}} wichtig (vgl. Markierungen 7 bis 13). Die in der Methode gespeicherte Zeitlinie auf die \say{\emph{zurückgemergt}} wird, wird nun die neue, $\_currentTimeline$ welche bei der Action $TakeCurrentTImeline$ übergeben wird. Hierbei wird das Ich aus der geladene Zeitlinie in die Szene gesetzt, damit der Spieler diesen Charakter steuern kann. Außerdem werden die fortgesetzten Startpositionen der $Recordable$ in ihrer Klasse gesetzt, welche bei einem \say{\emph{Merge}} nicht mehr wichtig sind, da diese Objekte in der Zeitlinie bereits eine Startposition besitzen, welche nicht überschrieben werden kann (vgl. Markierungen 14 bis 17). Nachdem das Spielobjekt Abbild des Chronologen erstellt und seine Abhängigkeiten gesetzt wurden, wird über die Action $LoadTimeline$ die aktuelle $\_currentTimeline$ übermittelt, damit die Spielwelt und die damit einhergehenden $Recordable$ Objekte den Zustand dieser Zeitlinien wiederherstellen können. Dazu laden die $Redordable$ Objekte in ihrer Methode $OnLoadTimeline()$ alle wichtigen Informationen und setzen diese in ihren lokalen Variablen. Zusätzlich setzten sie die geladene Endposition der Zeitlinie auf ihre Transform Komponente, damit sie wieder in die richtige Position gesetzt werden kann (vgl. Markierungen 18 bis 24). Zum Ende des grundlegenden \say{\emph{Mergeprozesses}} wird die Action $AfterMerge$ ausgeführt (vgl. Markierung 25).
 
-\begin{lstlisting}[caption={OnRemoveOldPlaceholder aus GraphController.ts Klasse}, label={fig:on-remove-old-placeholdere}]
+\begin{lstlisting}[caption={OnRemoveOldPlaceholder aus GraphController.ts}, label={fig:on-remove-old-placeholdere}]
 public class GraphController: MonoBehaviour
 {
     ...
@@ -2430,7 +2434,7 @@ Im ersten Schritt der $AfterMerge$ Action werden zunächst alle alten Platzhalte
 
 Im nächsten Schritt wird, wie im alten Prototyp und in Codeausschnit \ref{sec:old_checkForInteractions} gezeigt, darauf geschaut, welche Zeitlinien ein höheres oder gleiches Level wie die derzeitige Zeitlinie hat. Diese rekursive Methode wurde im hier entstandenen Prototyp folgendermaßen in Codeausschnitt \ref{fig:on-timelines-to-handle} übernommen (vgl. Markierungen 28 und 29).
 
-\begin{lstlisting}[caption={OnTimelinesToHandle aus GraphController.ts Klasse}, label={fig:on-timelines-to-handle}]
+\begin{lstlisting}[caption={OnTimelinesToHandle aus GraphController.ts}, label={fig:on-timelines-to-handle}]
 public class GraphController: MonoBehaviour
 {
     ...
@@ -2466,7 +2470,7 @@ Zuletzt wird, wie bereits bei der Erklärung des \say{\emph{Splits}} in \say{Kap
 \subsection{Vorstellung des HandleTimelineManagers}\label{sec:handle-timeline-manager}
 Der $HandleTimelineManager()$ ist die zentrale Logik, die das Replay-System ausführt. Durch die Anweisungen des $HandleTimelineManagers()$ werden die richtigen Kopien des Chronologen erzeugt und ebenso die richtigen Interaktionen an die richtigen Kopien übergeben.
 
-\begin{lstlisting}[caption={HandleTimelineManager aus GraphController.ts Klasse}, label={fig:handle-timeline-manager}]
+\begin{lstlisting}[caption={HandleTimelineManager aus GraphController.ts}, label={fig:handle-timeline-manager}]
 public class GraphController: MonoBehaviour
 {
     ...
@@ -2564,7 +2568,7 @@ Bevor auf das beispielhafte Erklären der Aufnahmen und Reproduktion einer Inter
 
 Zunächst wird auf den Aufnahmezyklus (rote Pfeile) eingegangen. Grundlegend erhalten alle $Ability$ Klassen, welche die Fähigkeiten des Spielers darstellen eine Referenz auf die Kollisionen, die der $UnityEngine CharacterController$ oder der Sphärkollider des Charakter-Objektes auslösen (vgl. Markierungen 1 und 2). Dabei wird eine Action ausgeführt, welche die Information in Form der $Information$ Klasse enthalten.
 \newpage
-\begin{lstlisting}[caption={Information.cs Klasse}, label={fig:information-cs}]
+\begin{lstlisting}[caption={Information.cs des Prototyps}, label={fig:information-cs}]
 public enum CollisionType
 {
     COLLISION_ENTER, COLLISION_EXIT,NULL
@@ -2595,7 +2599,7 @@ Nachdem die $Recordable$ Klasse, genauer gesagt die $Character$ Klasse auf der K
 
 \paragraph{Aufnahme der InteractionAbility}
 ~
-\begin{lstlisting}[caption={Ausschnitt aus InteractionAbility.cs Klasse}, label={lst:interaction-ability}]
+\begin{lstlisting}[caption={Ausschnitt aus InteractionAbility.cs}, label={lst:interaction-ability}]
 public class InteractionAbility : Ability, IInteract
 {
     private Interactable _interactable;
@@ -2667,7 +2671,7 @@ Dabei wird für das Darstellen in der Szene die Animation gestartet, die das Int
 \paragraph{Rekonstruktion der ReconstructionInteractionAbility}
 ~
 
-\begin{lstlisting}[caption={Ausschnitt aus ReconstructionInteractionAbility.cs Klasse}, label={lst:reconstruction-interaction-ability}]
+\begin{lstlisting}[caption={Ausschnitt aus ReconstructionInteractionAbility.cs}, label={lst:reconstruction-interaction-ability}]
 public class ReconstructionInteractionAbility : ReconstructAbilitty
 {
     private Interactable _interactable;
@@ -2733,7 +2737,7 @@ Im Kontext der Reproduktion der Zeitlinien sind diese in sich geschlossen. Die e
 
 Anfangs wurde der Charakter der Zeitlinie an seinen Anfangspunkt der Zeitlinie instanziiert und wartetet anschließend darauf, dass eine Interaktion zu einem übergebenen Zeitpunkt geschieht und die Kopie bewegt wird.
 
-\begin{lstlisting}[caption={Ausschnitt aus CharacterController.cs Klasse}, label={lst:character-controller}]
+\begin{lstlisting}[caption={Ausschnitt aus CharacterController.cs}, label={lst:character-controller}]
 public class CharacterController : Controller
 {
 ...
@@ -2761,7 +2765,7 @@ Die Lösung für dieses Problem ist naheliegend, wenn man sich den Aufbau der Me
 
 Der folgende Codeausschnit \ref{lst:character-controller_fixed} beinhaltet diese Lösung.
 
-\begin{lstlisting}[caption={Ausschnitt aus CharacterController.cs Klasse}, label={lst:character-controller_fixed}]
+\begin{lstlisting}[caption={Ausschnitt aus CharacterController.cs}, label={lst:character-controller_fixed}]
 public class CharacterController : Controller
 {
     ...
@@ -2822,7 +2826,7 @@ Führt der Spieler nun einen \say{\emph{Mergevorgang}} aus, so würde Folgendes 
 
 Der Prozess des Ladens der Rotation und der Position würde den Kran an die gespeicherte Rotation setzen. Allerdings überschreibt die Keyframe Animation den gespeicherten Wert. Weil das auf der Druckplatte stehende Ich des Chronologen neu instanziiert wurde, beginnt die Keyframe Animation wieder am Start der Animation. Die Ausgangslage des Kranes ist allerdings eine andere als im Moment der Speicherung.  
 
-\begin{lstlisting}[caption={Ausschnitt aus Moveable.cs Klasse}, label={lst:moveable}]
+\begin{lstlisting}[caption={Ausschnitt aus Moveable.cs}, label={lst:moveable}]
 public abstract class Moveable : Recordable
 {
     ...
@@ -2848,7 +2852,7 @@ public abstract class Moveable : Recordable
 
 Die Kranklasse $Crane.cs$, die im Anhang im Klassendiagramm zu finden ist, erbt von der Klasse $Moveable$ welche im Codeausschnitt \ref{lst:moveable} dargestellt ist. Es müssen nun die Methoden $OnLoadTimeline()$ und $OnSaveTimeline()$ aus der $Recordable$ Klasse überschrieben werden, da diese lediglich Positionen und Rotationen abspeichern, welche für Objekte mit einer Keyframe Animation irrelevant sind. Es wird nun mithilfe der $MoveableAnimationControllers$ Klasse aus Codeausschnitt \ref{lst:moveable_animation} der Keyframe und die aktive Animation in der Zeitlinie abgespeichert. Jede $Moveable$ Klasse hat eine $MoveableAnimationController$ Klasse.
 
-\begin{lstlisting}[caption={Ausschnitt aus MoveableAnimationController.cs Klasse}, label={lst:moveable_animation}]
+\begin{lstlisting}[caption={Ausschnitt aus MoveableAnimationController.cs}, label={lst:moveable_animation}]
 public class MoveableAnimationController : AnimationController
 {
     private Animator _animator;
