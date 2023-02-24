@@ -126,7 +126,7 @@ Bereits eingegliederte Zeitlinien können nicht erneut eingegliedert werden, sol
 \subsection{Timer}
 Der Timer zeigt dem Spieler an, wie lange er bereits in dem Level spielt. Er dient als Orientierung, ab welchem Zeitpunkt bis zu welchem Zeitpunkt der Spieler mit einem Ich aus einer anderen Zeitlinie spielt. So kann er abschätzen, wann die Zeitlinie seines gespeicherten Ichs nicht mehr in der Welt verfügbar ist und wann dementsprechend der Charakter der Zeitlinie nicht mehr bspw. auf einer Druckplatte stehen wird. Der Timer ist die zählende Komponente des Spiels, über die das Zeitkontinuum wacht. Durch den Timer kann nun auch bestimmt werden, wann eine Zeitlinie aus dem Kontinuum an die Zeitlinie des Chronologen angegliedert wird und wann der Spieler durch das \say{\emph{Merging}} an einen Knotenpunkt zurückgesprungen ist, also gewissermaßen wieder in die Vergangenheit gereist ist.
 
-\subsection{Avatara}
+\subsection{Avatar}
 Der Spieler sieht im  Spiel über die Steuereinheit die Namen seiner Ichs aus anderen Zeitlinien. Über eine Ansicht der verschieden verfügbaren Zeitlinien erhält er ebenfalls nur die Ansicht des Ichs aus dieser Zeitlinie. Ein Avatar ist in dem Kontext des Spiels der eigentliche Chronologe aus der Zeitlinie des Kontinuums und seine abgewandelten Persönlichkeiten aus den erforschten Zeitlinien. Der Spieler steuert jeweils das Selbst des Chronologen in all seinen Facetten.
 
 \subsection{Bewegungen und Interaktionen}
@@ -737,16 +737,17 @@ Der Spieler erhält bei der Markierung 6 in \say{Abbildung \ref{fig:ui-player}} 
 \label{fig:carry_object_objectarm}
 \end{figure}
 
+% \newpage
+% ~
+Sobald der Spieler ein Objekt trägt, erhält er wie in \say{Abbildung \ref{fig:carry_object_ui}} zu sehen eine Anweisung, wie er das Objekt wieder hinlegen kann. Das Objekt trägt er dabei, wie es in \say{Abbildung \ref{fig:carry_object_objectarm}} beim Spiel \say{The Talos Priciple} zu sehen ist.
+
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1\linewidth]{content/pictures/CarryObjects.jpg}
+\includegraphics[width=0.95\linewidth]{content/pictures/CarryObjects.jpg}
 \caption{User-Interface beim Tragen eines Spielobjektes, (Quelle: eigene Darstellung)}
 \label{fig:carry_object_ui}
 \end{figure}
-
-Sobald der Spieler ein Objekt trägt, erhält er wie in \say{Abbildung \ref{fig:carry_object_ui}} zu sehen eine Anweisung, wie er das Objekt wieder hinlegen kann. Das Objekt trägt er dabei, wie es in \say{Abbildung \ref{fig:carry_object_objectarm}} beim Spiel \say{The Talos Priciple} zu sehen ist.
-
-
+\newpage
 \subsection{Datenleser}\label{sec:datenleser_ui}
 
 \begin{figure}[ht]
@@ -814,7 +815,7 @@ Dem Spieler soll an bestimmten Stellen, wie an einer Druckplatte, vermittelt wer
 \end{figure}
 
 Wie in \say{Abbildung \ref{fig:pressureplate_tooltip}} zu sehen, wird, sobald der Chronologe nahe an einer Druckplatte steht, das Partikelsystem der Druckplatte aktiviert. Es zeigt durch seinen Fluss auf die Druckplatte dem Spieler an, dass er auf diese Druckplatte gehen muss, um sie durch seinen Körper zu aktivieren.
-
+\newpage
 \subsection{Kletterkanten}\label{sec:leadge}
 Ein Bestandteil der Bewegungsmöglichkeiten des Spielers ist es, auf Gerüste oder Stützen zu klettern. Hierbei benötigt der Spieler auf zwei Wegen einen Hinweis darauf, wo und wie er auf Objekte klettern kann.
 Der Spieler kann durch ein Kabel, das an der Kante des entsprechenden Objektes liegt, erkennen, dass er auf das Objekt klettern kann. Das Kabel wird durch eine Schraffierung an der Kante unterstützt.
@@ -835,7 +836,7 @@ Der zweite Weg wird im Folgenden \say{Kapitel \ref{sec:tooltip}: \nameref{sec:to
 
 In Bezug auf die Kletterkante aus \say{Kapitel \ref{sec:leadge}: \nameref{sec:leadge}} erhält der Spieler eine zusätzliche visuelle Aufforderung, wie er mit der Kante zu interagieren hat. Diese Aufforderungen werden im Kontext dieser Arbeit Tooltips genannt. Diese Tooltips beinhalten einen Keycode der Tastatur, durch welchen der Spieler den Chronologen auf das Gerüst klettern lassen kann. Im Fall der Kletterkante ist es die Leertaste.
 
-\newpage
+% \newpage
 
 Weitere Gegenstände, mit denen der Chronologe interagieren kann, enthalten ein Tooltip. Zum Beispiel wird ein Tooltip angezeigt, sobald sich der Spieler einem Hebel nähert. Dies ist in \say{Abbildung \ref{fig:lever_tooltip}} und in \say{Abbildung \ref{fig:stair_tooltip}} zu sehen. Bei der Treppe handelt es sich hierbei um ein tragbares Objekt. Der Spieler muss dieses Treppenbruchstück an einem anderen Ort platzieren.
 
@@ -871,7 +872,7 @@ Damit der Spieler ein besseres Verständnis dafür erhält, welche Interaktion e
 \label{fig:lever_tooltip_title}
 \end{figure}
 % ~
-\newpage
+% \newpage
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.8\linewidth]{content/pictures/leadge_tooltip_title.jpg}
