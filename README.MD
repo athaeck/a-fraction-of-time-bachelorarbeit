@@ -1,1 +1,1 @@
-📄 [Bachelorarbeit ansehen](./Nick_Philipp_Haecker_262144_Bachelorthesis.pdf)
+📄 [Bachelorarbeit ansehen](./bachelorarbeit.pdf)
