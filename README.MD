@@ -115,6 +115,8 @@ Lad dir einfach die aktuellste Version des Prototyps [herunter](https://github.c
 ## Quellen
 
 
+Bronstring, Marek (2012):What are adventure games?
+
 
 
 
