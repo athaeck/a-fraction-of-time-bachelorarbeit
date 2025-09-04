@@ -46,20 +46,20 @@ Replay-Systeme finden sich vor allem in Ego-Shootern und Rennspielen. Sie basier
     - Belohnungen: Neue Ichs oder Gegenstände, die alternative Lösungswege eröffnen.
 
 - Dynamics (Spielabläufe & Interaktionen)
-    - Level-Ablauf:
+    - [Spielablauf](./content/pictures/main_loop.jpg):
+        - Startmenü → Tutorial (mit oder ohne geführte Erklärungen).
+        - Kapiteleinteilung (je 5 Level).
+        - Ab Kapitel 2 Zugang zum Labor → Wiederspielen alter Level mit neuen Ichs/Items möglich.
+        - Fortschritt durch Story-Sequenzen zwischen den Leveln.
+
+    - [Level-Ablauf](./content/pictures/level_loop.jpg):
         - Spieler startet als Chronologe in einer Spielwelt.
         - Bei Hindernissen erzeugt er alternative Zeitlinien (Splitting).
         - Alternative Ichs lösen Aufgaben, während der Haupt-Charakter profitiert.
         - Durch Merging kann er zurückspringen, frühere Aktionen auslösen und mehrere Ichs koordinieren.
         - Instabilität → Weltveränderungen (verschobene Wände, Gegenstände).
 
-    - Spielablauf gesamt:
-        - Startmenü → Tutorial (mit oder ohne geführte Erklärungen).
-        - Kapiteleinteilung (je 5 Level).
-        - Ab Kapitel 2 Zugang zum Labor → Wiederspielen alter Level mit neuen Ichs/Items möglich.
-        - Fortschritt durch Story-Sequenzen zwischen den Leveln.
-
-    - Labor-Ablauf:
+    - [Labor-Ablauf](./content/pictures/labor_loop.jpg):
         - Hub für Levelauswahl, Informationssammlung und Storyfortschritt.
         - Computer als Wissensdatenbank über gesammelte Objekte und Hinweise.
         - Portal zum Starten neuer Level.
@@ -97,6 +97,8 @@ Replay-Systeme finden sich vor allem in Ego-Shootern und Rennspielen. Sie basier
 ### Informationen zur Spielmechanik
 
 Möchtest du mehr über die Zeitreise-Mechanik lesen? In den Seiten 92 - 148 wird die Spielmechanik detailreich vorgestellt.
+
+### Prototyp
 
 Wurde dein Interesse geweckt?
 
