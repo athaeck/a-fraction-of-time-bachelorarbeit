@@ -112,6 +112,8 @@ Wurde dein Interesse geweckt?
 
 Lad dir einfach die aktuellste Version des Prototyps [herunter](https://github.com/athaeck/a-fraction-of-time-demo-releases) und versuch dein Glück!
 
+Melde dich einfach über dieses [Kontaktformular](https://athaeck.github.io/) bei mir, um den Quellcode für den Prototyp und eine Anleitung zu erhalten!
+
 ## Quellen
 
 
