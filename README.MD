@@ -96,7 +96,11 @@ Replay-Systeme finden sich vor allem in Ego-Shootern und Rennspielen. Sie basier
 
 ### Showcase Spielmechanik
 
-[![Showcase der Spielmechanik anschauen](./content/thumbnail.png)](https://youtu.be/zHG2IQ06WkM)
+<!-- [![Showcase der Spielmechanik anschauen](./content/thumbnail.png)](https://youtu.be/zHG2IQ06WkM)
+ -->
+ <a href="https://youtu.be/zHG2IQ06WkM" target="_blank">
+  <img src="./content/thumbnail.png" alt="Showcase der Spielmechanik anschauen" />
+</a>
 
 ### Informationen zur Spielmechanik
 
