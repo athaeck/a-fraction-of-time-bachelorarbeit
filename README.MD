@@ -106,6 +106,12 @@ Replay-Systeme finden sich vor allem in Ego-Shootern und Rennspielen. Sie basier
 
 Möchtest du mehr über die Zeitreise-Mechanik lesen? In den Seiten 92 - 148 wird die Spielmechanik detailreich vorgestellt.
 
+### Vorgänger
+
+Bereits im Wintersemester 2021/ 2022 wurde zu dieser Spielidee ein erster Prototyp entwickelt. 
+
+Folgender [Link](https://github.com/athaeck/A-fraction-of-time) führt zu der Abgabe dieser ersten Prototyp-Version.
+
 ## Prototyp
 
 Wurde dein Interesse geweckt?
